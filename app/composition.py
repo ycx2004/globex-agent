@@ -312,6 +312,20 @@ async def build_container() -> Container:
         field_lexical_enabled=settings.field_lexical_enabled,
         field_weights=settings.field_lexical_weights,
     )
+    if settings.catalog_source == "pdd":
+        # 方案 A：实时平台 API 导购（关键词粗筛 → 精排 → 跳转链接），不读本地商品库
+        from app.application.usecases.live_catalog_search import LiveCatalogSearchUseCase
+        from app.infrastructure.live.pdd_client import PddClient
+        if not settings.pdd_client_id or not settings.pdd_client_secret:
+            raise RuntimeError("CATALOG_SOURCE=pdd 需要配置 PDD_CLIENT_ID / PDD_CLIENT_SECRET")
+        catalog_search = LiveCatalogSearchUseCase(
+            pdd_client=PddClient(settings.pdd_client_id, settings.pdd_client_secret, settings.pdd_timeout_seconds),
+            pdd_pid=settings.pdd_pid,
+            page_size=settings.pdd_search_page_size,
+            reranker=reranker,
+            recall_candidates=settings.recall_candidates,
+        )
+        logger.info("商品源：拼多多实时 API（导购跳转，PID %s)", "已配置" if settings.pdd_pid else "未配置，使用商品页直链")
     place_order = PlaceOrderUseCase(confirmations)
     query_order = QueryOrderUseCase(trade_store)
     cancel_order = CancelOrderUseCase(confirmations)

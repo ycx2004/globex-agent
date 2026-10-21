@@ -55,7 +55,7 @@ export interface ProductCard {
   updated_at?: string;
   default_sku_id?: string;
   image_url?: string | null;
-  image_kind?: "illustration" | "placeholder";
+  image_kind?: "illustration" | "placeholder" | "live";
   image_alt?: string;
   source_platform?: string;
   source_price_major?: number;
@@ -63,6 +63,8 @@ export interface ProductCard {
   canonical_product_id?: string;
   material_tags?: string[];
   weight_kg?: number;
+  /** 实时商品源的跳转链接（带佣推广链或商品页直链），本地目录商品为空。 */
+  purchase_url?: string;
 }
 
 export interface ChatMessage {

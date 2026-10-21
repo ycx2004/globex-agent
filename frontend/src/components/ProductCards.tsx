@@ -146,13 +146,26 @@ function ProductCards({
                   />
                   加入比较
                 </label>
-                <button
-                  className="detail-button"
-                  onClick={() => onDetail(product)}
-                >
-                  看看细节
-                  <Icon name="arrow" />
-                </button>
+                {product.purchase_url ? (
+                  <a
+                    className="detail-button purchase-button"
+                    href={product.purchase_url}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    去购买
+                    <Icon name="arrow" />
+                  </a>
+                ) : (
+                  <button
+                    className="detail-button"
+                    onClick={() => onDetail(product)}
+                  >
+                    看看细节
+                    <Icon name="arrow" />
+                  </button>
+                )}
               </div>
             </div>
           </article>

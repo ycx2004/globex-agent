@@ -149,6 +149,13 @@ class Settings:
     field_lexical_enabled: bool = False  # 实验字段召回；收益门禁通过前不默认启用。
     field_lexical_weights: dict[str, float] | None = None
     embedding_version: str = ""  # 同名模型更新权重或编码方式时，用版本区分已存向量
+    # ===== 实时商品源（方案 A：平台 API 导购跳转）=====
+    catalog_source: str = "local"  # local / pdd
+    pdd_client_id: str = ""
+    pdd_client_secret: str = field(default="", repr=False)
+    pdd_pid: str = ""
+    pdd_search_page_size: int = 20
+    pdd_timeout_seconds: float = 10.0
 
 
 def load_settings(*, require_llm_key: bool = True) -> Settings:
@@ -199,6 +206,12 @@ def load_settings(*, require_llm_key: bool = True) -> Settings:
         recall_candidates=int(os.getenv("RECALL_CANDIDATES", "32")),
         field_lexical_enabled=os.getenv("FIELD_LEXICAL_ENABLED", "0") in ("1", "true", "True"),
         field_lexical_weights=json.loads(os.environ["FIELD_LEXICAL_WEIGHTS"]) if os.getenv("FIELD_LEXICAL_WEIGHTS") else None,
+        catalog_source=os.getenv("CATALOG_SOURCE", "local"),
+        pdd_client_id=os.getenv("PDD_CLIENT_ID", ""),
+        pdd_client_secret=os.getenv("PDD_CLIENT_SECRET", ""),
+        pdd_pid=os.getenv("PDD_PID", ""),
+        pdd_search_page_size=int(os.getenv("PDD_SEARCH_PAGE_SIZE", "20")),
+        pdd_timeout_seconds=float(os.getenv("PDD_TIMEOUT_SECONDS", "10")),
         port=int(os.getenv("PORT", "8000")),
         log_level=os.getenv("LOG_LEVEL", "info"),
         # embedding 默认复用 LLM 网关（OpenAI 兼容 /v1/embeddings）
