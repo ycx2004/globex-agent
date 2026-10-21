@@ -115,9 +115,10 @@ class LiveCatalogSearchUseCase(CatalogSearchUseCase):
     async def _purchase_url(self, product: Product, spec_extra: dict) -> str:
         """有 PID 时优先生成带佣推广链；任何失败回退商品页直链，不阻断出卡。"""
         goods_id = product.external_product_id
-        if self._pdd_pid and goods_id:
+        goods_sign = spec_extra.get("goods_sign", "")
+        if self._pdd_pid and goods_sign:
             try:
-                return await self._pdd.promotion_url(goods_id, pid=self._pdd_pid, search_id=spec_extra.get("search_id", ""))
+                return await self._pdd.promotion_url(goods_sign, pid=self._pdd_pid, search_id=spec_extra.get("search_id", ""))
             except PddClientError as err:
                 logger.info("推广链接生成失败（%s），回退商品页直链", err.code)
         return spec_extra.get("purchase_url") or (goods_url(goods_id) if goods_id else "")

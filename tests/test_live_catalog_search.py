@@ -14,16 +14,18 @@ GOODS = [
         "goods_id": 1001, "goods_name": "轻便折叠双肩包 20L 旅行背包", "goods_desc": "轻",
         "min_group_price": 12900, "opt_name": "箱包", "category_name": "箱包皮具",
         "sales_tip": "1.2万", "has_coupon": False, "goods_thumbnail_url": "https://img.example.com/a.jpg",
+        "goods_sign": "sign1001",
     },
     {
         "goods_id": 1002, "goods_name": "大容量登山包 60L 户外重装", "goods_desc": "重",
         "min_group_price": 45900, "opt_name": "运动包", "category_name": "运动户外",
         "sales_tip": "300", "has_coupon": True, "coupon_discount": 2000,
-        "goods_image_url": "https://img.example.com/b.jpg",
+        "goods_image_url": "https://img.example.com/b.jpg", "goods_sign": "sign1002",
     },
     {
         "goods_id": 1003, "goods_name": "桌面香薰蜡烛 小众设计礼盒", "goods_desc": "",
         "min_group_price": 5900, "opt_name": "家居日用", "category_name": "家居",
+        "goods_sign": "sign1003",
     },
 ]
 
@@ -39,11 +41,11 @@ class FakePddClient:
             raise self._error
         return self._goods
 
-    async def promotion_url(self, goods_id, *, pid, search_id=""):
+    async def promotion_url(self, goods_sign, *, pid, search_id=""):
         self.promotion_calls += 1
         if pid == "bad":
             raise PddClientError("service_error", "模拟失败")
-        return f"https://pdd.promo/{goods_id}?pid={pid}"
+        return f"https://pdd.promo/{goods_sign}?pid={pid}"
 
 
 def make_usecase(client, pid="", reranker=None):
@@ -72,7 +74,7 @@ def test_live_search_budget_and_purchase_url():
     ids = [h["product_id"] for h in result["hits"]]
     assert "PDD1001" in ids and "PDD1002" not in ids  # 459 元被预算硬过滤
     hit = next(h for h in result["hits"] if h["product_id"] == "PDD1001")
-    assert hit["purchase_url"] == "https://pdd.promo/1001?pid=pid_1"
+    assert hit["purchase_url"] == "https://pdd.promo/sign1001?pid=pid_1"
     assert hit["image_url"] == "https://img.example.com/a.jpg"
     assert hit["image_kind"] == "live"
     assert "landed_price" not in hit

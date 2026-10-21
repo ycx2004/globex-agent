@@ -80,7 +80,7 @@ class PddClient:
         return result
 
     async def search_goods(self, keyword: str, *, page_size: int = 20, page: int = 1, pid: str = "") -> list[dict]:
-        """关键词搜索商品；pid 缺失时平台拒绝（须完成推广位备案）。"""
+        """关键词搜索商品；pid 缺失或未授权备案时平台拒绝。"""
         if not keyword.strip():
             return []
         result = await self.call(
@@ -91,7 +91,12 @@ class PddClient:
             sort_type=0,
             pid=pid or None,
         )
-        return result.get("goods_search_response", {}).get("goods_list") or []
+        body = result.get("goods_search_response", {})
+        goods_list = body.get("goods_list") or []
+        search_id = str(body.get("search_id") or "")
+        for goods in goods_list:
+            goods.setdefault("search_id", search_id)
+        return goods_list
 
     async def recommend_goods(self, *, channel_type: int = 0, limit: int = 20, offset: int = 0) -> tuple[list[dict], str]:
         """推荐商品流（不需 pid），返回 (goods_list, search_id)。无关键词能力，仅作降级兜底。"""
@@ -104,14 +109,16 @@ class PddClient:
         body = result.get("goods_basic_detail_response", {})
         return body.get("goods_list") or [], str(body.get("search_id") or "")
 
-    async def promotion_url(self, goods_id: str, *, pid: str, search_id: str = "") -> str:
+    async def promotion_url(self, goods_sign: str, *, pid: str, search_id: str = "") -> str:
         """生成带佣金追踪的推广链接；失败抛 PddClientError，由调用方回退到商品页直链。"""
         if not pid:
             raise PddClientError("pid_required", "生成推广链接需要 PDD_PID")
+        if not goods_sign:
+            raise PddClientError("invalid_params", "生成推广链接需要 goods_sign")
         result = await self.call(
             "pdd.ddk.goods.promotion.url.generate",
             p_id=pid,
-            goods_id_list=[int(goods_id)],
+            goods_sign_list=[goods_sign],
             search_id=search_id or None,
             generate_we_app=False,
         )

@@ -105,5 +105,6 @@ def pdd_goods_to_product(goods: dict) -> Product | None:
             "image_url": str(goods.get("goods_image_url") or goods.get("goods_thumbnail_url") or ""),
             "purchase_url": goods_url(goods_id),
             "search_id": str(goods.get("search_id") or ""),
+            "goods_sign": str(goods.get("goods_sign") or ""),
         },
     )
