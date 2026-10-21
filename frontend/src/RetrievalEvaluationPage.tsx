@@ -1,12 +1,13 @@
 import RetrievalEvaluation from "./components/RetrievalEvaluation";
 import { useEffect } from "react";
 import Icon from "./components/Icon";
+import { resolveBuyerId } from "./lib/buyerIdentity";
 import "./retrievalEvaluationPage.css";
 
 async function readEvaluation(path: string): Promise<Record<string, unknown>> {
   const base = (import.meta.env.VITE_API_BASE ?? "").replace(/\/$/, "");
   const url = new URL(`${base}/commerce${path}`, window.location.origin);
-  url.searchParams.set("buyer_id", import.meta.env.VITE_BUYER_ID || "pao-coder");
+  url.searchParams.set("buyer_id", resolveBuyerId());
   let token = import.meta.env.VITE_API_TOKEN;
   try { token ||= window.localStorage.getItem("globex.access-token") ?? undefined; } catch { /* 本机存储不可用时沿用构建配置。 */ }
   const response = await fetch(url, { headers: token ? { Authorization: `Bearer ${token}` } : {} });

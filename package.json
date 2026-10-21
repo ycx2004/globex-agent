@@ -1,0 +1,7 @@
+{
+  "name": "globex-agent",
+  "private": true,
+  "scripts": {
+    "dev": "bash scripts/dev-local.sh"
+  }
+}

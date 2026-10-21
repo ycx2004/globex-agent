@@ -28,7 +28,7 @@ def register_retrieval_evaluation_routes(api: FastAPI, root: Path | None = None)
     async def retrieval_evaluation(
         request: Request,
         response: Response,
-        buyer_id: str = Query(default="pao-coder", min_length=1, max_length=128),
+        buyer_id: str = Query(default="ycx", min_length=1, max_length=128),
         baseline_id: str | None = Query(default=None, min_length=1, max_length=96),
         candidate_id: str | None = Query(default=None, min_length=1, max_length=96),
     ) -> dict[str, Any]:

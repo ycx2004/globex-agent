@@ -8,6 +8,7 @@ import { ToolApprovalCards } from "./components/ToolApprovalCards";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useCommerceAgent } from "./hooks/useCommerceAgent";
 import { readProducts } from "./lib/commerceClient";
+import { resolveBuyerId, setBuyerIdOverride, DEFAULT_BUYER_ID } from "./lib/buyerIdentity";
 import type { ProductCard, PublishedSkill } from "./types";
 import Icon from "./components/Icon";
 import ConversationTurns from "./components/ConversationTurns";
@@ -57,6 +58,16 @@ export default function App() {
     return()=>{if(generation===formGeneration.current)++formGeneration.current;};
   },[agent.sessionId,agent.workspaceRequest,agent.shoppingForm]);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [editingBuyer, setEditingBuyer] = useState(false);
+  const [buyerDraft, setBuyerDraft] = useState("");
+  const saveBuyerId = useCallback(() => {
+    setEditingBuyer(false);
+    const next = buyerDraft.trim();
+    if (next && next !== resolveBuyerId()) {
+      setBuyerIdOverride(next === DEFAULT_BUYER_ID ? null : next);
+      window.location.reload();
+    }
+  }, [buyerDraft]);
   const navigationRef = useRef<HTMLElement>(null);
   const [historySearchOpen, setHistorySearchOpen] = useState(false);
   const [atmosphere, setAtmosphere] = useState(() => {
@@ -413,9 +424,30 @@ export default function App() {
         <div className="sidebar-bottom">
           <div className="sidebar-note"><span className="sidebar-note-icon"><Icon name="spark" /></span><div><strong>让选择，轻一点。</strong><p>找好物，也找到自己的偏好。</p></div></div>
           <div className="profile">
-            <span className="avatar">泡</span>
+            <span className="avatar">Y</span>
             <span>
-              <span className="profile-name">{import.meta.env.VITE_BUYER_ID || "pao-coder"}</span>
+              {editingBuyer ? (
+                <input
+                  className="profile-name-input"
+                  value={buyerDraft}
+                  autoFocus
+                  maxLength={32}
+                  placeholder={DEFAULT_BUYER_ID}
+                  aria-label="修改用户 ID"
+                  onChange={(e) => setBuyerDraft(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") saveBuyerId();
+                    if (e.key === "Escape") setEditingBuyer(false);
+                  }}
+                  onBlur={saveBuyerId}
+                />
+              ) : (
+                <span className="profile-name" role="button" tabIndex={0} title="点击修改用户 ID"
+                  onClick={() => { setBuyerDraft(resolveBuyerId()); setEditingBuyer(true); }}
+                  onKeyDown={(e) => { if (e.key === "Enter") { setBuyerDraft(resolveBuyerId()); setEditingBuyer(true); } }}>
+                  {resolveBuyerId()}
+                </span>
+              )}
               <span className="profile-caption">每一次选择，都有新发现</span>
             </span>
             <Icon name="leaf" />

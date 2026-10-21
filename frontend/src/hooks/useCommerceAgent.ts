@@ -1,5 +1,6 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { CommerceClient } from "../lib/commerceClient";
+import { resolveBuyerId } from "../lib/buyerIdentity";
 
 export function useCommerceAgent() {
   const [client] = useState(() => {
@@ -13,7 +14,7 @@ export function useCommerceAgent() {
     let accessToken = import.meta.env.VITE_API_TOKEN;
     try { accessToken ||= storage?.getItem("globex.access-token"); } catch { /* 可使用构建配置。 */ }
     return new CommerceClient({ url: `${base}/commerce/ag-ui/run`, storage,
-      buyerId: import.meta.env.VITE_BUYER_ID || "pao-coder", accessToken });
+      buyerId: resolveBuyerId(), accessToken });
   });
   const snapshot = useSyncExternalStore(client.subscribe, client.getSnapshot);
   useEffect(() => { void client.initialize(); return () => client.detach(); }, [client]);

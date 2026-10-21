@@ -216,6 +216,17 @@ button {
 }
 .profile-name {
   font-size: 12px;
+  cursor: pointer;
+}
+.profile-name:hover { text-decoration: underline dotted; }
+.profile-name-input {
+  font-size: 12px;
+  width: 96px;
+  border: 1px solid #c9d2c4;
+  border-radius: 6px;
+  padding: 1px 6px;
+  background: #fff;
+  color: inherit;
 }
 .profile-caption {
   font-size: 10px;
