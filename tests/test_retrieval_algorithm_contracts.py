@@ -220,7 +220,9 @@ async def test_calibrated_threshold_returns_fewer_cards_and_explains_shortfall()
 def test_search_tool_schema_exposes_constraints_and_soft_preferences():
     tool = build_product_search_tool(SimpleNamespace(execute=AsyncMock()), TradeEventBus())
     properties = FunctionTool(tool).input_schema["properties"]
-    assert {"sku_spec", "product_type", "max_weight_kg", "preferred_product_type", "prefer_lightweight"} <= properties.keys()
+    assert {"sku_spec", "product_type", "max_weight_kg", "prefer_lightweight"} <= properties.keys()
+    # 类型偏好只由检索链路按查询词推断，不再让模型传入，避免未知类型直接报错。
+    assert "preferred_product_type" not in properties
     assert {variant["type"] for variant in properties["max_weight_kg"]["anyOf"]} == {"number", "string", "null"}
 
 
@@ -231,13 +233,13 @@ async def test_tool_forwards_new_arguments_and_coerces_numeric_weight_string():
     try:
         response = await tool(
             normalized_query="户外背包", sku_spec="黑色 20L", product_type="daypack",
-            max_weight_kg="0.5", preferred_product_type="backpack", prefer_lightweight=True,
+            max_weight_kg="0.5", prefer_lightweight=True,
         )
     finally:
         ShoppingContext.reset(token)
     assert not response.content[0].text.startswith("[error]")
     spec = execute.await_args.args[0]
-    assert spec.product_type == spec.preferred_product_type == "背包"
+    assert spec.product_type == "背包" and spec.preferred_product_type is None
     assert spec.sku_spec == "黑色 20L" and spec.max_weight_kg == 0.5 and spec.prefer_lightweight is True
     assert spec.category is None  # 户外字样不擅自限制为户外运动一级类目。
     assert json.loads(response.content[0].text)["query_conditions"]["max_weight_kg"] == 0.5
@@ -270,3 +272,38 @@ def test_model_projection_preserves_unknown_weight_and_eligible_spec_evidence():
         assert hit["known_weight_kg"] is None
         assert hit["product_type"] == "背包"
         assert hit["eligible_sku_ids"] == ["P1001-S2"]
+
+
+@pytest.mark.parametrize("path", ["keyword", "dense", "hybrid"])
+async def test_query_type_word_adds_soft_preference_when_model_omits_type(path):
+    # 回归：“蓝牙耳机 长续航”未传类型时，挂颈风扇曾因“续航”字面重合排在英文耳机之前。
+    fan = _product(2001, title="便携挂颈风扇", description="蓝牙耳机般轻便 续航8小时")
+    headphones = _product(2002, title="Lingua Noise-cancelling headphones", description="蓝牙耳机 Listen during travel")
+    usecase, _ = _search([fan, headphones], path=path)
+    result = await usecase.execute(ProductSearchSpec(normalized_query="蓝牙耳机 长续航", top_k=2))
+    assert [hit["product_id"] for hit in result["hits"]] == ["P2002", "P2001"]
+    assert result["retrieval_diagnostics"]["inferred_preferred_product_type"] == "耳机"
+
+
+async def test_explicit_or_ambiguous_type_is_not_overridden_by_query_inference():
+    fan = _product(2001, title="便携挂颈风扇", description="耳机 风扇")
+    headphones = _product(2002, title="Lingua headphones", description="耳机 风扇")
+    usecase, _ = _search([fan, headphones], path="dense")
+    explicit = await usecase.execute(ProductSearchSpec(
+        normalized_query="耳机", top_k=2, preferred_product_type="风扇"))
+    assert [hit["product_id"] for hit in explicit["hits"]] == ["P2001", "P2002"]
+    assert "inferred_preferred_product_type" not in explicit["retrieval_diagnostics"]
+    # 同时点名两种类型时不猜测，保持原排序。
+    ambiguous = await usecase.execute(ProductSearchSpec(normalized_query="耳机 风扇", top_k=2))
+    assert [hit["product_id"] for hit in ambiguous["hits"]] == ["P2001", "P2002"]
+    assert "inferred_preferred_product_type" not in ambiguous["retrieval_diagnostics"]
+
+
+async def test_sku_rows_carry_target_currency_price_next_to_source_price():
+    item = _product(skus=[_sku("P1001", 1, "石墨黑", 41.83, currency="USD")])
+    usecase, _ = _search([item])
+    result = await usecase.execute(ProductSearchSpec(normalized_query="背包", target_currency="CNY"))
+    sku = result["hits"][0]["skus"][0]
+    assert (sku["price_major"], sku["currency"]) == (41.83, "USD")
+    assert sku["target_currency"] == "CNY"
+    assert sku["target_price_major"] == result["hits"][0]["price_major"] != 41.83

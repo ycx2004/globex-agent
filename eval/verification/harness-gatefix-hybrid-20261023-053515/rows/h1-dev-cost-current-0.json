@@ -1,0 +1,229 @@
+{
+  "case_id": "h1-dev-cost",
+  "split": "dev",
+  "mode": "snapshot",
+  "strategy": "current",
+  "repetition": 0,
+  "answer": "第一批（P28183 · 该批查询条件为寄往中国、数量1）的历史报价：\n\n- 到手价：**222 元**（CNY）\n- 运费：**26 元**（CNY）\n- 其中税费 7 元，商品单价 189 元（默认 SKU P28183-S1 石墨黑）\n\n说明：以上是第 1 批展示时的历史观察值，不是当前实时价格。你目前的约束是寄往英国（GB），该路线的到手价与运费会不同，需要我按当前业务数据重新核验吗？",
+  "checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "passed": true,
+  "error": null,
+  "usage": [
+    {
+      "kind": "business",
+      "input_tokens": 10734,
+      "output_tokens": 500,
+      "elapsed_ms": 14075.07177000025,
+      "request_context": {
+        "system_estimated_tokens": 1059,
+        "state_estimated_tokens": 0,
+        "product_estimated_tokens": 17669,
+        "history_estimated_tokens": 4597,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "buyer_request",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 1024,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "first_request",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "254d00939966170a85a777124740122cb0a8f0e55d9f56b4d62b8d16874fb525",
+        "prefix_tools_hash": "8f618e32962686b0a1c5dd43392630a683622934b5db1c0f053e5676d8e24599",
+        "prefix_message_count": 99,
+        "prefix_common_messages": null,
+        "prefix_common_message_bytes": null,
+        "prefix_first_changed_message": null,
+        "prefix_system_changed": null,
+        "prefix_tools_changed": null,
+        "prefix_parameters_changed": null
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    },
+    {
+      "kind": "business",
+      "input_tokens": 11630,
+      "output_tokens": 520,
+      "elapsed_ms": 15105.382780000582,
+      "request_context": {
+        "system_estimated_tokens": 1059,
+        "state_estimated_tokens": 0,
+        "product_estimated_tokens": 19841,
+        "history_estimated_tokens": 4316,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "lookup_followup",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 10240,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "append",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "254d00939966170a85a777124740122cb0a8f0e55d9f56b4d62b8d16874fb525",
+        "prefix_tools_hash": "8f618e32962686b0a1c5dd43392630a683622934b5db1c0f053e5676d8e24599",
+        "prefix_message_count": 101,
+        "prefix_common_messages": 99,
+        "prefix_common_message_bytes": 37104,
+        "prefix_first_changed_message": 99,
+        "prefix_system_changed": false,
+        "prefix_tools_changed": false,
+        "prefix_parameters_changed": false
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    }
+  ],
+  "input_tokens": 22364,
+  "output_tokens": 1020,
+  "model_calls": 2,
+  "lookup_calls": 1,
+  "lookup_events": [
+    {
+      "ref": "",
+      "batch": 1,
+      "position": 0,
+      "product_id": "P28183",
+      "sku_id": "",
+      "fields": "all",
+      "offset": 0,
+      "limit": 5,
+      "field_offset": 0
+    }
+  ],
+  "context_diagnostics": [
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 9621,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 21,
+      "protected_results": 2,
+      "below_target": false,
+      "trigger": "pressure"
+    },
+    {
+      "type": "lookup",
+      "batch": 1,
+      "position": 0,
+      "offset": 0,
+      "limit": 5,
+      "field_offset": 0,
+      "has_reference": false,
+      "has_query": false,
+      "has_product": true,
+      "has_sku": false,
+      "status": "success",
+      "error_code": null,
+      "returned_products": 1,
+      "effective_limit": 5,
+      "fields_normalized": false,
+      "limit_capped": false,
+      "effective_batch": 1,
+      "batch_inferred_from_user": false,
+      "records": 1,
+      "estimated_tokens": 822,
+      "has_more": false,
+      "elapsed_ms": 4.89225500041357
+    },
+    {
+      "type": "prune",
+      "before_tokens": 7713,
+      "after_tokens": 7713,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 0,
+      "protected_results": 3,
+      "below_target": false,
+      "trigger": "pressure"
+    }
+  ],
+  "current_calls": 0,
+  "elapsed_ms": 32476,
+  "compactions": [],
+  "round_metrics": [
+    {
+      "elapsed_ms": 29469,
+      "compacted": false,
+      "model_calls": 2
+    }
+  ],
+  "compaction_metrics": [],
+  "final_context_estimated_tokens": 27480,
+  "last_compaction": {
+    "policy_version": "layered-v4",
+    "reason": "pressure",
+    "before_tokens": 13475,
+    "after_tokens": 13475,
+    "archived_results": 0,
+    "summary_changed": false,
+    "elapsed_ms": 24,
+    "status": "noop"
+  },
+  "final_product_observations": 15,
+  "final_product_duplicate_ratio": 0.33333333333333337,
+  "association_check": {
+    "applicable": false,
+    "status": "not_applicable"
+  },
+  "original_checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "layer": "context",
+  "critical": true,
+  "title": "费用组成",
+  "evidence_trace": "traces/h1-dev-cost-current-0.jsonl"
+}

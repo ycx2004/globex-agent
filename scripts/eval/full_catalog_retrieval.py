@@ -17,7 +17,7 @@ from app.infrastructure.persistence.in_memory_repositories import InMemoryProduc
 from app.infrastructure.persistence.seed_products import _product_from_record
 from app.infrastructure.settings import load_settings
 from app.infrastructure.vector.index_bootstrap import bootstrap_product_index
-from app.infrastructure.vector.qdrant_product_index import QdrantProductIndex
+from app.infrastructure.vector.product_index_factory import build_product_index
 from scripts.eval.hard_constraints import find_hit_constraint_violations
 from scripts.eval.local_multilingual_embedding import LocalMultilingualEmbedding, MODEL, model_files, model_version
 from scripts.eval.retrieval_v2 import score, aggregate
@@ -126,7 +126,7 @@ async def evaluate(args):
     settings = replace(load_settings(), data_dir=args.index_dir, qdrant_url='',
                        qdrant_collection='full_products_multilingual_minilm', embedding_base_url='local://fastembed',
                        embedding_model=MODEL, embedding_dim=384, embedding_version=model_version(args.model_cache))
-    index = QdrantProductIndex(settings)
+    index = build_product_index(settings)
     report = {'status':'BUILDING', 'schema_version':'retrieval-stages-v1',
               'catalog_size':len(products), 'sku_count':sum(len(p.skus) for p in products),
               'models':{'embedding':MODEL, 'version':settings.embedding_version, 'reranker':None},

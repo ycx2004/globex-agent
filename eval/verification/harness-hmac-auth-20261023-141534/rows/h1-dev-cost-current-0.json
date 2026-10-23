@@ -1,0 +1,127 @@
+{
+  "case_id": "h1-dev-cost",
+  "split": "dev",
+  "mode": "snapshot",
+  "strategy": "current",
+  "repetition": 0,
+  "answer": "**第一批（P28183 / SKU：P28183-S1 石墨黑，币种 CNY）**\n\n该批次的到手价明细是**寄往中国（CN）**口径下的历史观察值（observed_at 2026-09-01T10:01:00Z）：\n\n- 到手价：**222 元**\n- 运费：**26 元**\n- 税费：7 元\n- 商品价：189 元（189 + 26 + 7 = 222）\n\n⚠️ 提示：你最新约束已改为**寄到英国（GB）**，与第一批的 CN 口径不可混用。按第23批（2026-09-01T10:23:00Z，ship_to=GB）观察，P28183-S1 为到手价 **237 元**、运费 **41 元**、税费 7 元。以上均为历史批次记录，不构成当前库存/报价；需要实时数值我可以再核验。",
+  "checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "passed": true,
+  "error": null,
+  "usage": [
+    {
+      "kind": "business",
+      "input_tokens": 10763,
+      "output_tokens": 1081,
+      "elapsed_ms": 17984.35183699621,
+      "request_context": {
+        "system_estimated_tokens": 1059,
+        "state_estimated_tokens": 0,
+        "product_estimated_tokens": 17669,
+        "history_estimated_tokens": 4597,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "buyer_request",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "first_request",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "31d9657c52dab1e2bc851c24ab3f82c21455c4152c63d28e3f5717c274f474e9",
+        "prefix_tools_hash": "2f4b65c43ffe980120f42b40db5f113c9f0f052af21cf0bb46e3d88685f6c92e",
+        "prefix_message_count": 99,
+        "prefix_common_messages": null,
+        "prefix_common_message_bytes": null,
+        "prefix_first_changed_message": null,
+        "prefix_system_changed": null,
+        "prefix_tools_changed": null,
+        "prefix_parameters_changed": null
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    }
+  ],
+  "input_tokens": 10763,
+  "output_tokens": 1081,
+  "model_calls": 1,
+  "lookup_calls": 0,
+  "lookup_events": [],
+  "context_diagnostics": [
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 9621,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 21,
+      "protected_results": 2,
+      "below_target": false,
+      "trigger": "pressure"
+    }
+  ],
+  "current_calls": 0,
+  "elapsed_ms": 20982,
+  "compactions": [],
+  "round_metrics": [
+    {
+      "elapsed_ms": 18157,
+      "compacted": false,
+      "model_calls": 1
+    }
+  ],
+  "compaction_metrics": [],
+  "final_context_estimated_tokens": 26406,
+  "last_compaction": {
+    "policy_version": "layered-v4",
+    "reason": "pressure",
+    "before_tokens": 14828,
+    "after_tokens": 10395,
+    "archived_results": 21,
+    "summary_changed": false,
+    "elapsed_ms": 90,
+    "status": "completed"
+  },
+  "final_product_observations": 15,
+  "final_product_duplicate_ratio": 0.33333333333333337,
+  "association_check": {
+    "applicable": false,
+    "status": "not_applicable"
+  },
+  "original_checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "layer": "context",
+  "critical": true,
+  "title": "费用组成",
+  "evidence_trace": "traces/h1-dev-cost-current-0.jsonl"
+}

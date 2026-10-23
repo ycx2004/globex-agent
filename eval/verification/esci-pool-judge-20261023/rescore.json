@@ -1,0 +1,146 @@
+{
+ "baseline@8 hybrid_only human": {
+  "hit_E": 0.83,
+  "hit_ES": 0.893,
+  "P@k_E": 0.346,
+  "recall_capped": 0.449,
+  "mrr": 0.624,
+  "ndcg_esci": 0.46,
+  "unjudged": 0.428
+ },
+ "baseline@8 hybrid_only pooled": {
+  "hit_E": 0.893,
+  "hit_ES": 0.96,
+  "P@k_E": 0.436,
+  "recall_capped": 0.523,
+  "mrr": 0.72,
+  "ndcg_esci": 0.56,
+  "unjudged": 0.0
+ },
+ "baseline@8 hybrid_rerank human": {
+  "hit_E": 0.863,
+  "hit_ES": 0.927,
+  "P@k_E": 0.41,
+  "recall_capped": 0.53,
+  "mrr": 0.693,
+  "ndcg_esci": 0.539,
+  "unjudged": 0.375
+ },
+ "baseline@8 hybrid_rerank pooled": {
+  "hit_E": 0.923,
+  "hit_ES": 0.987,
+  "P@k_E": 0.521,
+  "recall_capped": 0.627,
+  "mrr": 0.799,
+  "ndcg_esci": 0.658,
+  "unjudged": 0.0
+ },
+ "qu@8 hybrid_only human": {
+  "hit_E": 0.823,
+  "hit_ES": 0.883,
+  "P@k_E": 0.357,
+  "recall_capped": 0.456,
+  "mrr": 0.626,
+  "ndcg_esci": 0.466,
+  "unjudged": 0.437
+ },
+ "qu@8 hybrid_only pooled": {
+  "hit_E": 0.897,
+  "hit_ES": 0.963,
+  "P@k_E": 0.451,
+  "recall_capped": 0.537,
+  "mrr": 0.729,
+  "ndcg_esci": 0.573,
+  "unjudged": 0.0
+ },
+ "qu@8 hybrid_rerank human": {
+  "hit_E": 0.853,
+  "hit_ES": 0.917,
+  "P@k_E": 0.412,
+  "recall_capped": 0.531,
+  "mrr": 0.697,
+  "ndcg_esci": 0.541,
+  "unjudged": 0.391
+ },
+ "qu@8 hybrid_rerank pooled": {
+  "hit_E": 0.93,
+  "hit_ES": 0.987,
+  "P@k_E": 0.531,
+  "recall_capped": 0.636,
+  "mrr": 0.813,
+  "ndcg_esci": 0.668,
+  "unjudged": 0.0
+ },
+ "baseline@16 hybrid_only human": {
+  "hit_E": 0.873,
+  "hit_ES": 0.93,
+  "P@k_E": 0.268,
+  "recall_capped": 0.531,
+  "mrr": 0.628,
+  "ndcg_esci": 0.486,
+  "unjudged": 0.529
+ },
+ "baseline@16 hybrid_only pooled": {
+  "hit_E": 0.923,
+  "hit_ES": 0.983,
+  "P@k_E": 0.346,
+  "recall_capped": 0.59,
+  "mrr": 0.723,
+  "ndcg_esci": 0.58,
+  "unjudged": 0.0
+ },
+ "baseline@16 hybrid_rerank human": {
+  "hit_E": 0.9,
+  "hit_ES": 0.953,
+  "P@k_E": 0.293,
+  "recall_capped": 0.583,
+  "mrr": 0.696,
+  "ndcg_esci": 0.548,
+  "unjudged": 0.493
+ },
+ "baseline@16 hybrid_rerank pooled": {
+  "hit_E": 0.95,
+  "hit_ES": 0.99,
+  "P@k_E": 0.391,
+  "recall_capped": 0.663,
+  "mrr": 0.8,
+  "ndcg_esci": 0.661,
+  "unjudged": 0.0
+ },
+ "qu@16 hybrid_only human": {
+  "hit_E": 0.867,
+  "hit_ES": 0.923,
+  "P@k_E": 0.271,
+  "recall_capped": 0.529,
+  "mrr": 0.63,
+  "ndcg_esci": 0.487,
+  "unjudged": 0.54
+ },
+ "qu@16 hybrid_only pooled": {
+  "hit_E": 0.933,
+  "hit_ES": 0.983,
+  "P@k_E": 0.354,
+  "recall_capped": 0.597,
+  "mrr": 0.732,
+  "ndcg_esci": 0.589,
+  "unjudged": 0.0
+ },
+ "qu@16 hybrid_rerank human": {
+  "hit_E": 0.893,
+  "hit_ES": 0.94,
+  "P@k_E": 0.297,
+  "recall_capped": 0.584,
+  "mrr": 0.701,
+  "ndcg_esci": 0.549,
+  "unjudged": 0.508
+ },
+ "qu@16 hybrid_rerank pooled": {
+  "hit_E": 0.957,
+  "hit_ES": 0.99,
+  "P@k_E": 0.401,
+  "recall_capped": 0.673,
+  "mrr": 0.815,
+  "ndcg_esci": 0.671,
+  "unjudged": 0.0
+ }
+}

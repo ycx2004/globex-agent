@@ -24,7 +24,7 @@ import asyncio
 import re
 import math
 import unicodedata
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from typing import Optional
 
 from app.domain.catalog.exchange_rate import ExchangeRateTable
@@ -35,6 +35,7 @@ from app.domain.catalog.ports.retrieval_ports import (
     Reranker,
 )
 from app.domain.catalog.product import Product
+from app.domain.catalog.product_attributes import infer_product_type, normalize_product_type
 from app.domain.catalog.sku import Sku
 from app.domain.catalog.product_search_spec import ProductSearchSpec
 from app.domain.shipping.tariff_schedule import TariffSchedule
@@ -189,8 +190,27 @@ class CatalogSearchUseCase:
         identifiers = [exact_id] if exact_id else list(dict.fromkeys(re.findall(r"(?<![A-Za-z0-9])P\d{4,}(?:-S\d+)?(?![A-Za-z0-9-])", spec.normalized_query.upper())))
         if identifiers:
             return await self._execute_exact_ids(spec, identifiers)
-        if self._hybrid_enabled:
-            return await self._execute_hybrid(spec)
+        spec, inferred_type = self._infer_type_preference(spec)
+        result = await (self._execute_hybrid(spec) if self._hybrid_enabled else self._execute_ranked(spec))
+        if inferred_type:
+            result.setdefault("retrieval_diagnostics", {})["inferred_preferred_product_type"] = inferred_type
+        return result
+
+    @staticmethod
+    def _infer_type_preference(spec: ProductSearchSpec) -> tuple[ProductSearchSpec, str | None]:
+        """查询词明确且唯一地点名已知类型、模型又未传类型时，仅补排序偏好，不做硬过滤。
+
+        例：“蓝牙耳机 长续航”未传类型时，挂颈风扇会因“续航”字面重合排到英文耳机前面。
+        """
+        if spec.product_type or spec.preferred_product_type:
+            return spec, None
+        inferred = infer_product_type(spec.normalized_query)
+        # 别名表中个别类型名本身不是别名（如“耳塞”），无法通过 spec 校验时放弃推断，不阻断检索。
+        if inferred is not None and normalize_product_type(inferred) is None:
+            inferred = None
+        return (replace(spec, preferred_product_type=inferred), inferred) if inferred else (spec, None)
+
+    async def _execute_ranked(self, spec: ProductSearchSpec) -> dict:
         scored: list[tuple[float, Product]] = []
         recall_strategy = "keyword_2gram"
         rerank_applied = False
@@ -295,6 +315,9 @@ class CatalogSearchUseCase:
         return result
 
     async def _execute_hybrid(self, spec: ProductSearchSpec) -> dict:
+        lexical_index = getattr(self._vector_index, "supports_lexical_search", None)
+        if self._embedder is not None and lexical_index is not None and lexical_index():
+            return await self._execute_server_hybrid(spec)
         # 两路共享同一份权威目录快照；过滤资格不依赖向量库的陈旧价格或库存。
         products = await self._product_repo.list_all()
         permitted = [p.product_id for p in products if self._reject_reason(p, spec) is None]
@@ -347,7 +370,9 @@ class CatalogSearchUseCase:
         vector_eligible = eligible(vector_hits or [])
         # 单路故障时保留健康侧，不让零权重把降级结果清空。
         weights = self._fusion_weights if vector_hits is not None else (1.0, 0.0)
-        scored = reciprocal_rank_fusion(lexical_hits, vector_eligible, weights=weights)
+        # 融合结果按候选上限截断后再精排，精排耗时与送入条数成正比
+        scored = self._cap_unique(reciprocal_rank_fusion(lexical_hits, vector_eligible, weights=weights),
+                                  diagnostics["candidate_limit"])
         stages = None
         if self._capture_retrieval_stages:
             stages = {
@@ -385,6 +410,96 @@ class CatalogSearchUseCase:
         if stages is not None:
             stages["ranked_candidates"] = [p.product_id for _, p in deduped]
             result["retrieval_stages"] = stages
+        return result
+
+    async def _execute_server_hybrid(self, spec: ProductSearchSpec) -> dict:
+        """大目录混合检索：BM25 与向量都在索引服务端召回，应用侧只取回候选做硬约束过滤。
+
+        不扫描全目录、不把全部合格 ID 下发给索引；两路各取 candidate_limit 条，
+        合格数不足 top_k 时翻倍补召回（上限 256），融合后截断到 candidate_limit 送精排。
+        """
+        limit = max(self._recall_candidates, spec.top_k * 4)
+        diagnostics = {"filter_mode": "server_side_post_filter", "lexical_backend": "index_bm25",
+                       "lexical_weight": self._fusion_weights[0], "vector_weight": self._fusion_weights[1],
+                       "candidate_limit": limit,
+                       "rerank_status": "not_configured" if self._reranker is None else "not_attempted"}
+        rejected: list[dict] = []
+        rejected_ids: set[str] = set()
+
+        def eligible(ranking):
+            result = []
+            for score, product in ranking:
+                reason = self._reject_reason(product, spec)
+                if reason is None:
+                    result.append((score, product))
+                elif len(rejected) < _FILTERED_OUT_LIMIT and product.product_id not in rejected_ids:
+                    rejected_ids.add(product.product_id)
+                    rejected.append(self._to_rejected(product, spec, reason))
+            return result[:limit]
+
+        async def lexical():
+            top_n = limit
+            try:
+                while True:
+                    hits = await self._vector_index.search_lexical(spec.normalized_query, top_n=top_n)
+                    products = {p.product_id: p for p in await self._product_repo.find_by_ids([h.product_id for h in hits])}
+                    ranked = [(h.score, products[h.product_id]) for h in hits if h.product_id in products]
+                    unique = {p.canonical_product_id or p.product_id for _, p in ranked if self._reject_reason(p, spec) is None}
+                    if len(unique) >= spec.top_k or len(hits) < top_n or top_n >= 256:
+                        return ranked
+                    top_n = min(256, top_n * 2)
+            except Exception as err:  # noqa: BLE001 —— 单路故障保留另一路
+                logger.warning("Hybrid 词法侧不可用：%s", type(err).__name__)
+                return None
+
+        async def vector():
+            try:
+                return await self._vector_recall(spec, adaptive=True)
+            except Exception as err:  # noqa: BLE001
+                logger.warning("Hybrid 向量侧不可用：%s", type(err).__name__)
+                return None
+
+        lexical_hits, vector_hits = await asyncio.gather(lexical(), vector())
+        if lexical_hits is None and vector_hits is None:
+            # 索引服务整体不可用时沿用默认路径的降级（关键词兜底）
+            return await self._execute_ranked(spec)
+        lexical_eligible, vector_eligible = eligible(lexical_hits or []), eligible(vector_hits or [])
+        # 单路故障时只用健康侧，不让零权重把降级结果清空
+        weights = (self._fusion_weights if lexical_hits is not None and vector_hits is not None
+                   else (1.0, 0.0) if vector_hits is None else (0.0, 1.0))
+        scored = self._cap_unique(reciprocal_rank_fusion(lexical_eligible, vector_eligible, weights=weights), limit)
+        diagnostics.update(lexical_candidates=len(lexical_eligible), vector_candidates=len(vector_eligible),
+                           fused_candidates=len(scored))
+        strategy = ("hybrid_only" if lexical_hits is not None and vector_hits is not None
+                    else "bm25" if vector_hits is None else "embedding_only")
+        rerank_applied = False
+        if scored and self._reranker is not None:
+            try:
+                scored = await self._rerank(spec, scored)
+                strategy, rerank_applied = {"hybrid_only": "hybrid_rerank", "bm25": "bm25_rerank",
+                                            "embedding_only": "embedding_rerank"}[strategy], True
+                diagnostics["rerank_status"] = "success"
+            except Exception as err:  # noqa: BLE001
+                diagnostics["rerank_status"] = "failed"
+                diagnostics["reranker_error"] = getattr(err, "code", type(err).__name__)
+                logger.warning("Hybrid 重排不可用：%s", diagnostics["reranker_error"])
+        # 索引服务端 BM25 分与本地 BM25 分不同源，不能复用本地校准的词法阈值
+        score_kind = ("reranker" if rerank_applied else "rrf" if strategy == "hybrid_only"
+                      else "embedding" if strategy == "embedding_only" else "index_bm25")
+        scored = self._apply_relevance(scored, score_kind, diagnostics)
+        deduped = self._rank_preferences_and_deduplicate(scored, spec)
+        result = {"hits": [self._to_card(score, p, spec).to_dict() for score, p in deduped[:spec.top_k]],
+                  "total_candidates": len(deduped), "recall_strategy": strategy, "rerank_applied": rerank_applied,
+                  "retrieval_variant": "index_bm25_vector_rrf_v1", "vector_available": vector_hits is not None,
+                  "filtered_out": rejected, "retrieval_diagnostics": diagnostics}
+        self._explain_shortfall(result, spec, diagnostics)
+        if self._capture_retrieval_stages:
+            result["retrieval_stages"] = {
+                "lexical_candidates": [p.product_id for _, p in lexical_eligible],
+                "vector_candidates": [p.product_id for _, p in vector_eligible],
+                "fused_candidates": [p.product_id for _, p in scored],
+                "ranked_candidates": [p.product_id for _, p in deduped],
+            }
         return result
 
     def _reject_reason(self, product: Product, spec: ProductSearchSpec, primary=None) -> Optional[str]:
@@ -447,6 +562,16 @@ class CatalogSearchUseCase:
     def _eligible_skus(self, product: Product, spec: ProductSearchSpec, primary: Sku | None = None) -> list[Sku]:
         return [sku for sku in self._matching_skus(product, spec, primary)
                 if spec.price_max_major is None or self._tariff.rates.convert(sku.price, spec.target_currency).to_major_units() <= spec.price_max_major]
+
+    @staticmethod
+    def _cap_unique(scored: list[tuple[float, Product]], limit: int) -> list[tuple[float, Product]]:
+        """截到含 limit 个不同款（canonical）的最短前缀；同款副本不挤占候选名额。"""
+        seen: set[str] = set()
+        for position, (_, product) in enumerate(scored):
+            seen.add(product.canonical_product_id or product.product_id)
+            if len(seen) > limit:
+                return scored[:position]
+        return scored
 
     @staticmethod
     def _rank_preferences_and_deduplicate(scored: list[tuple[float, Product]], spec: ProductSearchSpec) -> list[tuple[float, Product]]:
@@ -582,6 +707,9 @@ class CatalogSearchUseCase:
                     "spec": sku.spec,
                     "price_major": sku.price.to_major_units(),
                     "currency": sku.price.currency,
+                    # 规格原币价易被误读为目标币种，同时给出与预算过滤一致的换算价。
+                    "target_price_major": self._tariff.rates.convert(sku.price, spec.target_currency).to_major_units(),
+                    "target_currency": spec.target_currency,
                     "stock": sku.stock,
                 }
                 for sku in product.skus

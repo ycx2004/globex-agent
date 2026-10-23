@@ -1,0 +1,153 @@
+{
+  "run_at": "2026-10-23 07:48:18 +0000",
+  "scope": "检索模块评测（直连 CatalogSearchUseCase，不经 Agent/LLM）；非 make eval-harness",
+  "wiring": {
+    "vector_backend": "milvus",
+    "milvus_collection": "globex_products_100k_bm25",
+    "milvus_search_ef": 128,
+    "embedding_model": "text-embedding-v4",
+    "embedding_dim": 1024,
+    "reranker_model": "qwen3-rerank",
+    "recall_candidates": 64,
+    "milvus_lexical_enabled": true,
+    "hybrid_weights": {
+      "lexical": 1.0,
+      "vector": 2.0
+    },
+    "strategies": [
+      "hybrid_only",
+      "hybrid_rerank"
+    ]
+  },
+  "spec": {
+    "top_k": 8,
+    "ship_to": "CN",
+    "target_currency": "CNY"
+  },
+  "dataset": {
+    "cases_total": 5265,
+    "sample": 300,
+    "seed": 20261023,
+    "gold": "ESCI esci_label == E",
+    "cases_sha256": "00c2f468a5eaaaf557b0739aa4995d1efd91d6ed7f01b628654d01aa0237f59a",
+    "catalog_sha256": "a279f2f4da012a1c61c4e90d24ccd06e17c8a6b4307feb7562e9293fe25a3877",
+    "catalog_count": 99999,
+    "catalog_load_s": 11.8
+  },
+  "source_sha256": {
+    "/app/app/application/usecases/catalog_search.py": "f78e6d65fc0e449263ecde3259d02a2eaa8ce3befc5de4b43f6b89e2cd33ee4f",
+    "/app/app/infrastructure/vector/milvus_product_index.py": "4397b1f4469c4d24c4486c63fe3a45765fe756a4d06bc6db5233d2a6dc7756f9"
+  },
+  "results": {
+    "hybrid_only": {
+      "queries": 300,
+      "errors": 0,
+      "actual_recall_strategies": [
+        "hybrid_only"
+      ],
+      "rerank_status": [
+        "not_configured"
+      ],
+      "k": 8,
+      "recall@8_full": 0.3622,
+      "recall@8_capped": 0.4492,
+      "precision@8": 0.3463,
+      "mrr": 0.624,
+      "ndcg@8": 0.3394,
+      "hit_rate@8": 0.83,
+      "latency_ms": {
+        "total": {
+          "n": 300,
+          "mean": 396.6,
+          "p50": 346.0,
+          "p95": 682.5,
+          "p99": 1337.8
+        },
+        "embed": {
+          "n": 300,
+          "mean": 367.4,
+          "p50": 317.2,
+          "p95": 652.2,
+          "p99": 1302.9
+        },
+        "vector": {
+          "n": 300,
+          "mean": 18.5,
+          "p50": 17.5,
+          "p95": 26.6,
+          "p99": 36.3
+        },
+        "lexical": {
+          "n": 300,
+          "mean": 42.7,
+          "p50": 41.6,
+          "p95": 60.0,
+          "p99": 69.1
+        },
+        "rerank": {
+          "n": 300,
+          "mean": 0.0,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0
+        }
+      },
+      "vector_calls_mean": 1
+    },
+    "hybrid_rerank": {
+      "queries": 300,
+      "errors": 0,
+      "actual_recall_strategies": [
+        "hybrid_rerank"
+      ],
+      "rerank_status": [
+        "success"
+      ],
+      "k": 8,
+      "recall@8_full": 0.4273,
+      "recall@8_capped": 0.5296,
+      "precision@8": 0.4096,
+      "mrr": 0.6926,
+      "ndcg@8": 0.4058,
+      "hit_rate@8": 0.8633,
+      "latency_ms": {
+        "total": {
+          "n": 300,
+          "mean": 1191.1,
+          "p50": 949.1,
+          "p95": 2337.2,
+          "p99": 3598.7
+        },
+        "embed": {
+          "n": 300,
+          "mean": 367.4,
+          "p50": 318.5,
+          "p95": 670.0,
+          "p99": 1005.3
+        },
+        "vector": {
+          "n": 300,
+          "mean": 17.4,
+          "p50": 16.9,
+          "p95": 24.8,
+          "p99": 32.2
+        },
+        "lexical": {
+          "n": 300,
+          "mean": 44.1,
+          "p50": 43.7,
+          "p95": 61.8,
+          "p99": 70.7
+        },
+        "rerank": {
+          "n": 300,
+          "mean": 794.6,
+          "p50": 579.4,
+          "p95": 1808.1,
+          "p99": 3079.0
+        }
+      },
+      "vector_calls_mean": 1
+    }
+  }
+}

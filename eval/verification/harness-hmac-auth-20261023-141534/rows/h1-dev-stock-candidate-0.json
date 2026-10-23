@@ -1,0 +1,199 @@
+{
+  "case_id": "h1-dev-stock",
+  "split": "dev",
+  "mode": "snapshot",
+  "strategy": "candidate",
+  "repetition": 0,
+  "answer": "已按当前权威库存核验（未使用历史批次数据）：\n\n- **P28173-S1（Wanderlite 折叠旅行双肩包 35L / 石墨黑）**\n  - 当前库存：**3 件**\n  - 当前单价：**183 CNY**\n  - 关联订单：ORD-EVAL，状态 **已取消**\n\n说明：历史展示批次中该规格的库存（51）与价格（209 CNY）均为旧观察值，已被当前结果覆盖，请以本次核验为准。\n\n另：当前业务状态显示\"长期排除塑料材质\"的偏好已删除，因此本次不再据此过滤商品。如需我按 347 CNY 预算、寄往德国重新核算到手价或推荐替代品，告诉我即可——在你明确授权前我不会下单或写入任何数据。",
+  "checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "passed": true,
+  "error": null,
+  "usage": [
+    {
+      "kind": "business",
+      "input_tokens": 14909,
+      "output_tokens": 42,
+      "elapsed_ms": 2064.0017820041976,
+      "request_context": {
+        "system_estimated_tokens": 884,
+        "state_estimated_tokens": 482,
+        "product_estimated_tokens": 22127,
+        "history_estimated_tokens": 4602,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "buyer_request",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 1024,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "first_request",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "2e15c095fc30a353c2334d4b1b6fa2ea59b95e35167ea2dbd903702347aa2d6e",
+        "prefix_tools_hash": "fb6d9645331c4aeb56f14fd7133aa6bbe243e7a32cb8e5e5c3ffc7dc4f5a95d5",
+        "prefix_message_count": 100,
+        "prefix_common_messages": null,
+        "prefix_common_message_bytes": null,
+        "prefix_first_changed_message": null,
+        "prefix_system_changed": null,
+        "prefix_tools_changed": null,
+        "prefix_parameters_changed": null
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    },
+    {
+      "kind": "business",
+      "input_tokens": 15027,
+      "output_tokens": 323,
+      "elapsed_ms": 5727.883364001173,
+      "request_context": {
+        "system_estimated_tokens": 884,
+        "state_estimated_tokens": 482,
+        "product_estimated_tokens": 22127,
+        "history_estimated_tokens": 5048,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "tool_followup",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 14336,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "append",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "2e15c095fc30a353c2334d4b1b6fa2ea59b95e35167ea2dbd903702347aa2d6e",
+        "prefix_tools_hash": "fb6d9645331c4aeb56f14fd7133aa6bbe243e7a32cb8e5e5c3ffc7dc4f5a95d5",
+        "prefix_message_count": 102,
+        "prefix_common_messages": 100,
+        "prefix_common_message_bytes": 50664,
+        "prefix_first_changed_message": 100,
+        "prefix_system_changed": false,
+        "prefix_tools_changed": false,
+        "prefix_parameters_changed": false
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    }
+  ],
+  "input_tokens": 29936,
+  "output_tokens": 365,
+  "model_calls": 2,
+  "lookup_calls": 0,
+  "lookup_events": [],
+  "context_diagnostics": [
+    {
+      "type": "state",
+      "mode": "snapshot",
+      "emitted": true,
+      "estimated_tokens": 298
+    },
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 55128,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 0,
+      "protected_results": 2,
+      "below_target": false,
+      "trigger": "pressure"
+    },
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 55128,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 0,
+      "protected_results": 3,
+      "below_target": false,
+      "trigger": "pressure"
+    }
+  ],
+  "current_calls": 1,
+  "elapsed_ms": 8669,
+  "compactions": [],
+  "round_metrics": [
+    {
+      "elapsed_ms": 8108,
+      "compacted": false,
+      "model_calls": 2
+    }
+  ],
+  "compaction_metrics": [],
+  "final_context_estimated_tokens": 76146,
+  "last_compaction": {
+    "policy_version": "layered-v4",
+    "reason": "pressure",
+    "before_tokens": 16541,
+    "after_tokens": 16541,
+    "archived_results": 0,
+    "summary_changed": false,
+    "elapsed_ms": 96,
+    "status": "noop"
+  },
+  "final_product_observations": 120,
+  "final_product_duplicate_ratio": 0.9166666666666666,
+  "association_check": {
+    "applicable": false,
+    "status": "not_applicable"
+  },
+  "original_checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "layer": "context",
+  "critical": true,
+  "title": "当前库存",
+  "evidence_trace": "traces/h1-dev-stock-candidate-0.jsonl"
+}

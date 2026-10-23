@@ -25,6 +25,7 @@ def build_remember_preference_tool(store: PreferenceStore, bus: TradeEventBus):
     ) -> ToolChunk:
         """记住买家的一条长期偏好（跨会话生效）。仅在买家表达出稳定偏好时调用，
         一次性的临时要求（如"这次要军绿色"）不要记。
+        只记"喜欢什么/不要什么"；筛选、排序、比较的步骤或优先级属于选购流程，不要用本工具记。
 
         Args:
             kind (`str`):

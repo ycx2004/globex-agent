@@ -1,5 +1,6 @@
 import Automations from "./components/Automations";
 import RetrievalEvaluation from "./components/RetrievalEvaluation";
+import LearningReview from "./components/LearningReview";
 import ModelPicker from "./components/ModelPicker";
 import HistorySearch from "./components/HistorySearch";
 import ContextWorkspace, { useContextWorkspace } from "./components/ContextWorkspace";
@@ -24,10 +25,11 @@ import SkillQueryInput from "./components/SkillQueryInput";
 import MyOrders from "./components/MyOrders";
 import FavoritesList from "./components/FavoritesList";
 import { CatalogMediaProvider } from "./components/CatalogMedia";
+import { ConversationSkillSuggestion } from "./components/SkillSuggestions";
 import BuyerWorkspace from "./components/BuyerWorkspace";
 import { skillQueryDraft, submitSkillQuery } from "./lib/skills";
 
-type View = "shopping" | "favorites" | "skills" | "preferences" | "orders" | "automations" | "retrieval";
+type View = "shopping" | "favorites" | "skills" | "preferences" | "orders" | "automations" | "retrieval" | "learning";
 const STARTERS = [
   "我想先逛逛旅行装备。请用“旅行装备”这个关键词一次搜索，返回 12 件候选，暂不扩展关键词或按子品类拆分搜索。收货国家中国，单件商品价格不超过 500 元人民币，运费和税费另列。先展示这批商品卡，再简要说明用途；符合条件不足 12 件时请如实说明。",
   "想买日常通勤耳机，帮我理一理选购思路。",
@@ -38,12 +40,14 @@ function readView(): View {
   try {
     if (new URLSearchParams(window.location.search).get("view") === "retrieval") return "retrieval";
     const saved = sessionStorage.getItem(VIEW_KEY);
-    if (saved && ["shopping", "favorites", "skills", "preferences", "orders", "automations", "retrieval"].includes(saved))
+    if (saved && ["shopping", "favorites", "skills", "preferences", "orders", "automations", "retrieval", "learning"].includes(saved))
       return saved as View;
   } catch { /* 存储受限时使用首页。 */ }
   return "shopping";
 }
-export default function App() {
+/** 严格签名模式下由 AuthGate 传入；缺省为本机演示模式。 */
+export type AppAuth = { buyerId: string; isLearningAdmin: boolean; onLogout: () => void };
+export default function App({ auth }: { auth?: AppAuth } = {}) {
   const agent = useCommerceAgent();
   const [shoppingForm,setShoppingForm]=useState<unknown>(null);
   const formGeneration=useRef(0);
@@ -364,6 +368,7 @@ export default function App() {
     { id: "preferences", label: "长期偏好", icon: "spark" },
     { id: "automations", label: "自动化", icon: "clock" },
     { id: "retrieval", label: "检索评测", icon: "compare" },
+    ...(auth?.isLearningAdmin ? [{ id: "learning" as View, label: "学习审核", icon: "check" }] : []),
   ];
 
   return (
@@ -426,7 +431,11 @@ export default function App() {
           <div className="profile">
             <span className="avatar">Y</span>
             <span>
-              {editingBuyer ? (
+              {auth ? (
+                <span className="profile-name">{auth.buyerId}{" "}
+                  <button type="button" className="profile-logout" onClick={auth.onLogout}>退出登录</button>
+                </span>
+              ) : editingBuyer ? (
                 <input
                   className="profile-name-input"
                   value={buyerDraft}
@@ -469,6 +478,7 @@ export default function App() {
               <button className="atmosphere-toggle icon-button" title={atmosphere ? "关闭氛围背景" : "开启氛围背景"} aria-label={atmosphere ? "关闭氛围背景" : "开启氛围背景"} aria-pressed={atmosphere} onClick={() => setAtmosphere(!atmosphere)}><Icon name="spark" /></button>
             </div>
           </header>
+          {view === "learning" && auth?.isLearningAdmin && <LearningReview request={agent.workspaceRequest} />}
           {view === "retrieval" && <RetrievalEvaluation request={agent.workspaceRequest} />}
           {view === "automations" && <Automations sessionId={agent.sessionId} request={agent.workspaceRequest} onHistoryChanged={agent.refreshHistory} onOpenSession={id => { void agent.refreshHistory().then(() => openSession(id)); }} busy={busy} />}
           {(view === "orders" || view === "favorites") && <section className="purchases-workspace" aria-label="订单与收藏">
@@ -504,6 +514,9 @@ export default function App() {
               )}
               {!hasConversation && <details className="welcome-plan-disclosure"><summary><Icon name="leaf" />或者，从一份选购方案开始<span>查看方案 <Icon name="arrow" /></span></summary><ShoppingPlans {...planProps} /></details>}
               <SkillRunStatus usages={agent.skillUsages} running={agentRunning} />
+              {hasConversation && <ConversationSkillSuggestion key={"suggest:"+agent.sessionId} sessionId={agent.sessionId}
+                runKey={agent.status === "idle" && !agent.error ? (lastUser?.runId ?? "") : ""} running={agentRunning}
+                busy={busy} request={agent.workspaceRequest} onSkillsChanged={agent.refreshSkills} />}
               {agentRunning && (
                 <div className="progress-line running" role="status">
                   <span className="live-dot" />

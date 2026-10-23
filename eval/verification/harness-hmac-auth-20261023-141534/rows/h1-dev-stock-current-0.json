@@ -1,0 +1,193 @@
+{
+  "case_id": "h1-dev-stock",
+  "split": "dev",
+  "mode": "snapshot",
+  "strategy": "current",
+  "repetition": 0,
+  "answer": "**P28173-S1（Wanderlite 折叠旅行双肩包 35L / 石墨黑）当前实时核验结果**\n\n- 当前库存：**3 件**（来自 current_business_state 实时查询，非历史值）\n- 当前单价：**183 CNY**\n- 关联订单：ORD-EVAL，状态 **CANCELLED**（未下单，符合你的要求）\n\n**与历史的差异（仅作对照，不作为当前依据）**\n- 历史批次（第2批，ship_to=DE 观察）：单价 209 CNY、库存 51；现已更新为 183 CNY、库存 3。\n- 历史落地价 252 CNY（含运费 35 + 税 8）也是历史观察，当前工具未返回德国方向的运费/税费，**该项未知**，需另行核验。\n\n**结论**：按当前单价 183 CNY 计，仍在预算 347 CNY 内；库存 3 件，满足 1 件需求。\n\n⚠️ 一点需要你确认：历史商品资料中 P28173 的配送范围仅列出 CN/JP/SG，未包含德国，且当前工具未返回配送范围。是否要我按德国收货地址重新核验可配送性与落地价？未获你明确授权前，我不会下单或写入任何数据。",
+  "checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "passed": true,
+  "error": null,
+  "usage": [
+    {
+      "kind": "business",
+      "input_tokens": 14853,
+      "output_tokens": 47,
+      "elapsed_ms": 2226.8016380039626,
+      "request_context": {
+        "system_estimated_tokens": 1058,
+        "state_estimated_tokens": 0,
+        "product_estimated_tokens": 22127,
+        "history_estimated_tokens": 4602,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "buyer_request",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 1024,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "first_request",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "5fcee5e8a7cc0327ebf560d22a818eba853cab262b9a4e4eb2c89cbf1ba61dbf",
+        "prefix_tools_hash": "a25444d5590a62047cadfac19555de434428d3df2ca5f87a07a92f4403752a59",
+        "prefix_message_count": 99,
+        "prefix_common_messages": null,
+        "prefix_common_message_bytes": null,
+        "prefix_first_changed_message": null,
+        "prefix_system_changed": null,
+        "prefix_tools_changed": null,
+        "prefix_parameters_changed": null
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    },
+    {
+      "kind": "business",
+      "input_tokens": 14971,
+      "output_tokens": 592,
+      "elapsed_ms": 11976.919322994945,
+      "request_context": {
+        "system_estimated_tokens": 1058,
+        "state_estimated_tokens": 0,
+        "product_estimated_tokens": 22127,
+        "history_estimated_tokens": 5062,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "tool_followup",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 14336,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "append",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "5fcee5e8a7cc0327ebf560d22a818eba853cab262b9a4e4eb2c89cbf1ba61dbf",
+        "prefix_tools_hash": "a25444d5590a62047cadfac19555de434428d3df2ca5f87a07a92f4403752a59",
+        "prefix_message_count": 101,
+        "prefix_common_messages": 99,
+        "prefix_common_message_bytes": 50198,
+        "prefix_first_changed_message": 99,
+        "prefix_system_changed": false,
+        "prefix_tools_changed": false,
+        "prefix_parameters_changed": false
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    }
+  ],
+  "input_tokens": 29824,
+  "output_tokens": 639,
+  "model_calls": 2,
+  "lookup_calls": 0,
+  "lookup_events": [],
+  "context_diagnostics": [
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 55128,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 0,
+      "protected_results": 2,
+      "below_target": false,
+      "trigger": "pressure"
+    },
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 55128,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 0,
+      "protected_results": 3,
+      "below_target": false,
+      "trigger": "pressure"
+    }
+  ],
+  "current_calls": 1,
+  "elapsed_ms": 15290,
+  "compactions": [],
+  "round_metrics": [
+    {
+      "elapsed_ms": 14658,
+      "compacted": false,
+      "model_calls": 2
+    }
+  ],
+  "compaction_metrics": [],
+  "final_context_estimated_tokens": 76021,
+  "last_compaction": {
+    "policy_version": "layered-v4",
+    "reason": "pressure",
+    "before_tokens": 16496,
+    "after_tokens": 16496,
+    "archived_results": 0,
+    "summary_changed": false,
+    "elapsed_ms": 113,
+    "status": "noop"
+  },
+  "final_product_observations": 120,
+  "final_product_duplicate_ratio": 0.9166666666666666,
+  "association_check": {
+    "applicable": false,
+    "status": "not_applicable"
+  },
+  "original_checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "layer": "context",
+  "critical": true,
+  "title": "当前库存",
+  "evidence_trace": "traces/h1-dev-stock-current-0.jsonl"
+}

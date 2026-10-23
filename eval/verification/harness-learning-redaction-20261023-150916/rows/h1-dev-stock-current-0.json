@@ -1,0 +1,193 @@
+{
+  "case_id": "h1-dev-stock",
+  "split": "dev",
+  "mode": "snapshot",
+  "strategy": "current",
+  "repetition": 0,
+  "answer": "当前权威核验结果（非历史）：\n\n- 商品：P28173 / SKU：P28173-S1（石墨黑）\n- 当前库存：**3 件**\n- 当前单价：**183 CNY**（此前展示批次中的 209 CNY 为历史值，不代表现价）\n- 相关订单 ORD-EVAL 状态：已取消\n\n按当前 183 CNY 单价，仍在 347 CNY 预算内；未执行任何下单或写入操作。",
+  "checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "passed": true,
+  "error": null,
+  "usage": [
+    {
+      "kind": "business",
+      "input_tokens": 14823,
+      "output_tokens": 46,
+      "elapsed_ms": 3235.2303410007153,
+      "request_context": {
+        "system_estimated_tokens": 1058,
+        "state_estimated_tokens": 0,
+        "product_estimated_tokens": 22127,
+        "history_estimated_tokens": 4602,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "buyer_request",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 1024,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "first_request",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "c00fd0607d7a0b404602b95d1aa6ac530a8d37153ed62c40ed6b61afca36f7d1",
+        "prefix_tools_hash": "0f087b8ecd8e7c1d90e9415d79ef1c4a9d09fdf9fd500a61e17d2199b2e2f974",
+        "prefix_message_count": 99,
+        "prefix_common_messages": null,
+        "prefix_common_message_bytes": null,
+        "prefix_first_changed_message": null,
+        "prefix_system_changed": null,
+        "prefix_tools_changed": null,
+        "prefix_parameters_changed": null
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    },
+    {
+      "kind": "business",
+      "input_tokens": 14941,
+      "output_tokens": 285,
+      "elapsed_ms": 8044.683515996439,
+      "request_context": {
+        "system_estimated_tokens": 1058,
+        "state_estimated_tokens": 0,
+        "product_estimated_tokens": 22127,
+        "history_estimated_tokens": 5054,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "tool_followup",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 14336,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "append",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "c00fd0607d7a0b404602b95d1aa6ac530a8d37153ed62c40ed6b61afca36f7d1",
+        "prefix_tools_hash": "0f087b8ecd8e7c1d90e9415d79ef1c4a9d09fdf9fd500a61e17d2199b2e2f974",
+        "prefix_message_count": 101,
+        "prefix_common_messages": 99,
+        "prefix_common_message_bytes": 50198,
+        "prefix_first_changed_message": 99,
+        "prefix_system_changed": false,
+        "prefix_tools_changed": false,
+        "prefix_parameters_changed": false
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    }
+  ],
+  "input_tokens": 29764,
+  "output_tokens": 331,
+  "model_calls": 2,
+  "lookup_calls": 0,
+  "lookup_events": [],
+  "context_diagnostics": [
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 55128,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 0,
+      "protected_results": 2,
+      "below_target": false,
+      "trigger": "pressure"
+    },
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 55128,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 0,
+      "protected_results": 3,
+      "below_target": false,
+      "trigger": "pressure"
+    }
+  ],
+  "current_calls": 1,
+  "elapsed_ms": 12272,
+  "compactions": [],
+  "round_metrics": [
+    {
+      "elapsed_ms": 11588,
+      "compacted": false,
+      "model_calls": 2
+    }
+  ],
+  "compaction_metrics": [],
+  "final_context_estimated_tokens": 75531,
+  "last_compaction": {
+    "policy_version": "layered-v4",
+    "reason": "pressure",
+    "before_tokens": 16453,
+    "after_tokens": 16453,
+    "archived_results": 0,
+    "summary_changed": false,
+    "elapsed_ms": 72,
+    "status": "noop"
+  },
+  "final_product_observations": 120,
+  "final_product_duplicate_ratio": 0.9166666666666666,
+  "association_check": {
+    "applicable": false,
+    "status": "not_applicable"
+  },
+  "original_checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "layer": "context",
+  "critical": true,
+  "title": "当前库存",
+  "evidence_trace": "traces/h1-dev-stock-current-0.jsonl"
+}

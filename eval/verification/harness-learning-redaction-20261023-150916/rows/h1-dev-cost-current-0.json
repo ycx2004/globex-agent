@@ -1,0 +1,229 @@
+{
+  "case_id": "h1-dev-cost",
+  "split": "dev",
+  "mode": "snapshot",
+  "strategy": "current",
+  "repetition": 0,
+  "answer": "第一批（P28183，寄中国、1件）的历史展示数据：\n\n- 到手价：**222 元**（= 商品价 189 元 + 运费 26 元 + 税费 7 元）\n- 运费：**26 元**\n- SKU：P28183-S1（石墨黑），币种 CNY\n\n说明：以上为第1批展示时的历史报价（目的地 CN），不是当前实时价格；当前你已改为寄英国，英国条件下的到手价/运费需按最新业务数据另行核验（本会话后续批次曾显示为 237 元 / 运费 41 元，属不同查询条件，不能与第1批混用）。需要我按英国地址核验当前实时价格与库存吗？",
+  "checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "passed": true,
+  "error": null,
+  "usage": [
+    {
+      "kind": "business",
+      "input_tokens": 10750,
+      "output_tokens": 362,
+      "elapsed_ms": 8192.492633999791,
+      "request_context": {
+        "system_estimated_tokens": 1059,
+        "state_estimated_tokens": 0,
+        "product_estimated_tokens": 17669,
+        "history_estimated_tokens": 4597,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "buyer_request",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "first_request",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "6206c58155545d126e4e9f604b346c078f0a2cd203b707052291e9be41b1381f",
+        "prefix_tools_hash": "91ebc1ac3f6bfeea8cba4b69ab3e7723cc9b0aee2ee80fe922ac096496a74a4b",
+        "prefix_message_count": 99,
+        "prefix_common_messages": null,
+        "prefix_common_message_bytes": null,
+        "prefix_first_changed_message": null,
+        "prefix_system_changed": null,
+        "prefix_tools_changed": null,
+        "prefix_parameters_changed": null
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    },
+    {
+      "kind": "business",
+      "input_tokens": 11408,
+      "output_tokens": 504,
+      "elapsed_ms": 8073.872421999113,
+      "request_context": {
+        "system_estimated_tokens": 1059,
+        "state_estimated_tokens": 0,
+        "product_estimated_tokens": 19266,
+        "history_estimated_tokens": 4316,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "lookup_followup",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 10240,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "append",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "6206c58155545d126e4e9f604b346c078f0a2cd203b707052291e9be41b1381f",
+        "prefix_tools_hash": "91ebc1ac3f6bfeea8cba4b69ab3e7723cc9b0aee2ee80fe922ac096496a74a4b",
+        "prefix_message_count": 101,
+        "prefix_common_messages": 99,
+        "prefix_common_message_bytes": 37104,
+        "prefix_first_changed_message": 99,
+        "prefix_system_changed": false,
+        "prefix_tools_changed": false,
+        "prefix_parameters_changed": false
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    }
+  ],
+  "input_tokens": 22158,
+  "output_tokens": 866,
+  "model_calls": 2,
+  "lookup_calls": 1,
+  "lookup_events": [
+    {
+      "ref": "",
+      "batch": 1,
+      "position": 0,
+      "product_id": "P28183",
+      "sku_id": "P28183-S1",
+      "fields": "price",
+      "offset": 0,
+      "limit": 5,
+      "field_offset": 0
+    }
+  ],
+  "context_diagnostics": [
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 9621,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 21,
+      "protected_results": 2,
+      "below_target": false,
+      "trigger": "pressure"
+    },
+    {
+      "type": "lookup",
+      "batch": 1,
+      "position": 0,
+      "offset": 0,
+      "limit": 5,
+      "field_offset": 0,
+      "has_reference": false,
+      "has_query": false,
+      "has_product": true,
+      "has_sku": true,
+      "status": "success",
+      "error_code": null,
+      "returned_products": 1,
+      "effective_limit": 5,
+      "fields_normalized": false,
+      "limit_capped": false,
+      "effective_batch": 1,
+      "batch_inferred_from_user": false,
+      "records": 1,
+      "estimated_tokens": 534,
+      "has_more": false,
+      "elapsed_ms": 4.133777001698036
+    },
+    {
+      "type": "prune",
+      "before_tokens": 7425,
+      "after_tokens": 7425,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 0,
+      "protected_results": 3,
+      "below_target": false,
+      "trigger": "pressure"
+    }
+  ],
+  "current_calls": 0,
+  "elapsed_ms": 20543,
+  "compactions": [],
+  "round_metrics": [
+    {
+      "elapsed_ms": 16494,
+      "compacted": false,
+      "model_calls": 2
+    }
+  ],
+  "compaction_metrics": [],
+  "final_context_estimated_tokens": 26865,
+  "last_compaction": {
+    "policy_version": "layered-v4",
+    "reason": "pressure",
+    "before_tokens": 12890,
+    "after_tokens": 12890,
+    "archived_results": 0,
+    "summary_changed": false,
+    "elapsed_ms": 23,
+    "status": "noop"
+  },
+  "final_product_observations": 15,
+  "final_product_duplicate_ratio": 0.33333333333333337,
+  "association_check": {
+    "applicable": false,
+    "status": "not_applicable"
+  },
+  "original_checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "layer": "context",
+  "critical": true,
+  "title": "费用组成",
+  "evidence_trace": "traces/h1-dev-cost-current-0.jsonl"
+}

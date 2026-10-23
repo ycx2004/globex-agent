@@ -1,0 +1,133 @@
+{
+  "case_id": "h1-dev-budget",
+  "split": "dev",
+  "mode": "snapshot",
+  "strategy": "candidate",
+  "repetition": 0,
+  "answer": "366 CNY",
+  "checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "passed": true,
+  "error": null,
+  "usage": [
+    {
+      "kind": "business",
+      "input_tokens": 10822,
+      "output_tokens": 44,
+      "elapsed_ms": 1874.174436999965,
+      "request_context": {
+        "system_estimated_tokens": 884,
+        "state_estimated_tokens": 480,
+        "product_estimated_tokens": 17669,
+        "history_estimated_tokens": 4607,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "buyer_request",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 1024,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "first_request",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "bae2784e810926219110410eee1635e305eb9e69e3298dcb7ce0c575788eca36",
+        "prefix_tools_hash": "b708780ca4eafff366303104a285c9ec93302eecb5eb8197e98c2d6d377e17ac",
+        "prefix_message_count": 100,
+        "prefix_common_messages": null,
+        "prefix_common_message_bytes": null,
+        "prefix_first_changed_message": null,
+        "prefix_system_changed": null,
+        "prefix_tools_changed": null,
+        "prefix_parameters_changed": null
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    }
+  ],
+  "input_tokens": 10822,
+  "output_tokens": 44,
+  "model_calls": 1,
+  "lookup_calls": 0,
+  "lookup_events": [],
+  "context_diagnostics": [
+    {
+      "type": "state",
+      "mode": "snapshot",
+      "emitted": true,
+      "estimated_tokens": 297
+    },
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 9621,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 21,
+      "protected_results": 2,
+      "below_target": false,
+      "trigger": "pressure"
+    }
+  ],
+  "current_calls": 0,
+  "elapsed_ms": 2693,
+  "compactions": [],
+  "round_metrics": [
+    {
+      "elapsed_ms": 2050,
+      "compacted": false,
+      "model_calls": 1
+    }
+  ],
+  "compaction_metrics": [],
+  "final_context_estimated_tokens": 25432,
+  "last_compaction": {
+    "policy_version": "layered-v4",
+    "reason": "pressure",
+    "before_tokens": 14982,
+    "after_tokens": 10551,
+    "archived_results": 21,
+    "summary_changed": false,
+    "elapsed_ms": 105,
+    "status": "completed"
+  },
+  "final_product_observations": 15,
+  "final_product_duplicate_ratio": 0.33333333333333337,
+  "association_check": {
+    "applicable": false,
+    "status": "not_applicable"
+  },
+  "original_checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "layer": "context",
+  "critical": true,
+  "title": "预算变更",
+  "evidence_trace": "traces/h1-dev-budget-candidate-0.jsonl"
+}

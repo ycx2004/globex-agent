@@ -1,0 +1,68 @@
+.learning-review { padding: 14px 0 50px; color: var(--ink, #263a31); }
+.learning-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+.learning-eyebrow { display: block; color: var(--green, #37654d); font-size: 11px; letter-spacing: .12em; margin-bottom: 9px; }
+.learning-heading h2 { font: 500 clamp(22px, 2.6vw, 30px)/1.4 var(--serif, serif); margin: 0 0 8px; }
+.learning-heading p { margin: 0; color: var(--muted, #6b746b); font-size: 13px; line-height: 1.8; max-width: 620px; }
+.learning-review button { border: 1px solid #ced9ce; border-radius: 9px; padding: 8px 15px; background: #fffefa; color: var(--green, #2f5a43); font: inherit; font-size: 13px; cursor: pointer; }
+.learning-review button:disabled { opacity: .5; cursor: not-allowed; }
+.learning-review button:focus-visible, .learning-review textarea:focus-visible { outline: 2px solid var(--green, #37654d); outline-offset: 2px; }
+.learning-review .learning-primary { background: var(--green, #2f5a43); border-color: var(--green, #2f5a43); color: #fff; }
+.learning-error { background: #faede7; color: #8a3f2a; border-radius: 10px; padding: 12px 16px; font-size: 13px; }
+.learning-error button { margin-left: 12px; padding: 2px 10px; }
+.learning-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 14px; }
+.learning-stats div { background: #fffefa; border: 1px solid #e2e7dd; border-radius: 12px; padding: 14px 16px; }
+.learning-stats span { display: block; font-size: 12px; color: #6b746b; margin-bottom: 4px; }
+.learning-stats strong { font-size: 22px; font-weight: 600; }
+.learning-last-run { font-size: 12px; color: #6b746b; margin: 0 0 16px; }
+.learning-history { font-size: 12px; color: #4f584f; margin: -8px 0 16px; }
+.learning-history summary { cursor: pointer; color: #3f6b47; }
+.learning-history ol { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 4px; }
+.learning-history li { display: flex; gap: 10px; flex-wrap: wrap; }
+.learning-history time { color: #6b746b; font-variant-numeric: tabular-nums; }
+.learning-filters { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+.learning-filters button[aria-selected="true"] { background: #e6efe4; border-color: #9fb8a1; }
+.learning-empty { color: #6b746b; font-size: 13px; padding: 24px; text-align: center; background: #f6f5ef; border-radius: 12px; }
+.learning-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+.learning-card { background: #fffefa; border: 1px solid #e2e7dd; border-radius: 14px; padding: 18px 20px; }
+.learning-card-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.learning-card h3 { margin: 0 0 10px; font-size: 16px; font-weight: 600; }
+.learning-badge { font-size: 12px; padding: 2px 10px; border-radius: 999px; background: #eef0ea; color: #4f5a50; white-space: nowrap; }
+.learning-badge.status-validated { background: #fbf1e0; color: #7a5520; }
+.learning-badge.status-approved { background: #e5eef7; color: #2f5272; }
+.learning-badge.status-published { background: #e3f0e3; color: #2f5d3a; }
+.learning-badge.status-rejected, .learning-badge.status-withdrawn { background: #f3e8e5; color: #7d4436; }
+.learning-card strong { display: block; font-size: 12px; color: #4f5a50; margin-bottom: 4px; }
+.learning-applies, .learning-body, .learning-keywords { font-size: 13px; line-height: 1.8; margin: 0 0 10px; }
+.learning-body { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.learning-body ol, .learning-body ul { margin: 0; padding-left: 20px; }
+.learning-keywords code { background: #f1f3ec; border-radius: 6px; padding: 1px 7px; margin-right: 6px; font-size: 12px; }
+.learning-checks { list-style: none; padding: 0; margin: 0 0 10px; font-size: 12px; display: grid; gap: 4px; }
+.learning-checks .is-pass { color: #2f5d3a; }
+.learning-checks .is-fail { color: #8a3f2a; }
+.learning-note, .learning-meta { font-size: 12px; color: #6b746b; margin: 0 0 8px; }
+.learning-note-input { display: block; font-size: 12px; color: #4f5a50; margin-bottom: 10px; }
+.learning-note-input textarea { display: block; width: 100%; margin-top: 6px; border: 1px solid #dde2d8; border-radius: 8px; padding: 8px 10px; font: inherit; font-size: 13px; resize: vertical; box-sizing: border-box; }
+.learning-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 720px) {
+  .learning-heading { flex-direction: column; }
+  .learning-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .learning-body { grid-template-columns: 1fr; }
+}
+
+/* 登录页 */
+/* 登录页不带侧栏：覆盖全局 main 的侧栏左边距与工作台内边距，铺满视口。 */
+main.login-page { box-sizing: border-box; width: 100%; min-height: 100vh; min-height: 100dvh; margin: 0; display: grid; place-items: center; background: #f3f6fc;
+  padding: max(24px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(24px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.login-card { box-sizing: border-box; width: min(400px, 100%); background: #fffefa; border: 1px solid #e2e7dd; border-radius: 16px; padding: 32px 28px; display: grid; gap: 14px; color: #263a31; }
+.login-brand { color: #2f5a43; font-size: 12px; letter-spacing: .14em; }
+.login-card h1 { margin: 0; font: 500 24px/1.4 var(--serif, serif); }
+.login-card p { margin: 0; font-size: 13px; color: #6b746b; }
+.login-card label { display: grid; gap: 6px; font-size: 13px; }
+.login-card input { border: 1px solid #ced9ce; border-radius: 9px; padding: 10px 12px; font: inherit; font-size: 14px; }
+.login-card input:focus-visible, .login-card button:focus-visible { outline: 2px solid #37654d; outline-offset: 2px; }
+.login-card button { border: 0; border-radius: 9px; padding: 11px; background: #2f5a43; color: #fff; font: inherit; font-size: 14px; cursor: pointer; }
+.login-card button:disabled { opacity: .55; cursor: not-allowed; }
+.login-card .login-error { color: #8a3f2a; background: #faede7; border-radius: 8px; padding: 8px 12px; }
+.login-status { color: #6b746b; font-size: 14px; }
+@media (max-width: 530px) { .login-card { padding: 26px 20px; border-radius: 14px; } .login-card input { font-size: 16px; } }
+.profile-logout { border: 0; background: none; padding: 0; color: inherit; font-size: 11px; text-decoration: underline; cursor: pointer; opacity: .8; }

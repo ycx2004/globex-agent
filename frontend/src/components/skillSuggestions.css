@@ -1,0 +1,22 @@
+.conversation-skill-suggestion { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin: 6px 0 14px; }
+.skill-suggestion-trigger { display: inline-flex; align-items: center; gap: 6px; border: 1px dashed #b9c9b9; border-radius: 999px; padding: 5px 13px; background: transparent; color: var(--green, #2f5a43); font: inherit; font-size: 12px; cursor: pointer; }
+.skill-suggestion-trigger:disabled { opacity: .55; cursor: not-allowed; }
+.skill-suggestion-notice { font-size: 12px; color: #6b746b; }
+.skill-suggestion { width: 100%; max-width: 640px; background: #fbfaf4; border: 1px solid #dfe6da; border-left: 3px solid var(--green, #37654d); border-radius: 12px; padding: 14px 16px; color: var(--ink, #263a31); }
+.skill-suggestion header { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; color: var(--green, #2f5a43); }
+.skill-suggestion header strong { display: block; font-size: 14px; font-weight: 600; color: var(--ink, #263a31); }
+.skill-suggestion header small { display: block; font-size: 12px; color: #6b746b; margin-top: 2px; }
+.skill-suggestion-preview h3 { font-size: 14px; margin: 0 0 4px; }
+.skill-suggestion-preview p { font-size: 12px; color: #5b665c; margin: 0 0 8px; }
+.skill-suggestion-preview pre { white-space: pre-wrap; font: inherit; font-size: 13px; line-height: 1.75; margin: 0; max-height: 220px; overflow: auto; }
+.skill-suggestion-editor { display: grid; gap: 8px; }
+.skill-suggestion-editor label { display: grid; gap: 4px; font-size: 12px; color: #4f5a50; }
+.skill-suggestion-editor input, .skill-suggestion-editor textarea { border: 1px solid #ced9ce; border-radius: 8px; padding: 7px 10px; font: inherit; font-size: 13px; background: #fffefa; }
+.skill-suggestion-error { color: #8a3f2a; font-size: 12px; margin: 8px 0 0; }
+.skill-suggestion footer { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.skill-suggestion footer button { border: 1px solid #ced9ce; border-radius: 9px; padding: 6px 14px; background: #fffefa; color: var(--green, #2f5a43); font: inherit; font-size: 13px; cursor: pointer; }
+.skill-suggestion footer button.primary { background: var(--green, #2f5a43); border-color: var(--green, #2f5a43); color: #fff; }
+.skill-suggestion footer button:disabled { opacity: .5; cursor: not-allowed; }
+.skill-suggestion button:focus-visible, .skill-suggestion input:focus-visible, .skill-suggestion textarea:focus-visible, .skill-suggestion-trigger:focus-visible { outline: 2px solid var(--green, #37654d); outline-offset: 2px; }
+.pending-skill-suggestions { display: grid; gap: 10px; margin-bottom: 18px; }
+.pending-skill-suggestions h2 { font-size: 14px; font-weight: 600; margin: 0; color: var(--green, #2f5a43); }

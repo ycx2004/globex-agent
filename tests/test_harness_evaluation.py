@@ -347,3 +347,30 @@ def test_quote_references_do_not_require_repeating_price_but_conflicts_fail(suff
     assert check_sku_quotes(answer,golden) is expected_result
     assert not check_sku_quotes('只比较 P1001-S1 和 P1002-S1',golden)
     assert not check_sku_quotes('P1002-S1 219 USD。P1001-S1 已排除，省略报价。',golden)
+
+
+def _junit(path, skipped):
+    cases=''.join(f'<testcase classname="{c}" name="{n}"><skipped message="m"/></testcase>' for c,n in skipped)
+    path.write_text(f'<testsuites><testsuite tests="{1+len(skipped)}" failures="0" errors="0" skipped="{len(skipped)}">'
+                    f'<testcase classname="tests.test_a" name="ok"/>{cases}</testsuite></testsuites>')
+
+
+@pytest.mark.parametrize('declared_os, other, expected', [
+    ('nt', False, True),        # 白名单中的 Windows 专属用例在 Linux 跳过：放行
+    ('posix', False, False),    # 声明平台即当前平台却被跳过：仍判失败
+    ('nt', True, False),        # 白名单之外的跳过：仍判失败
+])
+async def test_only_declared_platform_skip_is_excused(tmp_path, monkeypatch, declared_os, other, expected):
+    import os
+    from unittest.mock import AsyncMock
+    from scripts.eval.harness import runner
+    monkeypatch.setattr(os, 'name', 'posix')
+    skipped=[('tests.test_win','test_chmod')]+([('tests.test_b','test_other')] if other else [])
+    _junit(tmp_path/'contracts.xml', skipped)
+    process=AsyncMock(); process.wait=AsyncMock(return_value=0)
+    monkeypatch.setattr(runner.asyncio, 'create_subprocess_exec', AsyncMock(return_value=process))
+    suite={'contract_tests':['tests/test_a.py'],
+           'platform_skips':[{'test':'tests.test_win::test_chmod','only_os':declared_os}]}
+    result=await runner.contract_checks(suite, tmp_path)
+    assert result['passed'] is expected
+    assert result['platform_skipped']==(['tests.test_win::test_chmod'] if declared_os=='nt' else [])

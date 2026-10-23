@@ -1,0 +1,133 @@
+{
+  "case_id": "h1-dev-cost",
+  "split": "dev",
+  "mode": "snapshot",
+  "strategy": "candidate",
+  "repetition": 0,
+  "answer": "第一批（查询条件：寄到中国，quantity=1，历史快照 2026-09-01 10:01 UTC）中 P28183「Wanderlite 折叠旅行双肩包 35L」：\n\n- 到手价：222 元（CNY）\n- 运费：26 元（CNY），其中税费 7 元，商品价 189 元（默认 SKU P28183-S1 石墨黑）\n\n说明：这是第一批的历史报价，不是当前实时价格。你现在的条件已改为寄到英国（预算 369 元），按英国口径该商品到手价为 237 元、运费 41 元（税费 7 元）。需要我按英国条件重新核验当前库存与价格吗？",
+  "checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "passed": true,
+  "error": null,
+  "usage": [
+    {
+      "kind": "business",
+      "input_tokens": 10830,
+      "output_tokens": 524,
+      "elapsed_ms": 10109.749936999833,
+      "request_context": {
+        "system_estimated_tokens": 884,
+        "state_estimated_tokens": 483,
+        "product_estimated_tokens": 17669,
+        "history_estimated_tokens": 4597,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "buyer_request",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 1024,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "first_request",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "50078631c9e40be8238c24e30fd72d4f98d1e2ee9fdf0c0f622b8cfe065b54fc",
+        "prefix_tools_hash": "2853047f4750752b344d4e120b07f527b564d930066f943762f062cf543d492d",
+        "prefix_message_count": 100,
+        "prefix_common_messages": null,
+        "prefix_common_message_bytes": null,
+        "prefix_first_changed_message": null,
+        "prefix_system_changed": null,
+        "prefix_tools_changed": null,
+        "prefix_parameters_changed": null
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    }
+  ],
+  "input_tokens": 10830,
+  "output_tokens": 524,
+  "model_calls": 1,
+  "lookup_calls": 0,
+  "lookup_events": [],
+  "context_diagnostics": [
+    {
+      "type": "state",
+      "mode": "snapshot",
+      "emitted": true,
+      "estimated_tokens": 299
+    },
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 9621,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 21,
+      "protected_results": 2,
+      "below_target": false,
+      "trigger": "pressure"
+    }
+  ],
+  "current_calls": 0,
+  "elapsed_ms": 10852,
+  "compactions": [],
+  "round_metrics": [
+    {
+      "elapsed_ms": 10245,
+      "compacted": false,
+      "model_calls": 1
+    }
+  ],
+  "compaction_metrics": [],
+  "final_context_estimated_tokens": 26052,
+  "last_compaction": {
+    "policy_version": "layered-v4",
+    "reason": "pressure",
+    "before_tokens": 14984,
+    "after_tokens": 10551,
+    "archived_results": 21,
+    "summary_changed": false,
+    "elapsed_ms": 86,
+    "status": "completed"
+  },
+  "final_product_observations": 15,
+  "final_product_duplicate_ratio": 0.33333333333333337,
+  "association_check": {
+    "applicable": false,
+    "status": "not_applicable"
+  },
+  "original_checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "layer": "context",
+  "critical": true,
+  "title": "费用组成",
+  "evidence_trace": "traces/h1-dev-cost-candidate-0.jsonl"
+}

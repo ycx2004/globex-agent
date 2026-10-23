@@ -177,6 +177,13 @@
     "tests/test_model_workspace.py",
     "tests/test_model_connection_identity.py"
   ],
+  "platform_skips": [
+    {
+      "test": "tests.test_model_registry::test_windows_registry_startup_preserves_existing_key_without_chmod",
+      "only_os": "nt",
+      "reason": "Windows chmod 兼容回归，仅 Windows 执行"
+    }
+  ],
   "runtime": {
     "concurrency": 1,
     "min_interval_seconds": 2,

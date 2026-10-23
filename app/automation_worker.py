@@ -11,9 +11,12 @@ async def main():
     os.environ["AUTOMATION_WORKER_MODE"] = "external"
     from app.infrastructure.settings import load_settings
 
-    if not load_settings().qdrant_url:
+    _settings = load_settings()
+    _milvus = _settings.vector_backend == "milvus" and bool(_settings.milvus_uri)
+    if not _settings.qdrant_url and not _milvus:
         raise RuntimeError(
-            "独立 Worker 需要 QDRANT_URL 服务端索引；本地嵌入索引请使用默认 embedded 调度模式"
+            "独立 Worker 需要服务端向量索引（QDRANT_URL 或 VECTOR_BACKEND=milvus + MILVUS_URI）；"
+            "本地嵌入索引请使用默认 embedded 调度模式"
         )
     container = await build_container()
     await container.startup()

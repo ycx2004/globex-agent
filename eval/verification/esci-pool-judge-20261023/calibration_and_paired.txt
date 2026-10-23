@@ -1,0 +1,12 @@
+human\llm  E    S    C    I
+E          723  208   44   65
+S          156  279   26  123
+C           10   16   50    4
+I           27   54   28   74
+LLM E precision vs human 0.789 human-E recalled as E 0.695
+@8 hybrid_rerank recall_capped delta=+0.0089 95%CI[-0.0013,+0.0210] better=11 worse=7
+@8 hybrid_rerank ndcg_esci delta=+0.0100 95%CI[-0.0006,+0.0222] better=15 worse=11
+@8 hybrid_rerank mrr delta=+0.0143 95%CI[+0.0012,+0.0303] better=8 worse=4
+@16 hybrid_rerank recall_capped delta=+0.0100 95%CI[-0.0007,+0.0227] better=13 worse=9
+@16 hybrid_rerank ndcg_esci delta=+0.0104 95%CI[+0.0001,+0.0225] better=17 worse=12
+@16 hybrid_rerank mrr delta=+0.0142 95%CI[+0.0014,+0.0297] better=9 worse=5

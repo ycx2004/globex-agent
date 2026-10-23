@@ -1,0 +1,235 @@
+{
+  "case_id": "h1-dev-cost",
+  "split": "dev",
+  "mode": "snapshot",
+  "strategy": "candidate",
+  "repetition": 0,
+  "answer": "第一批（历史观察，目的国为中国，数量1）P28183 Wanderlite 折叠旅行双肩包 35L：\n\n- 到手价：222 元（含运费 26 元 + 税费 7 元，商品单价 189 元）\n- 运费：26 元\n\n说明：以上为第1批展示时的历史报价（币种 CNY，寄往 CN），不是当前实时价格。你当前选购条件已改为寄往英国、预算 369 元，如需按英国到手价重新核验，我可以再查当前状态。",
+  "checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "passed": true,
+  "error": null,
+  "usage": [
+    {
+      "kind": "business",
+      "input_tokens": 10827,
+      "output_tokens": 255,
+      "elapsed_ms": 9144.135241000185,
+      "request_context": {
+        "system_estimated_tokens": 884,
+        "state_estimated_tokens": 483,
+        "product_estimated_tokens": 17669,
+        "history_estimated_tokens": 4597,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "buyer_request",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 1024,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "first_request",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "6b78eba12a3eeddb9d833c48e68eedeeb0c372e1a925b15359e66c146e2b2fcc",
+        "prefix_tools_hash": "0a67295d3edae6ac3a307b03b652565d2145062c7d81bbc50a824f0699a3cb94",
+        "prefix_message_count": 100,
+        "prefix_common_messages": null,
+        "prefix_common_message_bytes": null,
+        "prefix_first_changed_message": null,
+        "prefix_system_changed": null,
+        "prefix_tools_changed": null,
+        "prefix_parameters_changed": null
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    },
+    {
+      "kind": "business",
+      "input_tokens": 11565,
+      "output_tokens": 238,
+      "elapsed_ms": 8096.789659000024,
+      "request_context": {
+        "system_estimated_tokens": 884,
+        "state_estimated_tokens": 483,
+        "product_estimated_tokens": 19126,
+        "history_estimated_tokens": 4316,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "lookup_followup",
+        "visible_evidence_answer": false,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 10752,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "append",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "6b78eba12a3eeddb9d833c48e68eedeeb0c372e1a925b15359e66c146e2b2fcc",
+        "prefix_tools_hash": "0a67295d3edae6ac3a307b03b652565d2145062c7d81bbc50a824f0699a3cb94",
+        "prefix_message_count": 102,
+        "prefix_common_messages": 100,
+        "prefix_common_message_bytes": 37570,
+        "prefix_first_changed_message": 100,
+        "prefix_system_changed": false,
+        "prefix_tools_changed": false,
+        "prefix_parameters_changed": false
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    }
+  ],
+  "input_tokens": 22392,
+  "output_tokens": 493,
+  "model_calls": 2,
+  "lookup_calls": 1,
+  "lookup_events": [
+    {
+      "ref": "ctx_78e7b3a5991e4d00b9c2629c59a3daf0",
+      "batch": 1,
+      "position": 3,
+      "product_id": "P28183",
+      "sku_id": "",
+      "fields": "price",
+      "offset": 0,
+      "limit": 5,
+      "field_offset": 0
+    }
+  ],
+  "context_diagnostics": [
+    {
+      "type": "state",
+      "mode": "snapshot",
+      "emitted": true,
+      "estimated_tokens": 299
+    },
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 9621,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 21,
+      "protected_results": 2,
+      "below_target": false,
+      "trigger": "pressure"
+    },
+    {
+      "type": "lookup",
+      "batch": 1,
+      "position": 3,
+      "offset": 0,
+      "limit": 5,
+      "field_offset": 0,
+      "has_reference": true,
+      "has_query": false,
+      "has_product": true,
+      "has_sku": false,
+      "status": "success",
+      "error_code": null,
+      "returned_products": 1,
+      "effective_limit": 5,
+      "fields_normalized": false,
+      "limit_capped": false,
+      "effective_batch": 1,
+      "batch_inferred_from_user": false,
+      "records": 1,
+      "estimated_tokens": 560,
+      "has_more": false,
+      "elapsed_ms": 5.933731999903102
+    },
+    {
+      "type": "prune",
+      "before_tokens": 7451,
+      "after_tokens": 7451,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 0,
+      "protected_results": 3,
+      "below_target": false,
+      "trigger": "pressure"
+    }
+  ],
+  "current_calls": 0,
+  "elapsed_ms": 18104,
+  "compactions": [],
+  "round_metrics": [
+    {
+      "elapsed_ms": 17542,
+      "compacted": false,
+      "model_calls": 2
+    }
+  ],
+  "compaction_metrics": [],
+  "final_context_estimated_tokens": 26814,
+  "last_compaction": {
+    "policy_version": "layered-v4",
+    "reason": "pressure",
+    "before_tokens": 12804,
+    "after_tokens": 12804,
+    "archived_results": 0,
+    "summary_changed": false,
+    "elapsed_ms": 37,
+    "status": "noop"
+  },
+  "final_product_observations": 15,
+  "final_product_duplicate_ratio": 0.33333333333333337,
+  "association_check": {
+    "applicable": false,
+    "status": "not_applicable"
+  },
+  "original_checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "layer": "context",
+  "critical": true,
+  "title": "费用组成",
+  "evidence_trace": "traces/h1-dev-cost-candidate-0.jsonl"
+}

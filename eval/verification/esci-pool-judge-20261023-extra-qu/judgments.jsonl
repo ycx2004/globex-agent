@@ -1,0 +1,300 @@
+{"id": "esci-us-25441", "query": "chicco car seat adjuster", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-18392", "query": "bookcase with glass doors", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-54511", "query": "iphone skills", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-24080", "query": "cbd oil not hemp oil", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-22562", "query": "canyoneering figure 8", "judged": {"P147613": "I"}, "calibration": {"P135113": {"human": "E", "llm": "E"}, "P105785": {"human": "S", "llm": "S"}, "P126243": {"human": "S", "llm": "S"}}, "usage": {"completion_tokens": 48, "prompt_tokens": 775, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 775}, "total_tokens": 823}}
+{"id": "esci-us-37349", "query": "elite screen 100 motorized", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-35794", "query": "du-rag, hair covering", "judged": {"P166934": "I", "P183719": "C", "P182061": "I"}, "calibration": {"P155713": {"human": "E", "llm": "E"}, "P142099": {"human": "E", "llm": "E"}, "P133386": {"human": "E", "llm": "S"}, "P121884": {"human": "E", "llm": "E"}}, "usage": {"completion_tokens": 75, "prompt_tokens": 1360, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1360}, "total_tokens": 1435}}
+{"id": "esci-us-41646", "query": "fly shotgun salt", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-58861", "query": "knife sets without block", "judged": {"P180631": "E", "P195922": "E", "P127013": "E", "P172125": "E", "P143849": "E", "P135290": "I", "P101080": "I", "P135713": "I", "P195243": "E", "P114155": "I", "P132919": "S", "P193425": "E", "P190635": "E", "P116793": "E", "P185295": "E"}, "calibration": {"P177996": {"human": "E", "llm": "E"}, "P193261": {"human": "E", "llm": "E"}, "P192843": {"human": "E", "llm": "E"}, "P193790": {"human": "E", "llm": "E"}, "P168280": {"human": "E", "llm": "E"}, "P188612": {"human": "E", "llm": "E"}, "P142481": {"human": "E", "llm": "C"}, "P155638": {"human": "E", "llm": "E"}}, "usage": {"completion_tokens": 132, "prompt_tokens": 4196, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 4196}, "total_tokens": 4328}}
+{"id": "esci-us-40685", "query": "fish tank sticker thermometer", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-5338", "query": "80s costumes for women plus size", "judged": {"P114880": "I", "P155566": "I"}, "calibration": {"P175537": {"human": "E", "llm": "S"}, "P168111": {"human": "E", "llm": "E"}, "P150882": {"human": "E", "llm": "S"}, "P107629": {"human": "E", "llm": "S"}, "P156981": {"human": "E", "llm": "S"}, "P170871": {"human": "I", "llm": "S"}, "P171934": {"human": "E", "llm": "E"}}, "usage": {"completion_tokens": 93, "prompt_tokens": 1685, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1685}, "total_tokens": 1778}}
+{"id": "esci-us-30913", "query": "custom 96 length navy blue pleated curtains", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-35124", "query": "dr brandt do not age", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-29469", "query": "cotton high waist shorts", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-60550", "query": "lc27h711qenxza", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-25024", "query": "charmaine delta kitchen faucet", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-59213", "query": "kx250f plastics kit", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-36046", "query": "duster for board", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-2081", "query": "14 guage automotive wire yellow", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-58152", "query": "killmonger wall art", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-41246", "query": "flexible seating", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-907", "query": "1 wheel skates without breaks", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-12524", "query": "bad dragon", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-46910", "query": "goumikids mittens", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-61609", "query": "leslie sansone mega miles dvd", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-38533", "query": "everyone loves raymond dvd complete series", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-12891", "query": "bamboo plants indoor", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-28795", "query": "cool head s", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-18553", "query": "boppy nursing pillow without cover", "judged": {"P134630": "I", "P124599": "I", "P155709": "I", "P179111": "I", "P140202": "I"}, "calibration": {"P183219": {"human": "E", "llm": "E"}, "P158143": {"human": "S", "llm": "E"}, "P165380": {"human": "E", "llm": "E"}, "P196521": {"human": "E", "llm": "E"}, "P105218": {"human": "E", "llm": "E"}, "P171506": {"human": "E", "llm": "E"}, "P129288": {"human": "C", "llm": "C"}, "P169910": {"human": "S", "llm": "S"}}, "usage": {"completion_tokens": 133, "prompt_tokens": 2536, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 2536}, "total_tokens": 2669}}
+{"id": "esci-us-27943", "query": "colors for dining room", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-20441", "query": "built in under counter microwave", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-58993", "query": "kombucha", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-41795", "query": "foldable beach hat", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-25132", "query": "cheap white dress shoes", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-38217", "query": "esstac kywi", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-32612", "query": "desk gadgets for office", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-1787", "query": "11x14+matting+art+prints black", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-58233", "query": "kindle unlimited audiobooks", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-1049", "query": "1/2 durable sink hose without connectors", "judged": {"P127173": "I", "P127171": "I", "P119033": "S", "P194303": "S", "P152112": "I", "P153717": "S", "P106552": "E", "P187870": "S", "P193433": "S", "P196013": "S", "P139424": "I", "P195052": "C", "P169901": "I", "P197619": "C", "P124344": "I", "P166340": "I", "P119158": "I", "P193076": "C"}, "calibration": {"P175169": {"human": "I", "llm": "S"}, "P172536": {"human": "I", "llm": "S"}, "P195860": {"human": "C", "llm": "C"}, "P155104": {"human": "C", "llm": "I"}, "P104056": {"human": "S", "llm": "E"}}, "usage": {"completion_tokens": 233, "prompt_tokens": 4642, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 4642}, "total_tokens": 4875}}
+{"id": "esci-us-26322", "query": "cinnamon sugar pop tarts", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-23868", "query": "cat puzzle feeder", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-13498", "query": "bat", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-52998", "query": "incredibles t-shirt", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-64837", "query": "maglite 5 cell d flashlight", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-51442", "query": "hot tea pot sets", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-62970", "query": "little love by nojo sweet deer", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-59544", "query": "ladder self closing for pool", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-22488", "query": "canon t5i microphone", "judged": {"P112702": "I", "P135537": "I"}, "calibration": {"P152870": {"human": "S", "llm": "E"}, "P124752": {"human": "S", "llm": "E"}, "P161713": {"human": "S", "llm": "E"}, "P169653": {"human": "S", "llm": "I"}, "P140773": {"human": "S", "llm": "I"}, "P157503": {"human": "S", "llm": "I"}, "P187279": {"human": "S", "llm": "E"}, "P157368": {"human": "E", "llm": "E"}}, "usage": {"completion_tokens": 74, "prompt_tokens": 1958, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1958}, "total_tokens": 2032}}
+{"id": "esci-us-31899", "query": "deadwood movie", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-3179", "query": "28th birthday decorations for men", "judged": {"P160827": "I", "P186271": "I"}, "calibration": {"P194610": {"human": "E", "llm": "E"}, "P194354": {"human": "E", "llm": "S"}, "P196963": {"human": "E", "llm": "E"}, "P194771": {"human": "E", "llm": "S"}, "P178326": {"human": "E", "llm": "E"}, "P193317": {"human": "E", "llm": "S"}, "P199968": {"human": "E", "llm": "C"}, "P188623": {"human": "C", "llm": "C"}}, "usage": {"completion_tokens": 103, "prompt_tokens": 2317, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 2317}, "total_tokens": 2420}}
+{"id": "esci-us-26158", "query": "chuanshi fc12 t9 32w", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-30020", "query": "creme hoodie men", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-1406", "query": "100 led without remote", "judged": {"P119758": "S", "P131380": "S", "P125466": "I", "P142884": "C", "P173906": "S", "P139451": "I", "P168032": "I", "P196971": "I", "P141908": "E", "P147218": "I", "P188148": "I", "P194892": "I", "P182165": "I", "P136018": "C", "P192853": "I", "P190563": "E", "P196925": "I", "P130795": "E", "P154020": "I", "P188888": "I", "P191997": "I", "P159193": "I", "P199633": "I", "P142623": "S"}, "calibration": {"P112143": {"human": "S", "llm": "S"}}, "usage": {"completion_tokens": 253, "prompt_tokens": 5100, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 5100}, "total_tokens": 5353}}
+{"id": "esci-us-27210", "query": "coaxial cable 9 feet", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-13089", "query": "bar stools", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-26054", "query": "christmas table cover", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-20740", "query": "burton step on bindings men", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-17594", "query": "bluetooth helmet motorcycle", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-7175", "query": "agitator balls for miniature paints", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-980", "query": "1.4 cubic feet small refrigerator without freezer", "judged": {"P173589": "I", "P177665": "S", "P188653": "I", "P127104": "I", "P120638": "I", "P130852": "I"}, "calibration": {"P191902": {"human": "S", "llm": "S"}, "P119940": {"human": "S", "llm": "S"}, "P173872": {"human": "S", "llm": "I"}}, "usage": {"completion_tokens": 93, "prompt_tokens": 1801, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1801}, "total_tokens": 1894}}
+{"id": "esci-us-31325", "query": "daddy little princess outfit", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-62478", "query": "lightweight mechanics gloves", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-62528", "query": "lilly brush", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-13890", "query": "batteries not included", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-54076", "query": "iphone 11 pro max case grip", "judged": {"P178541": "I", "P176617": "I"}, "calibration": {"P175752": {"human": "E", "llm": "E"}, "P173053": {"human": "E", "llm": "S"}, "P173177": {"human": "E", "llm": "E"}, "P177093": {"human": "E", "llm": "E"}, "P175182": {"human": "E", "llm": "E"}, "P177391": {"human": "S", "llm": "I"}, "P177187": {"human": "S", "llm": "I"}, "P175975": {"human": "S", "llm": "I"}}, "usage": {"completion_tokens": 103, "prompt_tokens": 1920, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1920}, "total_tokens": 2023}}
+{"id": "esci-us-1670", "query": "10” indoor flower pot without holes", "judged": {"P169285": "I", "P183370": "I", "P176456": "I", "P163506": "S", "P181928": "I", "P136355": "I", "P169486": "I", "P196089": "I", "P168183": "C", "P185231": "I"}, "calibration": {"P195536": {"human": "I", "llm": "I"}, "P165887": {"human": "S", "llm": "S"}, "P146493": {"human": "S", "llm": "S"}, "P196713": {"human": "E", "llm": "I"}, "P190195": {"human": "I", "llm": "I"}, "P180648": {"human": "S", "llm": "I"}, "P142338": {"human": "E", "llm": "S"}, "P178722": {"human": "E", "llm": "I"}}, "usage": {"completion_tokens": 102, "prompt_tokens": 3476, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 3476}, "total_tokens": 3578}}
+{"id": "esci-us-56584", "query": "jumbo rocking chair cushions", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-16547", "query": "black gift bags", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-479", "query": "007 james bond the world is not enough", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-21915", "query": "camera wrist strap canon", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-1816", "query": "12 hp engine", "judged": {"P143835": "C"}, "calibration": {"P138174": {"human": "C", "llm": "C"}, "P153117": {"human": "S", "llm": "I"}, "P115868": {"human": "S", "llm": "I"}, "P153137": {"human": "S", "llm": "I"}, "P112662": {"human": "S", "llm": "E"}, "P135349": {"human": "I", "llm": "C"}, "P166205": {"human": "S", "llm": "S"}, "P152888": {"human": "S", "llm": "I"}}, "usage": {"completion_tokens": 93, "prompt_tokens": 2041, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 2041}, "total_tokens": 2134}}
+{"id": "esci-us-11811", "query": "baby boy first birthday cookie montser decorations", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-32462", "query": "depth finders for boats", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-26566", "query": "classic brand headboard", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-27331", "query": "coconut shoes for women", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-5710", "query": "I would just like to have a jacket with pockets, and is light and plain looking; no flashy colors.", "judged": {"P118454": "E", "P137354": "I", "P136638": "E", "P167130": "I", "P184497": "S"}, "calibration": {}, "usage": {"completion_tokens": 57, "prompt_tokens": 997, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 997}, "total_tokens": 1054}}
+{"id": "esci-us-46153", "query": "gmc amp", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-41423", "query": "floral", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-51199", "query": "hood for 29 gallon aquarium", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-40380", "query": "fine mesh strainer large", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-52257", "query": "hydro flask with straw", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-38643", "query": "exhaust heat wrap cara", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-5488", "query": "90 degrees jacket women", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-60392", "query": "laural burch purse", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-16009", "query": "biotone starter fertilizer", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-31286", "query": "da polisher pads", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-12565", "query": "bae watch red bathing suit", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-16971", "query": "blacklist", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-47907", "query": "guess slim fit shirts for men", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-24535", "query": "chad wild clay merch spy kit", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-43911", "query": "galaxy 9 plus case waterproof", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-52830", "query": "im not your perfect mexican daughter", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-56046", "query": "jms580", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-47133", "query": "grass skirts bulk", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-961", "query": "1-year old toys", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-17346", "query": "blue camo ribbon", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-62086", "query": "licras sexy para mujer", "judged": {"P184775": "S", "P199469": "C", "P190290": "I", "P152388": "E", "P174786": "E", "P162976": "E", "P185108": "S", "P125727": "I", "P173179": "S", "P190483": "S", "P168998": "S"}, "calibration": {"P190788": {"human": "E", "llm": "S"}, "P189370": {"human": "E", "llm": "S"}, "P179502": {"human": "E", "llm": "S"}, "P190063": {"human": "E", "llm": "S"}, "P153401": {"human": "E", "llm": "S"}, "P182836": {"human": "E", "llm": "E"}, "P195923": {"human": "E", "llm": "S"}}, "usage": {"completion_tokens": 183, "prompt_tokens": 3403, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 3403}, "total_tokens": 3586}}
+{"id": "esci-us-57518", "query": "keyline", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-48212", "query": "habanero hot sauce cholula organic", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-60242", "query": "laser measure", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-21865", "query": "camellia sinensis tea", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-29430", "query": "cotonnelle flushable wipes", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-1960", "query": "12gb ram laptop", "judged": {"P159980": "S", "P144405": "I", "P186279": "I", "P141923": "I", "P122433": "C", "P188084": "S"}, "calibration": {"P190057": {"human": "E", "llm": "E"}, "P186549": {"human": "E", "llm": "E"}, "P182174": {"human": "E", "llm": "E"}, "P189486": {"human": "E", "llm": "E"}}, "usage": {"completion_tokens": 103, "prompt_tokens": 2398, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 2398}, "total_tokens": 2501}}
+{"id": "esci-us-23234", "query": "carmel harrington", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-58788", "query": "knaack tool box prime", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-9851", "query": "apple watch band plaid 38mm silicone", "judged": {"P165765": "S"}, "calibration": {"P178663": {"human": "S", "llm": "S"}, "P169515": {"human": "E", "llm": "E"}, "P168199": {"human": "S", "llm": "S"}, "P165272": {"human": "S", "llm": "S"}, "P152794": {"human": "S", "llm": "S"}}, "usage": {"completion_tokens": 66, "prompt_tokens": 1091, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1091}, "total_tokens": 1157}}
+{"id": "esci-us-31383", "query": "daisy embossing folder", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-46749", "query": "google watch for women", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-14724", "query": "behavioral investing", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-35762", "query": "drz400 rear brake light", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-1021", "query": "1.75 leather belts without buckles", "judged": {"P198491": "S", "P126195": "I", "P198489": "S", "P135004": "I", "P153097": "I", "P120422": "S", "P125782": "S", "P149558": "I", "P137690": "I"}, "calibration": {"P119391": {"human": "S", "llm": "S"}, "P105371": {"human": "S", "llm": "I"}, "P118459": {"human": "S", "llm": "E"}, "P176008": {"human": "S", "llm": "S"}, "P109526": {"human": "I", "llm": "I"}, "P119408": {"human": "E", "llm": "S"}}, "usage": {"completion_tokens": 153, "prompt_tokens": 2963, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 2963}, "total_tokens": 3116}}
+{"id": "esci-us-5365", "query": "86 inch tv", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-56923", "query": "kangol hats for women", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-65186", "query": "making your kids mind without losing yours", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-20086", "query": "brown party decorations", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-37100", "query": "electric motor mongose", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-14745", "query": "beige face towels", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-37600", "query": "enail titanium nail", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-46083", "query": "glow in the dark tee", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-14476", "query": "bed desk without cup holder", "judged": {"P168422": "E", "P199325": "E", "P176355": "E", "P152125": "E", "P183639": "E", "P199243": "E", "P166916": "I", "P190967": "I", "P180839": "S", "P140771": "S", "P135432": "S", "P192558": "I", "P183684": "I", "P131224": "I", "P168885": "I", "P177008": "E", "P157550": "E", "P157547": "E", "P196841": "E", "P186965": "E", "P199864": "E", "P196434": "E", "P156989": "E", "P195049": "E"}, "calibration": {}, "usage": {"completion_tokens": 243, "prompt_tokens": 4293, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 4293}, "total_tokens": 4536}}
+{"id": "esci-us-66651", "query": "mckenna paisley duvet cover", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-63824", "query": "lounge dresses for women", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-65835", "query": "mario cart switch", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-47346", "query": "green plastic folder without prongs", "judged": {"P142497": "S", "P186023": "S", "P160047": "S", "P122150": "S"}, "calibration": {"P173199": {"human": "E", "llm": "S"}, "P160042": {"human": "S", "llm": "I"}, "P155696": {"human": "E", "llm": "E"}, "P193424": {"human": "S", "llm": "S"}, "P160504": {"human": "S", "llm": "S"}, "P120133": {"human": "S", "llm": "S"}, "P184683": {"human": "S", "llm": "I"}, "P104570": {"human": "E", "llm": "S"}}, "usage": {"completion_tokens": 123, "prompt_tokens": 2361, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 2361}, "total_tokens": 2484}}
+{"id": "esci-us-42964", "query": "fuel bladder marine", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-49514", "query": "hay", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-1466", "query": "100% montmorency tart cherry juice without added sugar", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-9342", "query": "annin american flag 3x5", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-51437", "query": "hot spot internet devices", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-1656", "query": "10x8 picture frame without edge", "judged": {"P186589": "S", "P153437": "S", "P171330": "S", "P151857": "S", "P159534": "S", "P124681": "S", "P147488": "S", "P194585": "S"}, "calibration": {"P167076": {"human": "S", "llm": "S"}, "P190592": {"human": "E", "llm": "S"}, "P191399": {"human": "S", "llm": "S"}, "P178809": {"human": "S", "llm": "E"}, "P176322": {"human": "S", "llm": "S"}, "P192838": {"human": "I", "llm": "I"}, "P167169": {"human": "E", "llm": "S"}, "P197345": {"human": "S", "llm": "S"}}, "usage": {"completion_tokens": 90, "prompt_tokens": 3267, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 3267}, "total_tokens": 3357}}
+{"id": "esci-us-25050", "query": "chassy powder", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-2838", "query": "200k", "judged": {"P166123": "I"}, "calibration": {}, "usage": {"completion_tokens": 8, "prompt_tokens": 267, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 267}, "total_tokens": 275}}
+{"id": "esci-us-32662", "query": "desktop computers", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-57893", "query": "kids makeup vanity for girls", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-1514", "query": "100” curtain rod without center bracket", "judged": {"P172919": "I", "P195627": "I", "P179248": "I", "P179247": "I", "P135014": "I", "P133854": "E", "P134384": "E", "P185145": "S"}, "calibration": {"P115853": {"human": "I", "llm": "E"}, "P136273": {"human": "S", "llm": "I"}, "P195664": {"human": "E", "llm": "E"}, "P172059": {"human": "E", "llm": "E"}, "P151395": {"human": "E", "llm": "E"}, "P123838": {"human": "E", "llm": "I"}, "P194803": {"human": "I", "llm": "E"}, "P141037": {"human": "E", "llm": "S"}}, "usage": {"completion_tokens": 122, "prompt_tokens": 2979, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 2979}, "total_tokens": 3101}}
+{"id": "esci-us-28075", "query": "comforter queen set", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-57966", "query": "kids red masquerade mask", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-22513", "query": "cant tie the knot without you sticker", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-57858", "query": "kids hunter x hunter shirt", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-7120", "query": "aftermarket turn signals", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-45805", "query": "glamor lights", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-24316", "query": "cemetery of forgotten books", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-8419", "query": "aluminum welder", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-30852", "query": "curtain rod without drilling for windows", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-37315", "query": "elf lip brushes", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-10073", "query": "ar charging handle ambidextrous", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-42300", "query": "fountain pen without cartridge", "judged": {"P120672": "E"}, "calibration": {"P192453": {"human": "E", "llm": "S"}, "P181944": {"human": "I", "llm": "S"}, "P172118": {"human": "E", "llm": "S"}, "P196958": {"human": "E", "llm": "E"}, "P181942": {"human": "S", "llm": "S"}, "P199583": {"human": "S", "llm": "I"}, "P177690": {"human": "S", "llm": "S"}, "P156053": {"human": "E", "llm": "S"}}, "usage": {"completion_tokens": 93, "prompt_tokens": 1868, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1868}, "total_tokens": 1961}}
+{"id": "esci-us-30986", "query": "cute beach blanket", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-14488", "query": "bed frame including mattress", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-16380", "query": "black boho shirt plus size", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-27042", "query": "clothes cabinets for bedroom", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-57919", "query": "kids novelty dog socks", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-35431", "query": "dress pants for women", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-20261", "query": "buble", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-62178", "query": "lifeproof iphone 8 plus case", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-1503", "query": "100pack 1ml syringes without caps", "judged": {"P124483": "I", "P168244": "E", "P168241": "I", "P168210": "I", "P168007": "I", "P193578": "S", "P185383": "I", "P190167": "S", "P156291": "E", "P192105": "E", "P149141": "E", "P175234": "E", "P193092": "S", "P170372": "C", "P195527": "I", "P163481": "I", "P170385": "S"}, "calibration": {"P185378": {"human": "E", "llm": "S"}}, "usage": {"completion_tokens": 102, "prompt_tokens": 3267, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 3267}, "total_tokens": 3369}}
+{"id": "esci-us-16450", "query": "black cups for party", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-4525", "query": "5 inch duct", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-19677", "query": "breckelles outlaw boots", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-25391", "query": "chewbacca itty bitty", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-9358", "query": "ansi z87.1 safety glasses", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-16346", "query": "black bandana bedroom set", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-5737", "query": "Long black parka jacket Insulated with warm artificial filling and waterproofed for all weather with hood and multiple pockets", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-39921", "query": "felt monthly stickers", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-37227", "query": "electronics available on payments", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-1246", "query": "10 lb fly fishing leader", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-5274", "query": "8 month old towels", "judged": {"P164338": "S", "P153438": "E", "P156793": "I"}, "calibration": {"P142229": {"human": "S", "llm": "E"}, "P132547": {"human": "E", "llm": "E"}, "P160338": {"human": "S", "llm": "E"}, "P141057": {"human": "S", "llm": "E"}}, "usage": {"completion_tokens": 75, "prompt_tokens": 1490, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1490}, "total_tokens": 1565}}
+{"id": "esci-us-60152", "query": "large spring paper clips", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-66514", "query": "max dugan returns dvd", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-14985", "query": "berkinstocks women sandals", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-54194", "query": "iphone 6s plus case", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-65904", "query": "maroon dress for toddler girls", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-18020", "query": "boho homecoming dresses", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-19689", "query": "bremont watches for men", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-52312", "query": "hyperx cloud earbuds", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-51260", "query": "hoover vacuum cleaner", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-3432", "query": "3 rollerblade caster", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-35242", "query": "dragon ball z dvd season 1", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-55669", "query": "jean with elastic waist for women", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-21660", "query": "calm not busy", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-3055", "query": "24x17 frame", "judged": {"P180190": "I"}, "calibration": {"P128948": {"human": "S", "llm": "I"}, "P156597": {"human": "E", "llm": "S"}, "P162480": {"human": "S", "llm": "I"}, "P109925": {"human": "S", "llm": "I"}, "P129703": {"human": "E", "llm": "E"}, "P109992": {"human": "E", "llm": "E"}, "P136500": {"human": "S", "llm": "I"}, "P141541": {"human": "E", "llm": "E"}}, "usage": {"completion_tokens": 48, "prompt_tokens": 1991, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1991}, "total_tokens": 2039}}
+{"id": "esci-us-26719", "query": "clear garment bags moth", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-44784", "query": "gel polish remover for toes", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-53066", "query": "indoor bbq grill smokeless electric", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-29938", "query": "cream and sugar", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-56320", "query": "joshua mills seeing angels", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-63863", "query": "love letters hobbit", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-27895", "query": "colored pill bags for medicine small", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-5971", "query": "a4 light pad", "judged": {"P191757": "I"}, "calibration": {"P128875": {"human": "C", "llm": "C"}, "P169092": {"human": "E", "llm": "E"}, "P185636": {"human": "E", "llm": "E"}, "P176799": {"human": "E", "llm": "S"}, "P185246": {"human": "E", "llm": "E"}, "P184262": {"human": "E", "llm": "E"}, "P166017": {"human": "C", "llm": "C"}, "P164782": {"human": "E", "llm": "E"}}, "usage": {"completion_tokens": 93, "prompt_tokens": 1519, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1519}, "total_tokens": 1612}}
+{"id": "esci-us-3049", "query": "24v bow mount trolling motor", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-29501", "query": "cotton shorts men", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-41520", "query": "flower holder centerpieces for tables", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-20996", "query": "c side table", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-4656", "query": "50 shades of grey sex toys", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-45588", "query": "girls electric ride on scooter", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-40575", "query": "firestickfor tv", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-48095", "query": "gutters and downspouts", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-47419", "query": "greenlight", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-33994", "query": "diy crystal glue jewelry mold 83 pcs set", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-2173", "query": "15 pound barbell bar", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-17614", "query": "bluetooth phone", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-64296", "query": "lus brand hair products curls", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-37509", "query": "emergency red lights for firefighters", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-18480", "query": "boost mobile hotspot", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-30036", "query": "crepe paper sheets for flower making", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-49934", "query": "heathen nation t shirts for men", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-32394", "query": "dental wax carving pen", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-14130", "query": "be you not them decor", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-31730", "query": "davinci panels", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-53328", "query": "ink cartridges hp 67xl black and color", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-36591", "query": "echo dot accessories", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-59295", "query": "l-theanine for kids", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-51430", "query": "hot sauce", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-60114", "query": "large outdoor wreaths for all seasons", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-58514", "query": "kitchen aid mixer bowl", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-47968", "query": "guitar hero xbox one", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-13976", "query": "battle royale pc gaming headset", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-62116", "query": "life alert system", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-9779", "query": "apple power adapter and lightning cable", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-36971", "query": "elastic off shoulder long sleeve shirt womens", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-60535", "query": "lazy susan 16 inch", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-25081", "query": "cheap gifts under 5 dollars", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-32560", "query": "designer handbags for women", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-46469", "query": "gold red wrapping paper christmas", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-46831", "query": "gormet kitchen spices", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-24716", "query": "champion shoes 7", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-65050", "query": "mailbox without post", "judged": {"P187857": "E", "P103155": "I", "P118649": "I"}, "calibration": {"P104685": {"human": "E", "llm": "E"}, "P114621": {"human": "E", "llm": "E"}, "P165669": {"human": "E", "llm": "E"}, "P168689": {"human": "E", "llm": "E"}, "P115706": {"human": "E", "llm": "E"}, "P144185": {"human": "E", "llm": "E"}, "P115165": {"human": "I", "llm": "I"}, "P186333": {"human": "E", "llm": "S"}}, "usage": {"completion_tokens": 60, "prompt_tokens": 1747, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1747}, "total_tokens": 1807}}
+{"id": "esci-us-3821", "query": "380 reloading dies", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-50068", "query": "hefty bins", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-54404", "query": "iphone blue marble case for 10r", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-1024", "query": "1.75 reading glasses women without blue light blocking", "judged": {"P194554": "I", "P162908": "I", "P191045": "I", "P192840": "I", "P169746": "I", "P153002": "E", "P124920": "I", "P107261": "I", "P123034": "S", "P193394": "I", "P141095": "S", "P153121": "I", "P166127": "S", "P143110": "S", "P194963": "I", "P170389": "I", "P164145": "I", "P188318": "I", "P125377": "I", "P139248": "I", "P118311": "I"}, "calibration": {}, "usage": {"completion_tokens": 162, "prompt_tokens": 4532, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 4532}, "total_tokens": 4694}}
+{"id": "esci-us-39157", "query": "face make for 10", "judged": {"P177160": "S", "P113080": "I"}, "calibration": {"P191896": {"human": "C", "llm": "C"}, "P190830": {"human": "S", "llm": "E"}, "P189159": {"human": "S", "llm": "S"}, "P133300": {"human": "I", "llm": "I"}}, "usage": {"completion_tokens": 66, "prompt_tokens": 1087, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1087}, "total_tokens": 1153}}
+{"id": "esci-us-11354", "query": "autumn jackets for men", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-53535", "query": "insulated walking boot", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-3245", "query": "2t spiderman costume", "judged": {"P127805": "C"}, "calibration": {"P157829": {"human": "E", "llm": "E"}, "P178150": {"human": "I", "llm": "I"}, "P173204": {"human": "I", "llm": "I"}, "P162023": {"human": "S", "llm": "S"}, "P168611": {"human": "E", "llm": "E"}, "P167475": {"human": "I", "llm": "I"}, "P142909": {"human": "E", "llm": "E"}, "P117743": {"human": "E", "llm": "S"}}, "usage": {"completion_tokens": 93, "prompt_tokens": 1406, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1406}, "total_tokens": 1499}}
+{"id": "esci-us-29903", "query": "crayola gobbles 1 pack", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-44101", "query": "gallon milk 2 percent", "judged": {"P146651": "C"}, "calibration": {"P187407": {"human": "S", "llm": "S"}, "P112423": {"human": "S", "llm": "S"}, "P182024": {"human": "I", "llm": "I"}, "P148440": {"human": "E", "llm": "I"}, "P118246": {"human": "E", "llm": "S"}, "P103959": {"human": "S", "llm": "S"}, "P113770": {"human": "S", "llm": "S"}, "P142464": {"human": "S", "llm": "S"}}, "usage": {"completion_tokens": 93, "prompt_tokens": 1422, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1422}, "total_tokens": 1515}}
+{"id": "esci-us-39916", "query": "felt flower", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-30248", "query": "crocs rock band", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-48470", "query": "halberstam", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-7318", "query": "air fryer oven", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-40335", "query": "filtros y descalcificadores", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-44148", "query": "game over messenger purse", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-35862", "query": "duck dynasty season 9", "judged": {"P152253": "I"}, "calibration": {"P116650": {"human": "I", "llm": "S"}, "P140688": {"human": "S", "llm": "E"}, "P128286": {"human": "E", "llm": "E"}, "P131935": {"human": "S", "llm": "S"}, "P121062": {"human": "S", "llm": "S"}, "P118088": {"human": "S", "llm": "I"}, "P124647": {"human": "I", "llm": "S"}, "P119810": {"human": "S", "llm": "S"}}, "usage": {"completion_tokens": 93, "prompt_tokens": 590, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 590}, "total_tokens": 683}}
+{"id": "esci-us-9909", "query": "apple watch series 5 44mm palm trees band", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-66306", "query": "matching game for 2 year old", "judged": {"P162056": "I"}, "calibration": {"P164385": {"human": "E", "llm": "E"}, "P194837": {"human": "E", "llm": "S"}, "P194249": {"human": "E", "llm": "S"}, "P168746": {"human": "E", "llm": "E"}, "P101737": {"human": "E", "llm": "E"}, "P195829": {"human": "S", "llm": "I"}, "P195018": {"human": "S", "llm": "S"}, "P197890": {"human": "E", "llm": "S"}}, "usage": {"completion_tokens": 93, "prompt_tokens": 1940, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1940}, "total_tokens": 2033}}
+{"id": "esci-us-64801", "query": "magic ns adapter switch", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-56685", "query": "jurassic world raptor toys", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-35865", "query": "duck hunting shirt", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-8274", "query": "alpaca comforter queen", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-40070", "query": "ffp2 mask without valve", "judged": {"P192610": "I", "P194752": "S", "P192609": "C", "P186465": "I", "P197569": "I", "P188027": "I", "P189335": "I", "P189390": "I", "P178271": "I"}, "calibration": {"P189063": {"human": "E", "llm": "S"}, "P196527": {"human": "E", "llm": "E"}, "P194836": {"human": "S", "llm": "S"}, "P194748": {"human": "E", "llm": "S"}, "P194296": {"human": "E", "llm": "E"}, "P194882": {"human": "E", "llm": "E"}, "P196526": {"human": "E", "llm": "E"}}, "usage": {"completion_tokens": 90, "prompt_tokens": 2911, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 2911}, "total_tokens": 3001}}
+{"id": "esci-us-62246", "query": "light blue room decorations", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-2471", "query": "1x5p dupont connector housing female", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-40615", "query": "first grade team shirts women", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-63408", "query": "lone peak 4 women", "judged": {"P148074": "I"}, "calibration": {"P155125": {"human": "S", "llm": "S"}, "P174036": {"human": "S", "llm": "S"}, "P147728": {"human": "E", "llm": "E"}, "P147722": {"human": "I", "llm": "I"}, "P134921": {"human": "S", "llm": "S"}, "P147738": {"human": "E", "llm": "E"}, "P127072": {"human": "S", "llm": "S"}, "P147733": {"human": "E", "llm": "E"}}, "usage": {"completion_tokens": 93, "prompt_tokens": 1485, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1485}, "total_tokens": 1578}}
+{"id": "esci-us-207", "query": "+ 200 bifocal glasses without line for men", "judged": {"P162908": "I", "P170020": "I", "P190706": "S"}, "calibration": {"P190939": {"human": "E", "llm": "E"}, "P178279": {"human": "E", "llm": "E"}, "P193677": {"human": "E", "llm": "S"}, "P193189": {"human": "E", "llm": "E"}, "P178465": {"human": "E", "llm": "S"}, "P191149": {"human": "E", "llm": "S"}, "P189879": {"human": "E", "llm": "E"}, "P147867": {"human": "S", "llm": "I"}}, "usage": {"completion_tokens": 60, "prompt_tokens": 2239, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 2239}, "total_tokens": 2299}}
+{"id": "esci-us-50744", "query": "hitachi air conditioner", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-18496", "query": "boot covers costume", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-53808", "query": "ipad air 1", "judged": {"P177285": "I"}, "calibration": {"P156060": {"human": "S", "llm": "S"}, "P152796": {"human": "S", "llm": "S"}, "P117608": {"human": "I", "llm": "C"}, "P145937": {"human": "C", "llm": "C"}, "P147019": {"human": "S", "llm": "S"}, "P117106": {"human": "I", "llm": "C"}, "P121973": {"human": "S", "llm": "S"}, "P164486": {"human": "S", "llm": "S"}}, "usage": {"completion_tokens": 93, "prompt_tokens": 1774, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1774}, "total_tokens": 1867}}
+{"id": "esci-us-10040", "query": "aquarium light", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-30127", "query": "cricut white vinyl", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-37294", "query": "elevated dog bowl stand without bowls", "judged": {"P180466": "C", "P197282": "I", "P189600": "I", "P186740": "I", "P193135": "I", "P186532": "I", "P150839": "I", "P115673": "I", "P110914": "I", "P187946": "E", "P117822": "I", "P129246": "I", "P119514": "I", "P160639": "I", "P113366": "C", "P189799": "I", "P115700": "I", "P189241": "I", "P168167": "I", "P106748": "I", "P113677": "I"}, "calibration": {"P161162": {"human": "S", "llm": "S"}}, "usage": {"completion_tokens": 126, "prompt_tokens": 3883, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 3883}, "total_tokens": 4009}}
+{"id": "esci-us-26535", "query": "clarisonic deep pore facial cleansing brush head replacement", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-9776", "query": "apple plastic container", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-25663", "query": "chinese tea cups bulk", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-64241", "query": "luna sleep aid without melatonin", "judged": {"P145545": "I", "P144563": "S", "P148411": "S", "P175139": "I", "P168972": "S", "P154596": "C", "P110384": "I", "P187985": "S", "P132369": "I"}, "calibration": {"P179290": {"human": "S", "llm": "S"}, "P194275": {"human": "S", "llm": "S"}, "P190264": {"human": "S", "llm": "S"}, "P125264": {"human": "S", "llm": "S"}, "P113967": {"human": "S", "llm": "S"}, "P141542": {"human": "E", "llm": "E"}, "P193594": {"human": "S", "llm": "S"}, "P192022": {"human": "S", "llm": "S"}}, "usage": {"completion_tokens": 173, "prompt_tokens": 3084, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 3084}, "total_tokens": 3257}}
+{"id": "esci-us-62769", "query": "lip wax strips for women", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-60809", "query": "leatherman p", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-8019", "query": "alien stuff", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-15626", "query": "big girl bath cloth", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-43915", "query": "galaxy a10 e case with screen protector", "judged": {"P190546": "I"}, "calibration": {"P172457": {"human": "I", "llm": "I"}, "P169971": {"human": "I", "llm": "I"}, "P179685": {"human": "E", "llm": "E"}, "P178067": {"human": "I", "llm": "I"}, "P176808": {"human": "I", "llm": "I"}, "P170449": {"human": "I", "llm": "I"}, "P173860": {"human": "I", "llm": "I"}, "P182895": {"human": "I", "llm": "I"}}, "usage": {"completion_tokens": 93, "prompt_tokens": 1794, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 1794}, "total_tokens": 1887}}
+{"id": "esci-us-45578", "query": "girls dress up clothes 3t-4t", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-25881", "query": "christmas disney long sleeve shirts for girls", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-54307", "query": "iphone 8 case rubber silicone", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-38729", "query": "extension cord 10 ft usb port", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-8063", "query": "all boots", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-5888", "query": "a seperate peace john knowles", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-64110", "query": "lucky charms marshmallows", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-36100", "query": "dvd player with hdmi input", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-32299", "query": "deltran battery charger 5", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-8062", "query": "all black yankees hat", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-38815", "query": "extra large packing cubes for travel", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-56166", "query": "john wayne prime movies", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-49541", "query": "hcg drops for weight loss", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-46244", "query": "god gave us you book", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-14402", "query": "beauty and the beast costume for dog", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-20991", "query": "c fold paper towels case", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-66308", "query": "matching hospital outfits mom and baby", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-2345", "query": "18 month red sweater", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-12260", "query": "baby underarmour girl", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-39231", "query": "face stixker batman", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-50223", "query": "henry fonda", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-46277", "query": "gods not dead dvd", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-52573", "query": "ic40 salt cell pentair", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-42750", "query": "front bumper mugen", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-48904", "query": "handheld carpet cleaner", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-56053", "query": "jo ann fabric", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-64400", "query": "lysol", "judged": {}, "calibration": {}, "usage": {}}
+{"id": "esci-us-20080", "query": "brown notecards without envelopes", "judged": {"P153519": "I", "P143575": "I", "P128087": "S", "P136676": "I", "P122929": "I", "P198905": "I", "P132621": "I", "P108948": "S", "P114073": "I", "P144196": "I", "P131059": "C", "P189266": "I", "P140176": "I", "P116822": "C", "P147644": "I", "P112242": "I", "P141106": "C", "P191084": "I", "P100399": "I", "P105439": "S", "P122432": "S", "P102724": "I", "P108505": "I", "P100348": "I", "P100352": "I", "P180388": "I"}, "calibration": {}, "usage": {"completion_tokens": 263, "prompt_tokens": 3512, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 3512}, "total_tokens": 3775}}
+{"id": "esci-us-1088", "query": "1/24 tesla without sounds", "judged": {"P198788": "C", "P191908": "C", "P193987": "C", "P197804": "C", "P172518": "C", "P148668": "I", "P132586": "I", "P198637": "I", "P147377": "I", "P143137": "I", "P126368": "I", "P119417": "S", "P112632": "I", "P152058": "I", "P140031": "I", "P163754": "I", "P104345": "I", "P105427": "I", "P126191": "I"}, "calibration": {}, "usage": {"completion_tokens": 193, "prompt_tokens": 3278, "prompt_tokens_details": {"cached_tokens": 0, "text_tokens": 3278}, "total_tokens": 3471}}

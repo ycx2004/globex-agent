@@ -1,0 +1,143 @@
+{
+  "case_id": "h1-dev-sku",
+  "split": "dev",
+  "mode": "snapshot",
+  "strategy": "candidate",
+  "repetition": 0,
+  "answer": "第一批商品中的黑色规格 SKU（历史批次，非实时核验）：\n\n1. 商品ID：P28102  \n   SKU：P28102-S2  \n   规格：黑色 / 20寸  \n   历史单价：899.0  \n   原报价币种：CNY  \n\n2. 商品ID：P28103  \n   SKU：P28103-S1  \n   规格：石墨黑  \n   历史单价：165  \n   原报价币种：CNY  \n\n3. 商品ID：P28104  \n   SKU：P28104-S1  \n   规格：曜石黑  \n   历史单价：219.0  \n   原报价币种：USD",
+  "checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true,
+    "complete_black_sku_set": true,
+    "sku_price_currency_associations": true
+  },
+  "passed": true,
+  "error": null,
+  "usage": [
+    {
+      "kind": "business",
+      "input_tokens": 16277,
+      "output_tokens": 365,
+      "elapsed_ms": 5408.232361000046,
+      "request_context": {
+        "system_estimated_tokens": 1175,
+        "state_estimated_tokens": 690,
+        "product_estimated_tokens": 22127,
+        "history_estimated_tokens": 7425,
+        "tool_schema_estimated_tokens": 788,
+        "reason": "buyer_request",
+        "visible_evidence_answer": true,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "first_request",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "49733f8b3623385ade43777ce16c226de995c39fd5b34bfde18322fa7b776c8c",
+        "prefix_tools_hash": "79a51eab0aeb8b140f1fe01c73b55465406bb9677dcaa80d145833761bf98df4",
+        "prefix_message_count": 103,
+        "prefix_common_messages": null,
+        "prefix_common_message_bytes": null,
+        "prefix_first_changed_message": null,
+        "prefix_system_changed": null,
+        "prefix_tools_changed": null,
+        "prefix_parameters_changed": null
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    }
+  ],
+  "input_tokens": 16277,
+  "output_tokens": 365,
+  "model_calls": 1,
+  "lookup_calls": 0,
+  "lookup_events": [],
+  "context_diagnostics": [
+    {
+      "type": "state",
+      "mode": "snapshot",
+      "emitted": true,
+      "estimated_tokens": 500
+    },
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 55128,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 0,
+      "protected_results": 2,
+      "below_target": false,
+      "trigger": "pressure"
+    },
+    {
+      "type": "visible_evidence",
+      "covered": true,
+      "batch": 1,
+      "product_count": 5,
+      "historical_lookup_required": false,
+      "prefix_preserved": true
+    }
+  ],
+  "current_calls": 0,
+  "elapsed_ms": 6188,
+  "compactions": [],
+  "round_metrics": [
+    {
+      "elapsed_ms": 5608,
+      "compacted": false,
+      "model_calls": 1
+    }
+  ],
+  "compaction_metrics": [],
+  "final_context_estimated_tokens": 75919,
+  "last_compaction": {
+    "policy_version": "layered-v4",
+    "reason": "pressure",
+    "before_tokens": 15236,
+    "after_tokens": 15236,
+    "archived_results": 0,
+    "summary_changed": false,
+    "elapsed_ms": 96,
+    "status": "noop"
+  },
+  "final_product_observations": 120,
+  "final_product_duplicate_ratio": 0.9166666666666666,
+  "association_check": {
+    "applicable": false,
+    "status": "not_applicable"
+  },
+  "original_checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "layer": "context",
+  "critical": true,
+  "title": "不同SKU价格",
+  "evidence_trace": "traces/h1-dev-sku-candidate-0.jsonl"
+}

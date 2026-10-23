@@ -1,0 +1,137 @@
+{
+  "case_id": "h1-dev-sku",
+  "split": "dev",
+  "mode": "snapshot",
+  "strategy": "current",
+  "repetition": 0,
+  "answer": "第一批历史资料中的黑色 SKU（按 SKU 自身规格、单价和原报价币种）：\n\n1. **P28102-S2**  \n   - 商品ID：P28102  \n   - 规格：黑色 / 20寸  \n   - 历史单价：899.0  \n   - 原报价币种：CNY  \n\n2. **P28103-S1**  \n   - 商品ID：P28103  \n   - 规格：石墨黑  \n   - 历史单价：165  \n   - 原报价币种：CNY  \n\n3. **P28104-S1**  \n   - 商品ID：P28104  \n   - 规格：曜石黑  \n   - 历史单价：219.0  \n   - 原报价币种：USD  \n\n来源：第一批历史展示结果，`observed_at` 2026-09-01T10:01:00Z，`result_ref` `ctx_74178af69a5e485281f1f372aefa5d1d`；以上为历史单价，不是当前实时核验结果。",
+  "checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true,
+    "complete_black_sku_set": true,
+    "sku_price_currency_associations": true
+  },
+  "passed": true,
+  "error": null,
+  "usage": [
+    {
+      "kind": "business",
+      "input_tokens": 16108,
+      "output_tokens": 986,
+      "elapsed_ms": 16312.16390899499,
+      "request_context": {
+        "system_estimated_tokens": 1558,
+        "state_estimated_tokens": 0,
+        "product_estimated_tokens": 0,
+        "history_estimated_tokens": 28886,
+        "tool_schema_estimated_tokens": 1,
+        "reason": "buyer_request",
+        "visible_evidence_answer": true,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "first_request",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "f5c9c5cf3c6e05ef9ded33064c858153adcd5b49f8c52be23ec4026e0d76dc9f",
+        "prefix_tools_hash": "9ac6e337f77f80eeda5df6db2f4e3b579fbdcfde2e68f42b30ddf9e50bb73900",
+        "prefix_message_count": 54,
+        "prefix_common_messages": null,
+        "prefix_common_message_bytes": null,
+        "prefix_first_changed_message": null,
+        "prefix_system_changed": null,
+        "prefix_tools_changed": null,
+        "prefix_parameters_changed": null
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    }
+  ],
+  "input_tokens": 16108,
+  "output_tokens": 986,
+  "model_calls": 1,
+  "lookup_calls": 0,
+  "lookup_events": [],
+  "context_diagnostics": [
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 55128,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 0,
+      "protected_results": 2,
+      "below_target": false,
+      "trigger": "pressure"
+    },
+    {
+      "type": "visible_evidence",
+      "covered": true,
+      "batch": 1,
+      "product_count": 5,
+      "historical_lookup_required": false,
+      "prefix_preserved": false
+    }
+  ],
+  "current_calls": 0,
+  "elapsed_ms": 17033,
+  "compactions": [],
+  "round_metrics": [
+    {
+      "elapsed_ms": 16443,
+      "compacted": false,
+      "model_calls": 1
+    }
+  ],
+  "compaction_metrics": [],
+  "final_context_estimated_tokens": 75913,
+  "last_compaction": {
+    "policy_version": "layered-v4",
+    "reason": "pressure",
+    "before_tokens": 15080,
+    "after_tokens": 15080,
+    "archived_results": 0,
+    "summary_changed": false,
+    "elapsed_ms": 56,
+    "status": "noop"
+  },
+  "final_product_observations": 120,
+  "final_product_duplicate_ratio": 0.9166666666666666,
+  "association_check": {
+    "applicable": false,
+    "status": "not_applicable"
+  },
+  "original_checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "layer": "context",
+  "critical": true,
+  "title": "不同SKU价格",
+  "evidence_trace": "traces/h1-dev-sku-current-0.jsonl"
+}

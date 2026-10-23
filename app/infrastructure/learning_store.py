@@ -3,12 +3,12 @@ from __future__ import annotations
 
 from contextlib import contextmanager
 import json
-import re
 from pathlib import Path
 import sqlite3
 import time
 import uuid
 
+from app.domain.learning_redaction import context_values, known_values, redact
 from app.domain.learning import PROCESSOR_VERSION, canonical, digest, input_fingerprint, validate_checks, validate_strategy
 
 LEARNING_SCHEMA = """
@@ -178,19 +178,28 @@ class LearningStore:
         answers = [m for m in projection["messages"] if m.get("role") == "assistant" and m.get("id") not in previous_ids]
         query = str(current[0].get("content", "")) if current else ""
         answer = "\n".join(str(m.get("content", "")) for m in answers)
-        text = query+"\n"+answer
-        # 明显敏感内容直接跳过，不尝试用正则脱敏后宣称匿名化。
-        if len(text) > 12000 or re.search(r"地址|电话|手机号|身份证|收件人|姓名|[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}|\b\d{7,}\b|\b(?:sk|pk)-[\w-]+|https?://", text):
+        if len(query)+len(answer) > 12000:
             return evidence
+        # 个人信息替换为占位符后继续学习；已知值取自下单工具参数和会话状态，其余按语境/格式规则。
+        decoded = [json.loads(event["event_json"]) for event in events]
+        tool_args: dict[str, str] = {}
+        for event in decoded:
+            if event.get("type") == "TOOL_CALL_ARGS":
+                tool_args[event.get("toolCallId", "")] = tool_args.get(event.get("toolCallId", ""), "") + str(event.get("delta", ""))
+        known = {**context_values(query, answer), **known_values(state, *tool_args.values())}
+        query, query_counts = redact(query, known)
+        answer, answer_counts = redact(answer, known)
+        redactions = dict(query_counts + answer_counts)
         facts = []
         for index, product in enumerate(state.get("products", [])[:12]):
             allowed = {key: product[key] for key in ("product_id", "sku_id", "title", "stock", "price", "currency", "material_tags", "landed_price", "skus") if key in product}
             if allowed:
                 facts.append({"ref": f"agui:{job['source_ref']}#/state/products/{index}", "value": allowed, "observed_at": row["updated_at"]})
-        calls = sum(json.loads(event["event_json"]).get("type") == "TOOL_CALL_START" for event in events)
+        calls = sum(event.get("type") == "TOOL_CALL_START" for event in decoded)
         if facts and query and answer and calls >= 2:
-            evidence.update(input=query, output=answer, facts=facts, meaningful=True,
-                            privacy="bounded_current_turn_same_provider", outcome="unverified")
+            # rule_redacted：规则替换不等于匿名化，自由书写的姓名/地址可能漏网，发布前须人工审核。
+            evidence.update(input=query, output=answer, facts=facts, meaningful=True, redactions=redactions,
+                            privacy="rule_redacted_current_turn_same_provider", outcome="unverified")
         return evidence
 
     @staticmethod

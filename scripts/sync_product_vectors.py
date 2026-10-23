@@ -11,12 +11,12 @@ from app.infrastructure.embedding.openai_embedding_client import OpenAIEmbedding
 from app.infrastructure.persistence.in_memory_repositories import InMemoryProductRepository
 from app.infrastructure.settings import load_settings
 from app.infrastructure.vector.index_bootstrap import bootstrap_product_index
-from app.infrastructure.vector.qdrant_product_index import QdrantProductIndex
+from app.infrastructure.vector.product_index_factory import build_product_index
 
 
 async def sync() -> dict:
     settings = load_settings()
-    index = QdrantProductIndex(settings)
+    index = build_product_index(settings)
     report = {'model': settings.embedding_model, 'model_version': settings.embedding_version,
               'model_key': index.embedding_key, 'collection': settings.qdrant_collection}
     try:

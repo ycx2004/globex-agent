@@ -37,8 +37,11 @@ async def test_catalog_presentation_preserves_snapshot_fields_and_labels_illustr
     result = await usecase.execute(ProductSearchSpec(normalized_query=source["title"], ship_to="CN"))
     card = result["hits"][0]
 
-    for field in ("description", "rating_summary", "ships_to", "dimensions_cm", "updated_at", "skus"):
+    for field in ("description", "rating_summary", "ships_to", "dimensions_cm", "updated_at"):
         assert card[field] == source[field], f"展示字段 {field} 必须来自目录，不能由 UI 补造"
+    # SKU 原币字段必须来自目录；target_* 是与预算过滤一致的换算价，单独校验。
+    assert [{k: sku[k] for k in source["skus"][0]} for sku in card["skus"]] == source["skus"], "展示字段 skus 必须来自目录，不能由 UI 补造"
+    assert all(sku["target_currency"] == "CNY" for sku in card["skus"])
     assert card["rating_is_live"] is False
     assert card["image_url"] == f"/products/{filename}"
     assert card["image_kind"] == "illustration"
@@ -90,8 +93,10 @@ async def test_default_sku_and_landed_quote_use_available_variant_without_rewrit
     assert card["source_price_major"] == 10
     assert card["source_currency"] == "USD"
     assert card["skus"] == [
-        {"sku_id": "P-VARIANT-S1", "spec": "缺货小号", "price_major": 5, "currency": "USD", "stock": 0},
-        {"sku_id": "P-VARIANT-S2", "spec": "可售大号", "price_major": 10, "currency": "USD", "stock": 7},
+        {"sku_id": "P-VARIANT-S1", "spec": "缺货小号", "price_major": 5, "currency": "USD",
+         "target_price_major": pytest.approx(35.5), "target_currency": "CNY", "stock": 0},
+        {"sku_id": "P-VARIANT-S2", "spec": "可售大号", "price_major": 10, "currency": "USD",
+         "target_price_major": pytest.approx(71), "target_currency": "CNY", "stock": 7},
     ]
     assert card["landed_price"]["subtotal_major"] == pytest.approx(card["price_major"])
     assert card["landed_price"]["currency"] == card["currency"]

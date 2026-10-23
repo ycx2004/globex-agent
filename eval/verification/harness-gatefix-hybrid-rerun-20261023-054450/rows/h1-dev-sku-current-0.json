@@ -1,0 +1,137 @@
+{
+  "case_id": "h1-dev-sku",
+  "split": "dev",
+  "mode": "snapshot",
+  "strategy": "current",
+  "repetition": 0,
+  "answer": "第一批中的黑色规格（历史结果，非实时核验）：\n\n- `P28102-S2`：黑色 / 20寸，历史单价 `899.0 CNY`\n- `P28103-S1`：石墨黑，历史单价 `165 CNY`\n- `P28104-S1`：曜石黑，历史单价 `219.0 USD`",
+  "checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true,
+    "complete_black_sku_set": true,
+    "sku_price_currency_associations": true
+  },
+  "passed": true,
+  "error": null,
+  "usage": [
+    {
+      "kind": "business",
+      "input_tokens": 16128,
+      "output_tokens": 769,
+      "elapsed_ms": 12046.033888000238,
+      "request_context": {
+        "system_estimated_tokens": 1558,
+        "state_estimated_tokens": 0,
+        "product_estimated_tokens": 0,
+        "history_estimated_tokens": 28886,
+        "tool_schema_estimated_tokens": 1,
+        "reason": "buyer_request",
+        "visible_evidence_answer": true,
+        "recovery_attempt": 0
+      },
+      "prompt_cache": {
+        "model": "qwen3.8-flash",
+        "response_model": "qwen3.8-flash",
+        "response_model_matches": true,
+        "response_model_conflict": false,
+        "protocol_status": "valid",
+        "cache_mode": "passthrough",
+        "cache_policy": "static",
+        "cache_marker_count": 0,
+        "cache_reason": "passthrough",
+        "cache_retry_without_markers": false,
+        "cache_read_tokens": 0,
+        "cache_write_tokens": null,
+        "cache_usage_invalid": false,
+        "reported_cost": null,
+        "prefix_comparison": "first_request",
+        "prefix_scope_known": true,
+        "prefix_system_hash": "60c35339a7ec20a9a01f017a5a284df429e649de3aa04d252a6b6ff52338a59b",
+        "prefix_tools_hash": "5a4cbbe38173bf34717a8b84f28ad14a468d072256edd0e036afcceb931788d5",
+        "prefix_message_count": 54,
+        "prefix_common_messages": null,
+        "prefix_common_message_bytes": null,
+        "prefix_first_changed_message": null,
+        "prefix_system_changed": null,
+        "prefix_tools_changed": null,
+        "prefix_parameters_changed": null
+      },
+      "model_execution": {
+        "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+        "requested_model": "qwen3.8-flash",
+        "response_models": [
+          "qwen3.8-flash"
+        ],
+        "response_model_matches": true,
+        "profile_id": null,
+        "profile_revision": null
+      },
+      "ttft_ms": null
+    }
+  ],
+  "input_tokens": 16128,
+  "output_tokens": 769,
+  "model_calls": 1,
+  "lookup_calls": 0,
+  "lookup_events": [],
+  "context_diagnostics": [
+    {
+      "type": "prune",
+      "before_tokens": 55128,
+      "after_tokens": 55128,
+      "high_watermark": 6000,
+      "next_high_watermark": 6000,
+      "low_watermark": 6000,
+      "archived_results": 0,
+      "protected_results": 2,
+      "below_target": false,
+      "trigger": "pressure"
+    },
+    {
+      "type": "visible_evidence",
+      "covered": true,
+      "batch": 1,
+      "product_count": 5,
+      "historical_lookup_required": false,
+      "prefix_preserved": false
+    }
+  ],
+  "current_calls": 0,
+  "elapsed_ms": 12802,
+  "compactions": [],
+  "round_metrics": [
+    {
+      "elapsed_ms": 12222,
+      "compacted": false,
+      "model_calls": 1
+    }
+  ],
+  "compaction_metrics": [],
+  "final_context_estimated_tokens": 75753,
+  "last_compaction": {
+    "policy_version": "layered-v4",
+    "reason": "pressure",
+    "before_tokens": 15080,
+    "after_tokens": 15080,
+    "archived_results": 0,
+    "summary_changed": false,
+    "elapsed_ms": 76,
+    "status": "noop"
+  },
+  "final_product_observations": 120,
+  "final_product_duplicate_ratio": 0.9166666666666666,
+  "association_check": {
+    "applicable": false,
+    "status": "not_applicable"
+  },
+  "original_checks": {
+    "facts": true,
+    "current_lookup": true,
+    "no_error": true
+  },
+  "layer": "context",
+  "critical": true,
+  "title": "不同SKU价格",
+  "evidence_trace": "traces/h1-dev-sku-current-0.jsonl"
+}

@@ -1,0 +1,3545 @@
+[
+  {
+    "case_id": "h1-dev-cost",
+    "split": "dev",
+    "mode": "snapshot",
+    "strategy": "current",
+    "repetition": 0,
+    "answer": "**第一批（P28183 / SKU：P28183-S1 石墨黑，币种 CNY）**\n\n该批次的到手价明细是**寄往中国（CN）**口径下的历史观察值（observed_at 2026-09-01T10:01:00Z）：\n\n- 到手价：**222 元**\n- 运费：**26 元**\n- 税费：7 元\n- 商品价：189 元（189 + 26 + 7 = 222）\n\n⚠️ 提示：你最新约束已改为**寄到英国（GB）**，与第一批的 CN 口径不可混用。按第23批（2026-09-01T10:23:00Z，ship_to=GB）观察，P28183-S1 为到手价 **237 元**、运费 **41 元**、税费 7 元。以上均为历史批次记录，不构成当前库存/报价；需要实时数值我可以再核验。",
+    "checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "passed": true,
+    "error": null,
+    "usage": [
+      {
+        "kind": "business",
+        "input_tokens": 10763,
+        "output_tokens": 1081,
+        "elapsed_ms": 17984.35183699621,
+        "request_context": {
+          "system_estimated_tokens": 1059,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 17669,
+          "history_estimated_tokens": 4597,
+          "tool_schema_estimated_tokens": 788,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "31d9657c52dab1e2bc851c24ab3f82c21455c4152c63d28e3f5717c274f474e9",
+          "prefix_tools_hash": "2f4b65c43ffe980120f42b40db5f113c9f0f052af21cf0bb46e3d88685f6c92e",
+          "prefix_message_count": 99,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      }
+    ],
+    "input_tokens": 10763,
+    "output_tokens": 1081,
+    "model_calls": 1,
+    "lookup_calls": 0,
+    "lookup_events": [],
+    "context_diagnostics": [
+      {
+        "type": "prune",
+        "before_tokens": 55128,
+        "after_tokens": 9621,
+        "high_watermark": 6000,
+        "next_high_watermark": 6000,
+        "low_watermark": 6000,
+        "archived_results": 21,
+        "protected_results": 2,
+        "below_target": false,
+        "trigger": "pressure"
+      }
+    ],
+    "current_calls": 0,
+    "elapsed_ms": 20982,
+    "compactions": [],
+    "round_metrics": [
+      {
+        "elapsed_ms": 18157,
+        "compacted": false,
+        "model_calls": 1
+      }
+    ],
+    "compaction_metrics": [],
+    "final_context_estimated_tokens": 26406,
+    "last_compaction": {
+      "policy_version": "layered-v4",
+      "reason": "pressure",
+      "before_tokens": 14828,
+      "after_tokens": 10395,
+      "archived_results": 21,
+      "summary_changed": false,
+      "elapsed_ms": 90,
+      "status": "completed"
+    },
+    "final_product_observations": 15,
+    "final_product_duplicate_ratio": 0.33333333333333337,
+    "association_check": {
+      "applicable": false,
+      "status": "not_applicable"
+    },
+    "original_checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "layer": "context",
+    "critical": true,
+    "title": "费用组成",
+    "evidence_trace": "traces/h1-dev-cost-current-0.jsonl"
+  },
+  {
+    "case_id": "h1-dev-cost",
+    "split": "dev",
+    "mode": "snapshot",
+    "strategy": "candidate",
+    "repetition": 0,
+    "answer": "按**第1批**展示时的历史报价（目的地中国，数量1）：\n\n- 到手价：**222 元**\n- 运费：**26 元**\n- 税费：7 元｜商品价：189 元\n\n说明：这是第1批展示时的历史观察值，非当前实时报价。当前你的条件已改为预算 369 元、寄往英国，如需按英国重新核算到手价，我可以再查一次。",
+    "checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "passed": true,
+    "error": null,
+    "usage": [
+      {
+        "kind": "business",
+        "input_tokens": 10829,
+        "output_tokens": 195,
+        "elapsed_ms": 4573.426749004284,
+        "request_context": {
+          "system_estimated_tokens": 884,
+          "state_estimated_tokens": 483,
+          "product_estimated_tokens": 17669,
+          "history_estimated_tokens": 4597,
+          "tool_schema_estimated_tokens": 788,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "fe02110699d60972e14318d3cd6f0377a384cb79369714b3feb9a7e85a0bd34c",
+          "prefix_tools_hash": "54a5a703fabf26002734907ec5baabfe4af4d36aa7fedf44893106b2222a5e4c",
+          "prefix_message_count": 100,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      },
+      {
+        "kind": "business",
+        "input_tokens": 11513,
+        "output_tokens": 277,
+        "elapsed_ms": 6942.169633999583,
+        "request_context": {
+          "system_estimated_tokens": 884,
+          "state_estimated_tokens": 483,
+          "product_estimated_tokens": 19075,
+          "history_estimated_tokens": 4316,
+          "tool_schema_estimated_tokens": 788,
+          "reason": "lookup_followup",
+          "visible_evidence_answer": false,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 10752,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "fe02110699d60972e14318d3cd6f0377a384cb79369714b3feb9a7e85a0bd34c",
+          "prefix_tools_hash": "54a5a703fabf26002734907ec5baabfe4af4d36aa7fedf44893106b2222a5e4c",
+          "prefix_message_count": 102,
+          "prefix_common_messages": 100,
+          "prefix_common_message_bytes": 37570,
+          "prefix_first_changed_message": 100,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": false
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      }
+    ],
+    "input_tokens": 22342,
+    "output_tokens": 472,
+    "model_calls": 2,
+    "lookup_calls": 1,
+    "lookup_events": [
+      {
+        "ref": "",
+        "batch": 1,
+        "position": 3,
+        "product_id": "P28183",
+        "sku_id": "",
+        "fields": "price",
+        "offset": 0,
+        "limit": 1,
+        "field_offset": 0
+      }
+    ],
+    "context_diagnostics": [
+      {
+        "type": "state",
+        "mode": "snapshot",
+        "emitted": true,
+        "estimated_tokens": 299
+      },
+      {
+        "type": "prune",
+        "before_tokens": 55128,
+        "after_tokens": 9621,
+        "high_watermark": 6000,
+        "next_high_watermark": 6000,
+        "low_watermark": 6000,
+        "archived_results": 21,
+        "protected_results": 2,
+        "below_target": false,
+        "trigger": "pressure"
+      },
+      {
+        "type": "lookup",
+        "batch": 1,
+        "position": 3,
+        "offset": 0,
+        "limit": 1,
+        "field_offset": 0,
+        "has_reference": false,
+        "has_query": false,
+        "has_product": true,
+        "has_sku": false,
+        "status": "success",
+        "error_code": null,
+        "returned_products": 1,
+        "effective_limit": 1,
+        "fields_normalized": false,
+        "limit_capped": false,
+        "effective_batch": 1,
+        "batch_inferred_from_user": false,
+        "records": 1,
+        "estimated_tokens": 561,
+        "has_more": false,
+        "elapsed_ms": 3.555384995706845
+      },
+      {
+        "type": "prune",
+        "before_tokens": 7452,
+        "after_tokens": 7452,
+        "high_watermark": 6000,
+        "next_high_watermark": 6000,
+        "low_watermark": 6000,
+        "archived_results": 0,
+        "protected_results": 3,
+        "below_target": false,
+        "trigger": "pressure"
+      }
+    ],
+    "current_calls": 0,
+    "elapsed_ms": 12402,
+    "compactions": [],
+    "round_metrics": [
+      {
+        "elapsed_ms": 11915,
+        "compacted": false,
+        "model_calls": 2
+      }
+    ],
+    "compaction_metrics": [],
+    "final_context_estimated_tokens": 26831,
+    "last_compaction": {
+      "policy_version": "layered-v4",
+      "reason": "pressure",
+      "before_tokens": 12751,
+      "after_tokens": 12751,
+      "archived_results": 0,
+      "summary_changed": false,
+      "elapsed_ms": 22,
+      "status": "noop"
+    },
+    "final_product_observations": 15,
+    "final_product_duplicate_ratio": 0.33333333333333337,
+    "association_check": {
+      "applicable": false,
+      "status": "not_applicable"
+    },
+    "original_checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "layer": "context",
+    "critical": true,
+    "title": "费用组成",
+    "evidence_trace": "traces/h1-dev-cost-candidate-0.jsonl"
+  },
+  {
+    "case_id": "agent-sku",
+    "layer": "agent",
+    "mode": "workflow",
+    "repetition": 0,
+    "checks": {
+      "facts_and_associations": true,
+      "latest_lookup": true,
+      "no_unapproved_order": true,
+      "inventory_unchanged": true,
+      "no_confirmation_on_readonly": true
+    },
+    "passed": true,
+    "error": null,
+    "usage": [
+      {
+        "kind": "business",
+        "input_tokens": 8567,
+        "output_tokens": 291,
+        "elapsed_ms": 6801.924311002949,
+        "request_context": {
+          "system_estimated_tokens": 4440,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 0,
+          "history_estimated_tokens": 494,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "ce4d5c239727280d147c1f542dce449e82e40a9819241f47721680f2574b186a",
+          "prefix_tools_hash": "8af4e22cb7b8ea89eb1599128025d4be0924af0f43cf0a3197ec0177174c1fd8",
+          "prefix_message_count": 3,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      },
+      {
+        "kind": "business",
+        "input_tokens": 9392,
+        "output_tokens": 499,
+        "elapsed_ms": 8095.041985994612,
+        "request_context": {
+          "system_estimated_tokens": 4440,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 1832,
+          "history_estimated_tokens": 209,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "tool_followup",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 8192,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "ce4d5c239727280d147c1f542dce449e82e40a9819241f47721680f2574b186a",
+          "prefix_tools_hash": "8af4e22cb7b8ea89eb1599128025d4be0924af0f43cf0a3197ec0177174c1fd8",
+          "prefix_message_count": 5,
+          "prefix_common_messages": 3,
+          "prefix_common_message_bytes": 11992,
+          "prefix_first_changed_message": 3,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": false
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": 2869.578513993474
+      },
+      {
+        "kind": "business",
+        "input_tokens": 9928,
+        "output_tokens": 508,
+        "elapsed_ms": 13562.685411998245,
+        "request_context": {
+          "system_estimated_tokens": 4494,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 2523,
+          "history_estimated_tokens": 465,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 7168,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "rewrite",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "02a85b2c6d2c31aa62cd5918944e240de45f7c62a25f54e331212931140b13cb",
+          "prefix_tools_hash": "8af4e22cb7b8ea89eb1599128025d4be0924af0f43cf0a3197ec0177174c1fd8",
+          "prefix_message_count": 7,
+          "prefix_common_messages": 0,
+          "prefix_common_message_bytes": 0,
+          "prefix_first_changed_message": 0,
+          "prefix_system_changed": true,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": true
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      },
+      {
+        "kind": "business",
+        "input_tokens": 10827,
+        "output_tokens": 463,
+        "elapsed_ms": 9184.421074998681,
+        "request_context": {
+          "system_estimated_tokens": 4494,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 4553,
+          "history_estimated_tokens": 465,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "tool_followup",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 9216,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "02a85b2c6d2c31aa62cd5918944e240de45f7c62a25f54e331212931140b13cb",
+          "prefix_tools_hash": "8af4e22cb7b8ea89eb1599128025d4be0924af0f43cf0a3197ec0177174c1fd8",
+          "prefix_message_count": 10,
+          "prefix_common_messages": 7,
+          "prefix_common_message_bytes": 16494,
+          "prefix_first_changed_message": 7,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": true
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": 8601.380631997017
+      }
+    ],
+    "round_metrics": [
+      {
+        "elapsed_ms": 15034.489817000576,
+        "compacted": false,
+        "model_calls": 2
+      },
+      {
+        "elapsed_ms": 22924.207829004445,
+        "compacted": false,
+        "model_calls": 2
+      }
+    ],
+    "compaction_metrics": [],
+    "elapsed_ms": 38189.60053300543,
+    "transcript": [
+      {
+        "user": "本次预算300元人民币，寄到中国，只读选购。请调用商品检索核对 P1003-S1 石墨黑的当前单价、库存与到手价。",
+        "assistant": "已按 SKU 精确核对完毕（数据来自本次实时检索，核验时间 2026-10-23 14:18 UTC）：\n\n**Wanderlite 折叠旅行双肩包 35L · P1003-S1 石墨黑**\n\n| 项目 | 结果 |\n|---|---|\n| 当前单价 | **129.00 元**（CNY，报价按 1 件） |\n| 库存 | **80 件**（现货充足） |\n| 寄往中国到手价 | **154.00 元** |\n| ├ 商品小计 | 129.00 元 |\n| ├ 运费 | 25.00 元 |\n| └ 关税 | 0.00 元（税率 9%，但已适用免税额度 de_minimis） |\n\n**预算符合性**：300 元预算内，单件到手 154 元，还有约 146 元余量（若买 2 件，小计 258 元 + 运费，到手价需重新检索核算，不能简单用 154×2 推算）。\n\n几点如实说明：\n- 该 SKU 是当前商品 P1003 的默认规格，材质标签为合成聚合物（防泼水尼龙），发货地韩国，可配送国家含 CN。\n- 重量字段存在快照差异：宣传亮点写「仅 380g」，结构化重量字段为 0.33kg（330g）。两者不一致，我不替你判定哪个为准；如果重量是关键指标，建议以商家实测为准。\n- 商品图为 AI 生成示意图，非实拍；评分 4.2（52 条评价）为快照数据，非实时。\n\n本轮为只读核对，未创建订单、未占用库存。需要我按 2 件或其他规格重新核算到手价，随时说。"
+      },
+      {
+        "user": "预算改为180元人民币，仍寄到中国。只比较刚才的 P1003-S1；请重新调用商品工具核对当前单价和库存。只用 JSON 回答 sku_id、unit_price_major、stock、budget_major、currency 五个字段，数字使用数值类型。不要下单。",
+        "assistant": "{\"sku_id\": \"P1003-S1\", \"unit_price_major\": 129.0, \"stock\": 80, \"budget_major\": 180, \"currency\": \"CNY\"}"
+      }
+    ],
+    "events": [
+      {
+        "type": "tool.invoke",
+        "payload": {
+          "tool": "product_search_tool",
+          "args": {
+            "normalized_query": "",
+            "category": null,
+            "ship_to": "CN",
+            "top_k": 5,
+            "price_max_major": null,
+            "target_currency": "CNY",
+            "excluded_material_tags": [],
+            "required_material_tags": [],
+            "product_id": null,
+            "sku_id": "P1003-S1",
+            "sku_spec": null,
+            "product_type": null,
+            "max_weight_kg": null,
+            "prefer_lightweight": false
+          }
+        }
+      },
+      {
+        "type": "tool.result",
+        "payload": {
+          "tool": "product_search_tool",
+          "hit_count": 1,
+          "recall_strategy": "exact_id_lookup",
+          "total_candidates": 1,
+          "rerank_applied": false,
+          "hits": [
+            {
+              "product_id": "P1003",
+              "title": "Wanderlite 折叠旅行双肩包 35L",
+              "brand": "Wanderlite",
+              "category": "旅行装备",
+              "origin_country": "KR",
+              "price_major": 129.0,
+              "currency": "CNY",
+              "source_price_major": 129.0,
+              "source_currency": "CNY",
+              "highlights": [
+                "重量：仅 380g 超轻",
+                "收纳：可折叠成手掌大小"
+              ],
+              "skus": [
+                {
+                  "sku_id": "P1003-S1",
+                  "spec": "石墨黑",
+                  "price_major": 129.0,
+                  "currency": "CNY",
+                  "target_price_major": 129.0,
+                  "target_currency": "CNY",
+                  "stock": 80
+                }
+              ],
+              "score": 1.0,
+              "source_platform": "etsy",
+              "canonical_product_id": "CAN-LEGACY-002",
+              "material_tags": [
+                "合成聚合物"
+              ],
+              "weight_kg": 0.33,
+              "description": "防泼水尼龙 超轻 可折叠收纳 大容量 35升 徒步 城市通勤 便宜实惠 高性价比",
+              "rating_summary": {
+                "average": 4.2,
+                "review_count": 52
+              },
+              "rating_is_live": false,
+              "ships_to": [
+                "CN",
+                "JP",
+                "SG"
+              ],
+              "dimensions_cm": {
+                "height": 6,
+                "length": 14,
+                "width": 10
+              },
+              "updated_at": "2026-08-01",
+              "default_sku_id": "P1003-S1",
+              "image_url": "/products/wanderlite.png",
+              "image_kind": "illustration",
+              "image_alt": "Wanderlite 折叠旅行双肩包 35L：AI 生成示意图，非商品实拍",
+              "product_type": "背包",
+              "known_weight_kg": 0.33,
+              "eligible_sku_ids": [
+                "P1003-S1"
+              ],
+              "landed_price": {
+                "ship_to": "CN",
+                "subtotal_major": 129.0,
+                "freight_major": 25.0,
+                "tariff_major": 0.0,
+                "tariff_rate": 0.09,
+                "de_minimis_applied": true,
+                "landed_total_major": 154.0,
+                "currency": "CNY"
+              }
+            }
+          ],
+          "result_ref": "ctx_6d8bb20ac2e34987b66d5063ec021c03",
+          "filtered_out": []
+        }
+      },
+      {
+        "type": "tool.invoke",
+        "payload": {
+          "tool": "product_search_tool",
+          "args": {
+            "normalized_query": "",
+            "category": null,
+            "ship_to": null,
+            "top_k": 5,
+            "price_max_major": null,
+            "target_currency": "CNY",
+            "excluded_material_tags": [],
+            "required_material_tags": [],
+            "product_id": null,
+            "sku_id": "P1003-S1",
+            "sku_spec": null,
+            "product_type": "背包",
+            "max_weight_kg": null,
+            "prefer_lightweight": false
+          }
+        }
+      },
+      {
+        "type": "tool.invoke",
+        "payload": {
+          "tool": "product_search_tool",
+          "args": {
+            "normalized_query": "",
+            "category": null,
+            "ship_to": null,
+            "top_k": 5,
+            "price_max_major": null,
+            "target_currency": "CNY\n</parameter=\n<parameter name=\"ship_to\">CN\n</parameter=\n<parameter name=\"price_max_major\">180\n</parameter=\n</function_calls>\n\n</parameter=>\n\n</function_calls>\n\n</parameter=\n\n</function_calls>\n\n</parameter >\n\n</function_calls",
+            "excluded_material_tags": [],
+            "required_material_tags": [],
+            "product_id": null,
+            "sku_id": null,
+            "sku_spec": null,
+            "product_type": null,
+            "max_weight_kg": null,
+            "prefer_lightweight": false
+          }
+        }
+      },
+      {
+        "type": "tool.result",
+        "payload": {
+          "tool": "product_search_tool",
+          "error": "必须提供 normalized_query、product_id 或 sku_id"
+        }
+      },
+      {
+        "type": "tool.result",
+        "payload": {
+          "tool": "product_search_tool",
+          "hit_count": 1,
+          "recall_strategy": "exact_id_lookup",
+          "total_candidates": 1,
+          "rerank_applied": false,
+          "hits": [
+            {
+              "product_id": "P1003",
+              "title": "Wanderlite 折叠旅行双肩包 35L",
+              "brand": "Wanderlite",
+              "category": "旅行装备",
+              "origin_country": "KR",
+              "price_major": 129.0,
+              "currency": "CNY",
+              "source_price_major": 129.0,
+              "source_currency": "CNY",
+              "highlights": [
+                "重量：仅 380g 超轻",
+                "收纳：可折叠成手掌大小"
+              ],
+              "skus": [
+                {
+                  "sku_id": "P1003-S1",
+                  "spec": "石墨黑",
+                  "price_major": 129.0,
+                  "currency": "CNY",
+                  "target_price_major": 129.0,
+                  "target_currency": "CNY",
+                  "stock": 80
+                }
+              ],
+              "score": 1.0,
+              "source_platform": "etsy",
+              "canonical_product_id": "CAN-LEGACY-002",
+              "material_tags": [
+                "合成聚合物"
+              ],
+              "weight_kg": 0.33,
+              "description": "防泼水尼龙 超轻 可折叠收纳 大容量 35升 徒步 城市通勤 便宜实惠 高性价比",
+              "rating_summary": {
+                "average": 4.2,
+                "review_count": 52
+              },
+              "rating_is_live": false,
+              "ships_to": [
+                "CN",
+                "JP",
+                "SG"
+              ],
+              "dimensions_cm": {
+                "height": 6,
+                "length": 14,
+                "width": 10
+              },
+              "updated_at": "2026-08-01",
+              "default_sku_id": "P1003-S1",
+              "image_url": "/products/wanderlite.png",
+              "image_kind": "illustration",
+              "image_alt": "Wanderlite 折叠旅行双肩包 35L：AI 生成示意图，非商品实拍",
+              "product_type": "背包",
+              "known_weight_kg": 0.33,
+              "eligible_sku_ids": [
+                "P1003-S1"
+              ]
+            }
+          ],
+          "result_ref": "ctx_c69fbf8bf3dd4da3afa99c6fbee2bc1f",
+          "filtered_out": []
+        }
+      }
+    ],
+    "tool_trace": [
+      {
+        "tool": "product_search_tool",
+        "elapsed_ms": 20.79739500186406,
+        "state": "success"
+      },
+      {
+        "tool": "product_search_tool",
+        "elapsed_ms": 4.62123299803352,
+        "state": "error"
+      },
+      {
+        "tool": "product_search_tool",
+        "elapsed_ms": 73.19617000030121,
+        "state": "success"
+      }
+    ],
+    "context_diagnostics": [
+      {
+        "type": "fresh_product",
+        "reason": "explicit_current_recheck"
+      }
+    ],
+    "lookup_calls": 0,
+    "compactions": {
+      "policy_version": "layered-v4",
+      "reason": "pressure",
+      "before_tokens": 16029,
+      "after_tokens": 16029,
+      "archived_results": 0,
+      "summary_changed": false,
+      "elapsed_ms": 6,
+      "status": "noop"
+    },
+    "scope": "生产 MainAgentFactory 和真实本地交易工具；合成目录、隔离 SQLite；非浏览器/外部检索验收",
+    "strategy": "current",
+    "critical": true,
+    "title": "精确 SKU 核验与更新预算",
+    "evidence_trace": "traces/agent-sku-current-0.jsonl"
+  },
+  {
+    "case_id": "agent-sku",
+    "layer": "agent",
+    "mode": "workflow",
+    "repetition": 0,
+    "checks": {
+      "facts_and_associations": true,
+      "latest_lookup": true,
+      "no_unapproved_order": true,
+      "inventory_unchanged": true,
+      "no_confirmation_on_readonly": true
+    },
+    "passed": true,
+    "error": null,
+    "usage": [
+      {
+        "kind": "business",
+        "input_tokens": 8656,
+        "output_tokens": 100,
+        "elapsed_ms": 6840.237471995351,
+        "request_context": {
+          "system_estimated_tokens": 4260,
+          "state_estimated_tokens": 488,
+          "product_estimated_tokens": 0,
+          "history_estimated_tokens": 494,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 7168,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "7250e5c537720f8ab35a7733a1b0eb413e832e6d1d51cb8a3bda5a0d7ef8aead",
+          "prefix_tools_hash": "c2ec5809cc77f4c878b77be12d99e561938b54d71dc65817e8c9b6c84896f12b",
+          "prefix_message_count": 4,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      },
+      {
+        "kind": "business",
+        "input_tokens": 9480,
+        "output_tokens": 462,
+        "elapsed_ms": 9323.474069002259,
+        "request_context": {
+          "system_estimated_tokens": 4260,
+          "state_estimated_tokens": 488,
+          "product_estimated_tokens": 1536,
+          "history_estimated_tokens": 209,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "tool_followup",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 8192,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "7250e5c537720f8ab35a7733a1b0eb413e832e6d1d51cb8a3bda5a0d7ef8aead",
+          "prefix_tools_hash": "c2ec5809cc77f4c878b77be12d99e561938b54d71dc65817e8c9b6c84896f12b",
+          "prefix_message_count": 6,
+          "prefix_common_messages": 4,
+          "prefix_common_message_bytes": 12458,
+          "prefix_first_changed_message": 4,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": false
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": 2857.8942470048787
+      },
+      {
+        "kind": "business",
+        "input_tokens": 10243,
+        "output_tokens": 198,
+        "elapsed_ms": 5106.229588003771,
+        "request_context": {
+          "system_estimated_tokens": 4260,
+          "state_estimated_tokens": 1030,
+          "product_estimated_tokens": 2186,
+          "history_estimated_tokens": 465,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 9216,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "7250e5c537720f8ab35a7733a1b0eb413e832e6d1d51cb8a3bda5a0d7ef8aead",
+          "prefix_tools_hash": "c2ec5809cc77f4c878b77be12d99e561938b54d71dc65817e8c9b6c84896f12b",
+          "prefix_message_count": 9,
+          "prefix_common_messages": 6,
+          "prefix_common_message_bytes": 15090,
+          "prefix_first_changed_message": 6,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": true
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      },
+      {
+        "kind": "business",
+        "input_tokens": 10673,
+        "output_tokens": 213,
+        "elapsed_ms": 4844.91284500109,
+        "request_context": {
+          "system_estimated_tokens": 4260,
+          "state_estimated_tokens": 1030,
+          "product_estimated_tokens": 3135,
+          "history_estimated_tokens": 465,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "tool_followup",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 10240,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "7250e5c537720f8ab35a7733a1b0eb413e832e6d1d51cb8a3bda5a0d7ef8aead",
+          "prefix_tools_hash": "c2ec5809cc77f4c878b77be12d99e561938b54d71dc65817e8c9b6c84896f12b",
+          "prefix_message_count": 11,
+          "prefix_common_messages": 9,
+          "prefix_common_message_bytes": 17715,
+          "prefix_first_changed_message": 9,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": true
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": 4255.292330002703
+      }
+    ],
+    "round_metrics": [
+      {
+        "elapsed_ms": 16315.079448999313,
+        "compacted": false,
+        "model_calls": 2
+      },
+      {
+        "elapsed_ms": 10045.882321996032,
+        "compacted": false,
+        "model_calls": 2
+      }
+    ],
+    "compaction_metrics": [],
+    "elapsed_ms": 26572.58204199752,
+    "transcript": [
+      {
+        "user": "本次预算300元人民币，寄到中国，只读选购。请调用商品检索核对 P1003-S1 石墨黑的当前单价、库存与到手价。",
+        "assistant": "已按 SKU 精确检索核对（实时结果，观察时间 2026-10-23 14:18 UTC）：\n\n**Wanderlite 折叠旅行双肩包 35L · P1003-S1 石墨黑**\n\n| 项目 | 当前值 |\n|---|---|\n| 单价 | ¥129.00 CNY |\n| 库存 | 80 件（可售） |\n| 到手价（寄中国，单件） | **¥154.00 CNY** |\n| ├ 商品小计 | ¥129.00 |\n| ├ 运费 | ¥25.00 |\n| └ 关税 | ¥0.00（税率 9%，已适用小额免税 de_minimis） |\n\n**与本次预算对比**：预算 ¥300，单件到手 ¥154，还有 ¥146 余量；按到手价算，本次预算内可覆盖 1 件（2 件到手 ¥308 会略超 ¥300）。\n\n几点如实说明：\n- 该 SKU 石墨黑为当前可售且唯一命中规格，配送范围含 CN，未被任何硬约束过滤掉。\n- 快照里宣传亮点写\"仅 380g\"，而结构化重量字段为 0.33kg，两者存在差异，以你实际看重哪一项为准，我不替你判定。\n- 图片为 AI 生成示意图，非商品实拍；评分 4.2（52 条）为非实时数据。\n\n本轮为只读选购，未生成订单。需要我再核对同品类其他候选，或对比别的规格/颜色，随时说。"
+      },
+      {
+        "user": "预算改为180元人民币，仍寄到中国。只比较刚才的 P1003-S1；请重新调用商品工具核对当前单价和库存。只用 JSON 回答 sku_id、unit_price_major、stock、budget_major、currency 五个字段，数字使用数值类型。不要下单。",
+        "assistant": "{\"sku_id\": \"P1003-S1\", \"unit_price_major\": 129.0, \"stock\": 80, \"budget_major\": 180, \"currency\": \"CNY\"}"
+      }
+    ],
+    "events": [
+      {
+        "type": "tool.invoke",
+        "payload": {
+          "tool": "product_search_tool",
+          "args": {
+            "normalized_query": "",
+            "category": null,
+            "ship_to": "CN",
+            "top_k": 5,
+            "price_max_major": null,
+            "target_currency": "CNY",
+            "excluded_material_tags": [],
+            "required_material_tags": [],
+            "product_id": null,
+            "sku_id": "P1003-S1",
+            "sku_spec": null,
+            "product_type": null,
+            "max_weight_kg": null,
+            "prefer_lightweight": false
+          }
+        }
+      },
+      {
+        "type": "tool.result",
+        "payload": {
+          "tool": "product_search_tool",
+          "hit_count": 1,
+          "recall_strategy": "exact_id_lookup",
+          "total_candidates": 1,
+          "rerank_applied": false,
+          "hits": [
+            {
+              "product_id": "P1003",
+              "title": "Wanderlite 折叠旅行双肩包 35L",
+              "brand": "Wanderlite",
+              "category": "旅行装备",
+              "origin_country": "KR",
+              "price_major": 129.0,
+              "currency": "CNY",
+              "source_price_major": 129.0,
+              "source_currency": "CNY",
+              "highlights": [
+                "重量：仅 380g 超轻",
+                "收纳：可折叠成手掌大小"
+              ],
+              "skus": [
+                {
+                  "sku_id": "P1003-S1",
+                  "spec": "石墨黑",
+                  "price_major": 129.0,
+                  "currency": "CNY",
+                  "target_price_major": 129.0,
+                  "target_currency": "CNY",
+                  "stock": 80
+                }
+              ],
+              "score": 1.0,
+              "source_platform": "etsy",
+              "canonical_product_id": "CAN-LEGACY-002",
+              "material_tags": [
+                "合成聚合物"
+              ],
+              "weight_kg": 0.33,
+              "description": "防泼水尼龙 超轻 可折叠收纳 大容量 35升 徒步 城市通勤 便宜实惠 高性价比",
+              "rating_summary": {
+                "average": 4.2,
+                "review_count": 52
+              },
+              "rating_is_live": false,
+              "ships_to": [
+                "CN",
+                "JP",
+                "SG"
+              ],
+              "dimensions_cm": {
+                "height": 6,
+                "length": 14,
+                "width": 10
+              },
+              "updated_at": "2026-08-01",
+              "default_sku_id": "P1003-S1",
+              "image_url": "/products/wanderlite.png",
+              "image_kind": "illustration",
+              "image_alt": "Wanderlite 折叠旅行双肩包 35L：AI 生成示意图，非商品实拍",
+              "product_type": "背包",
+              "known_weight_kg": 0.33,
+              "eligible_sku_ids": [
+                "P1003-S1"
+              ],
+              "landed_price": {
+                "ship_to": "CN",
+                "subtotal_major": 129.0,
+                "freight_major": 25.0,
+                "tariff_major": 0.0,
+                "tariff_rate": 0.09,
+                "de_minimis_applied": true,
+                "landed_total_major": 154.0,
+                "currency": "CNY"
+              }
+            }
+          ],
+          "result_ref": "ctx_011a22c6ca414834acc7305b04ce180c",
+          "filtered_out": []
+        }
+      },
+      {
+        "type": "tool.invoke",
+        "payload": {
+          "tool": "product_search_tool",
+          "args": {
+            "normalized_query": "",
+            "category": null,
+            "ship_to": "CN",
+            "top_k": 5,
+            "price_max_major": null,
+            "target_currency": "CNY",
+            "excluded_material_tags": [],
+            "required_material_tags": [],
+            "product_id": null,
+            "sku_id": "P1003-S1",
+            "sku_spec": null,
+            "product_type": "背包",
+            "max_weight_kg": null,
+            "prefer_lightweight": false
+          }
+        }
+      },
+      {
+        "type": "tool.result",
+        "payload": {
+          "tool": "product_search_tool",
+          "hit_count": 1,
+          "recall_strategy": "exact_id_lookup",
+          "total_candidates": 1,
+          "rerank_applied": false,
+          "hits": [
+            {
+              "product_id": "P1003",
+              "title": "Wanderlite 折叠旅行双肩包 35L",
+              "brand": "Wanderlite",
+              "category": "旅行装备",
+              "origin_country": "KR",
+              "price_major": 129.0,
+              "currency": "CNY",
+              "source_price_major": 129.0,
+              "source_currency": "CNY",
+              "highlights": [
+                "重量：仅 380g 超轻",
+                "收纳：可折叠成手掌大小"
+              ],
+              "skus": [
+                {
+                  "sku_id": "P1003-S1",
+                  "spec": "石墨黑",
+                  "price_major": 129.0,
+                  "currency": "CNY",
+                  "target_price_major": 129.0,
+                  "target_currency": "CNY",
+                  "stock": 80
+                }
+              ],
+              "score": 1.0,
+              "source_platform": "etsy",
+              "canonical_product_id": "CAN-LEGACY-002",
+              "material_tags": [
+                "合成聚合物"
+              ],
+              "weight_kg": 0.33,
+              "description": "防泼水尼龙 超轻 可折叠收纳 大容量 35升 徒步 城市通勤 便宜实惠 高性价比",
+              "rating_summary": {
+                "average": 4.2,
+                "review_count": 52
+              },
+              "rating_is_live": false,
+              "ships_to": [
+                "CN",
+                "JP",
+                "SG"
+              ],
+              "dimensions_cm": {
+                "height": 6,
+                "length": 14,
+                "width": 10
+              },
+              "updated_at": "2026-08-01",
+              "default_sku_id": "P1003-S1",
+              "image_url": "/products/wanderlite.png",
+              "image_kind": "illustration",
+              "image_alt": "Wanderlite 折叠旅行双肩包 35L：AI 生成示意图，非商品实拍",
+              "product_type": "背包",
+              "known_weight_kg": 0.33,
+              "eligible_sku_ids": [
+                "P1003-S1"
+              ],
+              "landed_price": {
+                "ship_to": "CN",
+                "subtotal_major": 129.0,
+                "freight_major": 25.0,
+                "tariff_major": 0.0,
+                "tariff_rate": 0.09,
+                "de_minimis_applied": true,
+                "landed_total_major": 154.0,
+                "currency": "CNY"
+              }
+            }
+          ],
+          "result_ref": "ctx_724ce3f925724afa8e74ff1968343fde",
+          "filtered_out": []
+        }
+      }
+    ],
+    "tool_trace": [
+      {
+        "tool": "product_search_tool",
+        "elapsed_ms": 18.43861000088509,
+        "state": "success"
+      },
+      {
+        "tool": "product_search_tool",
+        "elapsed_ms": 13.199571003497113,
+        "state": "success"
+      }
+    ],
+    "context_diagnostics": [
+      {
+        "type": "state",
+        "mode": "snapshot",
+        "emitted": true,
+        "estimated_tokens": 311
+      },
+      {
+        "type": "state",
+        "mode": "snapshot",
+        "emitted": true,
+        "estimated_tokens": 364
+      },
+      {
+        "type": "fresh_product",
+        "reason": "explicit_current_recheck"
+      }
+    ],
+    "lookup_calls": 0,
+    "compactions": {
+      "policy_version": "layered-v4",
+      "reason": "pressure",
+      "before_tokens": 15396,
+      "after_tokens": 15396,
+      "archived_results": 0,
+      "summary_changed": false,
+      "elapsed_ms": 5,
+      "status": "noop"
+    },
+    "scope": "生产 MainAgentFactory 和真实本地交易工具；合成目录、隔离 SQLite；非浏览器/外部检索验收",
+    "strategy": "candidate",
+    "critical": true,
+    "title": "精确 SKU 核验与更新预算",
+    "evidence_trace": "traces/agent-sku-candidate-0.jsonl"
+  },
+  {
+    "case_id": "agent-approval",
+    "layer": "agent",
+    "mode": "workflow",
+    "repetition": 0,
+    "checks": {
+      "confirmation_prepared": true,
+      "no_order_before_approval": true,
+      "state_restored": true,
+      "denial_persisted": true,
+      "denial_no_new_confirmation": true,
+      "no_unapproved_order": true,
+      "inventory_unchanged": true
+    },
+    "passed": true,
+    "error": null,
+    "usage": [
+      {
+        "kind": "business",
+        "input_tokens": 8513,
+        "output_tokens": 97,
+        "elapsed_ms": 2542.7973629994085,
+        "request_context": {
+          "system_estimated_tokens": 4385,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 0,
+          "history_estimated_tokens": 465,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 7168,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "553b5ee96f0f4f0e66caa867c2acaa6a8c62dca55856ce7ed7361c559e6a7ee4",
+          "prefix_tools_hash": "a5c29cdab4ecd8376c7ec183ba16a3398cf4ac0c3922790e60e7c2e0db5f5fd9",
+          "prefix_message_count": 3,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      },
+      {
+        "kind": "business",
+        "input_tokens": 9323,
+        "output_tokens": 564,
+        "elapsed_ms": 13358.780734997708,
+        "request_context": {
+          "system_estimated_tokens": 4385,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 1512,
+          "history_estimated_tokens": 180,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "tool_followup",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 8192,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "553b5ee96f0f4f0e66caa867c2acaa6a8c62dca55856ce7ed7361c559e6a7ee4",
+          "prefix_tools_hash": "a5c29cdab4ecd8376c7ec183ba16a3398cf4ac0c3922790e60e7c2e0db5f5fd9",
+          "prefix_message_count": 5,
+          "prefix_common_messages": 3,
+          "prefix_common_message_bytes": 11769,
+          "prefix_first_changed_message": 3,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": false
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": 5132.463172994903
+      },
+      {
+        "kind": "business",
+        "input_tokens": 9940,
+        "output_tokens": 164,
+        "elapsed_ms": 2987.1552319964394,
+        "request_context": {
+          "system_estimated_tokens": 4467,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 2307,
+          "history_estimated_tokens": 415,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 8192,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "rewrite",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "4ba032912262f55019589b870dc936a8e2491785eb1c830399fec24eede53e10",
+          "prefix_tools_hash": "a5c29cdab4ecd8376c7ec183ba16a3398cf4ac0c3922790e60e7c2e0db5f5fd9",
+          "prefix_message_count": 7,
+          "prefix_common_messages": 0,
+          "prefix_common_message_bytes": 0,
+          "prefix_first_changed_message": 0,
+          "prefix_system_changed": true,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": false
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      },
+      {
+        "kind": "business",
+        "input_tokens": 10549,
+        "output_tokens": 298,
+        "elapsed_ms": 5512.091866999981,
+        "request_context": {
+          "system_estimated_tokens": 4467,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 2307,
+          "history_estimated_tokens": 1393,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "tool_followup",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 9216,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "4ba032912262f55019589b870dc936a8e2491785eb1c830399fec24eede53e10",
+          "prefix_tools_hash": "a5c29cdab4ecd8376c7ec183ba16a3398cf4ac0c3922790e60e7c2e0db5f5fd9",
+          "prefix_message_count": 9,
+          "prefix_common_messages": 7,
+          "prefix_common_message_bytes": 16405,
+          "prefix_first_changed_message": 7,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": false
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": 1086.0814360057702
+      },
+      {
+        "kind": "business",
+        "input_tokens": 10803,
+        "output_tokens": 232,
+        "elapsed_ms": 5230.186328997661,
+        "request_context": {
+          "system_estimated_tokens": 4418,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 2307,
+          "history_estimated_tokens": 2061,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 8192,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "8378ad0e974f9d395fddb9af3c12714f956e785b0a419dbe757edaa566df94c7",
+          "prefix_tools_hash": "07dd6967bc49b8a3756c21c9a788c07be8af6f5645c1a9c59d7196563b154b61",
+          "prefix_message_count": 11,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": 3973.922170000151
+      }
+    ],
+    "round_metrics": [
+      {
+        "elapsed_ms": 16027.345292000973,
+        "compacted": false,
+        "model_calls": 2
+      },
+      {
+        "elapsed_ms": 8632.347105994995,
+        "compacted": false,
+        "model_calls": 2
+      },
+      {
+        "elapsed_ms": 5294.631816002948,
+        "compacted": false,
+        "model_calls": 1
+      }
+    ],
+    "compaction_metrics": [],
+    "elapsed_ms": 30402.37657900434,
+    "transcript": [
+      {
+        "user": "先用商品工具核对 P1003-S1，寄到中国，数量1件。",
+        "assistant": "已按 SKU 精确核对完成（查询时间 2026-10-23 14:19 UTC，寄往中国，1 件）：\n\n**P1003-S1｜Wanderlite 折叠旅行双肩包 35L — 石墨黑**\n- 商品编号：P1003（规格 P1003-S1，为该商品的默认规格）\n- 品类：旅行装备 / 背包，产地：韩国，来源平台：etsy\n- 单价：**129.00 元**（人民币报价，币种 CNY）\n- 库存：**80 件**（充足，1 件无压力）\n- 材质标签：合成聚合物（防泼水尼龙）\n- 评分：4.2 / 52 条（快照数据，非实时）\n- 可配送国家：中国、日本、新加坡 ✅ 中国可达\n\n**寄到中国的到手价明细（1 件）**\n- 商品小计 129.00 元\n- 运费 25.00 元\n- 关税 0.00 元（税率 9%，已适用小额免税 de_minimis）\n- **合计到手价 154.00 元**\n\n一点数据口径提示：商品宣传亮点写的是\"仅 380g 超轻\"，而结构化重量字段记录为 0.33 kg，两者存在差异，这是快照本身的不一致，我无法替你判定哪个为准——如果重量对你的用途是关键（比如随身行李限重），建议以 0.33 kg 做保守估算。另外折叠收纳尺寸标注为 14×10×6 cm。\n\n需要我按这个规格（石墨黑 / 1 件）准备下单确认单吗？如果要，请提供收货人姓名、详细地址、城市/省份、邮编和联系电话，我就把确认卡生成出来（金额仅含商品 129 元，运费税费以结算页为准，且需你在页面点击确认才生效）。"
+      },
+      {
+        "user": "请为 P1003-S1 准备1件订单确认卡，商品是P1003。合成收件人为评测买家，国家CN，省市上海，地址评测街1号，邮编200000，电话00000000000。只准备确认，尚未批准。",
+        "assistant": "订单确认卡已准备好，等待你在页面点击确认（我不会代你确认，也不会扣库存）。\n\n**待确认订单**\n- 商品：Wanderlite 折叠旅行双肩包 35L — 石墨黑（P1003 / P1003-S1）\n- 数量：1 件\n- 商品金额：**129.00 元**（仅商品小计，不含运费与税费）\n- 收货信息：评测买家 · 中国 上海 上海 · 评测街1号 · 邮编 200000 · 电话 00000000000\n- 确认编号：a06c4f5f…（状态：待确认）\n- **有效期至今日 14:24 UTC**，过期需重新生成\n\n参考上一轮核价：寄往中国 1 件的到手价合计约 **154.00 元**（129 商品 + 25 运费 + 0 关税，关税已适用小额免税），但这笔运税不在本确认卡金额内，最终以结算页为准。\n\n请在页面找到该确认卡并点击\"确认\"按钮，订单才会真正提交；如果只想先放着，也可以不点，卡片过期即自动失效。"
+      },
+      {
+        "user": "我在页面拒绝了确认，不要重试下单，也不要创建新的确认卡。请简短确认。",
+        "assistant": "好的，已收到：该确认卡被你拒绝，**订单未创建、未扣库存，我也没有支付或物流动作**。\n\n我不会重试下单，也不会再生成新的确认卡。之前那张卡（编号 a06c4f5f…）已作废，无需理会。需要我时随时说。"
+      }
+    ],
+    "events": [
+      {
+        "type": "tool.invoke",
+        "payload": {
+          "tool": "product_search_tool",
+          "args": {
+            "normalized_query": "",
+            "category": null,
+            "ship_to": "CN",
+            "top_k": 5,
+            "price_max_major": null,
+            "target_currency": "CNY",
+            "excluded_material_tags": [],
+            "required_material_tags": [],
+            "product_id": null,
+            "sku_id": "P1003-S1",
+            "sku_spec": null,
+            "product_type": null,
+            "max_weight_kg": null,
+            "prefer_lightweight": false
+          }
+        }
+      },
+      {
+        "type": "tool.result",
+        "payload": {
+          "tool": "product_search_tool",
+          "hit_count": 1,
+          "recall_strategy": "exact_id_lookup",
+          "total_candidates": 1,
+          "rerank_applied": false,
+          "hits": [
+            {
+              "product_id": "P1003",
+              "title": "Wanderlite 折叠旅行双肩包 35L",
+              "brand": "Wanderlite",
+              "category": "旅行装备",
+              "origin_country": "KR",
+              "price_major": 129.0,
+              "currency": "CNY",
+              "source_price_major": 129.0,
+              "source_currency": "CNY",
+              "highlights": [
+                "重量：仅 380g 超轻",
+                "收纳：可折叠成手掌大小"
+              ],
+              "skus": [
+                {
+                  "sku_id": "P1003-S1",
+                  "spec": "石墨黑",
+                  "price_major": 129.0,
+                  "currency": "CNY",
+                  "target_price_major": 129.0,
+                  "target_currency": "CNY",
+                  "stock": 80
+                }
+              ],
+              "score": 1.0,
+              "source_platform": "etsy",
+              "canonical_product_id": "CAN-LEGACY-002",
+              "material_tags": [
+                "合成聚合物"
+              ],
+              "weight_kg": 0.33,
+              "description": "防泼水尼龙 超轻 可折叠收纳 大容量 35升 徒步 城市通勤 便宜实惠 高性价比",
+              "rating_summary": {
+                "average": 4.2,
+                "review_count": 52
+              },
+              "rating_is_live": false,
+              "ships_to": [
+                "CN",
+                "JP",
+                "SG"
+              ],
+              "dimensions_cm": {
+                "height": 6,
+                "length": 14,
+                "width": 10
+              },
+              "updated_at": "2026-08-01",
+              "default_sku_id": "P1003-S1",
+              "image_url": "/products/wanderlite.png",
+              "image_kind": "illustration",
+              "image_alt": "Wanderlite 折叠旅行双肩包 35L：AI 生成示意图，非商品实拍",
+              "product_type": "背包",
+              "known_weight_kg": 0.33,
+              "eligible_sku_ids": [
+                "P1003-S1"
+              ],
+              "landed_price": {
+                "ship_to": "CN",
+                "subtotal_major": 129.0,
+                "freight_major": 25.0,
+                "tariff_major": 0.0,
+                "tariff_rate": 0.09,
+                "de_minimis_applied": true,
+                "landed_total_major": 154.0,
+                "currency": "CNY"
+              }
+            }
+          ],
+          "result_ref": "ctx_ceb9eea611d348d2b72e017229b9bb73",
+          "filtered_out": []
+        }
+      },
+      {
+        "type": "tool.invoke",
+        "payload": {
+          "tool": "create_order_tool",
+          "args": {
+            "buyer_id": "harness-agent-approval-0",
+            "items": null
+          }
+        }
+      },
+      {
+        "type": "confirmation.required",
+        "payload": {
+          "confirmation": {
+            "confirmation_id": "a06c4f5ffe2646dab5c2d22c69eb37f5",
+            "operation_id": "operation-7526c43f800f49e5869aba796c151c2d",
+            "buyer_id": "harness-agent-approval-0",
+            "session_id": "session-agent-approval-0",
+            "action": "create",
+            "payload": {
+              "items": [
+                {
+                  "product_id": "P1003",
+                  "sku_id": "P1003-S1",
+                  "title": "Wanderlite 折叠旅行双肩包 35L（石墨黑）",
+                  "unit_price_minor": 12900,
+                  "currency": "CNY",
+                  "quantity": 1
+                }
+              ],
+              "shipping_address": {
+                "recipient_name": "评测买家",
+                "country": "CN",
+                "state": "上海",
+                "city": "上海",
+                "address_line": "评测街1号",
+                "postal_code": "200000",
+                "phone": "00000000000"
+              },
+              "currency": "CNY",
+              "total_amount_minor": 12900,
+              "amount_scope": "merchandise_only",
+              "order_kind": "purchase_intent"
+            },
+            "snapshot_hash": "0aee514afab6510346e97402189e894ea9b03d1d87ffb73c0553934ff03a0db3",
+            "expires_at": "2026-10-23T14:24:23.706790+00:00",
+            "status": "pending",
+            "result": null,
+            "created_at": "2026-10-23T14:19:23.712342+00:00",
+            "resolved_at": null,
+            "expired": false
+          }
+        }
+      },
+      {
+        "type": "tool.result",
+        "payload": {
+          "tool": "create_order_tool",
+          "confirmation_required": true,
+          "confirmation": {
+            "confirmation_id": "a06c4f5ffe2646dab5c2d22c69eb37f5",
+            "operation_id": "operation-7526c43f800f49e5869aba796c151c2d",
+            "buyer_id": "harness-agent-approval-0",
+            "session_id": "session-agent-approval-0",
+            "action": "create",
+            "payload": {
+              "items": [
+                {
+                  "product_id": "P1003",
+                  "sku_id": "P1003-S1",
+                  "title": "Wanderlite 折叠旅行双肩包 35L（石墨黑）",
+                  "unit_price_minor": 12900,
+                  "currency": "CNY",
+                  "quantity": 1
+                }
+              ],
+              "shipping_address": {
+                "recipient_name": "评测买家",
+                "country": "CN",
+                "state": "上海",
+                "city": "上海",
+                "address_line": "评测街1号",
+                "postal_code": "200000",
+                "phone": "00000000000"
+              },
+              "currency": "CNY",
+              "total_amount_minor": 12900,
+              "amount_scope": "merchandise_only",
+              "order_kind": "purchase_intent"
+            },
+            "snapshot_hash": "0aee514afab6510346e97402189e894ea9b03d1d87ffb73c0553934ff03a0db3",
+            "expires_at": "2026-10-23T14:24:23.706790+00:00",
+            "status": "pending",
+            "result": null,
+            "created_at": "2026-10-23T14:19:23.712342+00:00",
+            "resolved_at": null,
+            "expired": false
+          }
+        }
+      },
+      {
+        "type": "confirmation.resolved",
+        "payload": {
+          "confirmation": {
+            "confirmation_id": "a06c4f5ffe2646dab5c2d22c69eb37f5",
+            "operation_id": "operation-7526c43f800f49e5869aba796c151c2d",
+            "buyer_id": "harness-agent-approval-0",
+            "session_id": "session-agent-approval-0",
+            "action": "create",
+            "payload": {
+              "items": [
+                {
+                  "product_id": "P1003",
+                  "sku_id": "P1003-S1",
+                  "title": "Wanderlite 折叠旅行双肩包 35L（石墨黑）",
+                  "unit_price_minor": 12900,
+                  "currency": "CNY",
+                  "quantity": 1
+                }
+              ],
+              "shipping_address": {
+                "recipient_name": "评测买家",
+                "country": "CN",
+                "state": "上海",
+                "city": "上海",
+                "address_line": "评测街1号",
+                "postal_code": "200000",
+                "phone": "00000000000"
+              },
+              "currency": "CNY",
+              "total_amount_minor": 12900,
+              "amount_scope": "merchandise_only",
+              "order_kind": "purchase_intent"
+            },
+            "snapshot_hash": "0aee514afab6510346e97402189e894ea9b03d1d87ffb73c0553934ff03a0db3",
+            "expires_at": "2026-10-23T14:24:23.706790+00:00",
+            "status": "rejected",
+            "result": null,
+            "created_at": "2026-10-23T14:19:23.712342+00:00",
+            "resolved_at": "2026-10-23T14:19:29.333176+00:00",
+            "expired": false
+          }
+        }
+      }
+    ],
+    "tool_trace": [
+      {
+        "tool": "product_search_tool",
+        "elapsed_ms": 12.20264100265922,
+        "state": "success"
+      },
+      {
+        "tool": "create_order_tool",
+        "elapsed_ms": 33.73733299667947,
+        "state": "success"
+      }
+    ],
+    "context_diagnostics": [],
+    "lookup_calls": 0,
+    "compactions": {
+      "policy_version": "layered-v4",
+      "reason": "pressure",
+      "before_tokens": 15336,
+      "after_tokens": 15336,
+      "archived_results": 0,
+      "summary_changed": false,
+      "elapsed_ms": 9,
+      "status": "noop"
+    },
+    "scope": "生产 MainAgentFactory 和真实本地交易工具；合成目录、隔离 SQLite；非浏览器/外部检索验收",
+    "strategy": "current",
+    "critical": true,
+    "title": "订单准备、拒绝和恢复",
+    "evidence_trace": "traces/agent-approval-current-0.jsonl"
+  },
+  {
+    "case_id": "agent-approval",
+    "layer": "agent",
+    "mode": "workflow",
+    "repetition": 0,
+    "checks": {
+      "confirmation_prepared": true,
+      "no_order_before_approval": true,
+      "state_restored": true,
+      "denial_persisted": true,
+      "denial_no_new_confirmation": true,
+      "no_unapproved_order": true,
+      "inventory_unchanged": true
+    },
+    "passed": true,
+    "error": null,
+    "usage": [
+      {
+        "kind": "business",
+        "input_tokens": 8602,
+        "output_tokens": 112,
+        "elapsed_ms": 2859.39672600216,
+        "request_context": {
+          "system_estimated_tokens": 4260,
+          "state_estimated_tokens": 433,
+          "product_estimated_tokens": 0,
+          "history_estimated_tokens": 465,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 8192,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "694824ebb5c6d9e41ad639adaa6dd4c81804a9f05c4709533672e805b552bfc8",
+          "prefix_tools_hash": "e56d6279e0450a1aaa135cc9c5a5783c7e0807c150ff784fb60ebfb32f1ada9a",
+          "prefix_message_count": 4,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      },
+      {
+        "kind": "business",
+        "input_tokens": 9426,
+        "output_tokens": 479,
+        "elapsed_ms": 8976.744334002433,
+        "request_context": {
+          "system_estimated_tokens": 4260,
+          "state_estimated_tokens": 433,
+          "product_estimated_tokens": 1523,
+          "history_estimated_tokens": 180,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "tool_followup",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 8192,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "694824ebb5c6d9e41ad639adaa6dd4c81804a9f05c4709533672e805b552bfc8",
+          "prefix_tools_hash": "e56d6279e0450a1aaa135cc9c5a5783c7e0807c150ff784fb60ebfb32f1ada9a",
+          "prefix_message_count": 6,
+          "prefix_common_messages": 4,
+          "prefix_common_message_bytes": 12235,
+          "prefix_first_changed_message": 4,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": false
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": 2862.4530070010223
+      },
+      {
+        "kind": "business",
+        "input_tokens": 10195,
+        "output_tokens": 271,
+        "elapsed_ms": 5332.619847999013,
+        "request_context": {
+          "system_estimated_tokens": 4260,
+          "state_estimated_tokens": 948,
+          "product_estimated_tokens": 2207,
+          "history_estimated_tokens": 415,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 9216,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "694824ebb5c6d9e41ad639adaa6dd4c81804a9f05c4709533672e805b552bfc8",
+          "prefix_tools_hash": "e56d6279e0450a1aaa135cc9c5a5783c7e0807c150ff784fb60ebfb32f1ada9a",
+          "prefix_message_count": 9,
+          "prefix_common_messages": 6,
+          "prefix_common_message_bytes": 14855,
+          "prefix_first_changed_message": 6,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": false
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      },
+      {
+        "kind": "business",
+        "input_tokens": 10807,
+        "output_tokens": 407,
+        "elapsed_ms": 6811.850300000515,
+        "request_context": {
+          "system_estimated_tokens": 4260,
+          "state_estimated_tokens": 948,
+          "product_estimated_tokens": 2207,
+          "history_estimated_tokens": 1528,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "tool_followup",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 9216,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "694824ebb5c6d9e41ad639adaa6dd4c81804a9f05c4709533672e805b552bfc8",
+          "prefix_tools_hash": "e56d6279e0450a1aaa135cc9c5a5783c7e0807c150ff784fb60ebfb32f1ada9a",
+          "prefix_message_count": 11,
+          "prefix_common_messages": 9,
+          "prefix_common_message_bytes": 17393,
+          "prefix_first_changed_message": 9,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": false
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": 2606.658245997096
+      },
+      {
+        "kind": "business",
+        "input_tokens": 11426,
+        "output_tokens": 154,
+        "elapsed_ms": 3347.4930459997267,
+        "request_context": {
+          "system_estimated_tokens": 4260,
+          "state_estimated_tokens": 1414,
+          "product_estimated_tokens": 2207,
+          "history_estimated_tokens": 2289,
+          "tool_schema_estimated_tokens": 8490,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 10752,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "00a41b5d52922747ea94cfabf26e6c75cf7167ac3a692e39ca356335e777033c",
+          "prefix_tools_hash": "58d0fb692397a7f6698e1890e6666fe6cc647b391c9e722fbb9603693251880d",
+          "prefix_message_count": 14,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": 2192.0540900027845
+      }
+    ],
+    "round_metrics": [
+      {
+        "elapsed_ms": 11970.923999004299,
+        "compacted": false,
+        "model_calls": 2
+      },
+      {
+        "elapsed_ms": 12266.70136499888,
+        "compacted": false,
+        "model_calls": 2
+      },
+      {
+        "elapsed_ms": 3398.402578997775,
+        "compacted": false,
+        "model_calls": 1
+      }
+    ],
+    "compaction_metrics": [],
+    "elapsed_ms": 28075.025805999758,
+    "transcript": [
+      {
+        "user": "先用商品工具核对 P1003-S1，寄到中国，数量1件。",
+        "assistant": "已按当前商品库核对完毕，**P1003-S1 存在且可寄中国**：\n\n**Wanderlite 折叠旅行双肩包 35L**（product_id: P1003）\n- 规格：P1003-S1 · 石墨黑\n- 单价：¥129.00（CNY）｜库存：80 件\n- 材质/类型：合成聚合物（防泼水尼龙）· 背包\n- 评分：4.2（52 条评价，为快照数据，非实时）\n- 可配送地区：CN / JP / SG\n\n**寄到中国、1 件到手价明细**\n- 商品小计：¥129.00\n- 运费：¥25.00\n- 关税：¥0.00（适用小额免税，税率档位 9%）\n- **到手合计：¥154.00**\n\n两点如实说明：\n1. 快照里重量字段有点不一致——宣传亮点写\"仅 380g\"，结构化重量字段是 0.33kg（330g）。两者都是同一份快照里的数据，我不替您判定哪个准，若您对重量很敏感（比如随身行李限重），建议下单前再确认。\n2. 上面 ¥154.00 是**单件**到手价，不含任何后续退换或物流服务承诺。\n\n需要我按这个规格准备 1 件的下单确认卡吗？如果要，请提供收货人姓名、省/市、详细地址、邮编和联系电话，我就直接生成确认单（最终仍需您在页面点击确认）。"
+      },
+      {
+        "user": "请为 P1003-S1 准备1件订单确认卡，商品是P1003。合成收件人为评测买家，国家CN，省市上海，地址评测街1号，邮编200000，电话00000000000。只准备确认，尚未批准。",
+        "assistant": "订单确认卡已准备好，**尚未提交、未扣库存**：\n\n**待确认订单（purchase_intent）**\n- 商品：Wanderlite 折叠旅行双肩包 35L（石墨黑）\n- product_id / sku_id：P1003 / P1003-S1\n- 数量：1 件 ｜ 单价：¥129.00\n- 卡面金额：**¥129.00**（仅商品，不含运费与税费）\n- 收货信息：评测买家 · 中国 上海 上海 · 评测街1号 · 200000 · 00000000000\n- 确认单号：31b7985c742d43a2b14401e9599bc121\n- 有效期：至 2026-10-23 14:24 UTC（超时需重新准备）\n\n两点请您留意：\n1. 请到页面**点击确认卡上的按钮**才算完成下单意向；您在这句话里说的\"只准备确认，尚未批准\"我已照办，不会代您确认。\n2. 卡面 ¥129.00 与之前核对的**到手价 ¥154.00**（含运费 ¥25、关税 ¥0）口径不同——确认卡只结算商品金额，运税不在其中。\n\n需要我调整规格、数量或地址，随时说。"
+      },
+      {
+        "user": "我在页面拒绝了确认，不要重试下单，也不要创建新的确认卡。请简短确认。",
+        "assistant": "收到，已记录您在页面拒绝了该确认卡。\n\n- 未创建任何订单，库存未扣。\n- 我不会重试下单，也不会再生成新的确认卡。\n- 确认单 31b7985c742d43a2b14401e9599bc121 就此作废。\n\n需要别的随时叫我。"
+      }
+    ],
+    "events": [
+      {
+        "type": "tool.invoke",
+        "payload": {
+          "tool": "product_search_tool",
+          "args": {
+            "normalized_query": "",
+            "category": null,
+            "ship_to": "CN",
+            "top_k": 5,
+            "price_max_major": null,
+            "target_currency": "CNY",
+            "excluded_material_tags": [],
+            "required_material_tags": [],
+            "product_id": null,
+            "sku_id": "P1003-S1",
+            "sku_spec": null,
+            "product_type": null,
+            "max_weight_kg": null,
+            "prefer_lightweight": false
+          }
+        }
+      },
+      {
+        "type": "tool.result",
+        "payload": {
+          "tool": "product_search_tool",
+          "hit_count": 1,
+          "recall_strategy": "exact_id_lookup",
+          "total_candidates": 1,
+          "rerank_applied": false,
+          "hits": [
+            {
+              "product_id": "P1003",
+              "title": "Wanderlite 折叠旅行双肩包 35L",
+              "brand": "Wanderlite",
+              "category": "旅行装备",
+              "origin_country": "KR",
+              "price_major": 129.0,
+              "currency": "CNY",
+              "source_price_major": 129.0,
+              "source_currency": "CNY",
+              "highlights": [
+                "重量：仅 380g 超轻",
+                "收纳：可折叠成手掌大小"
+              ],
+              "skus": [
+                {
+                  "sku_id": "P1003-S1",
+                  "spec": "石墨黑",
+                  "price_major": 129.0,
+                  "currency": "CNY",
+                  "target_price_major": 129.0,
+                  "target_currency": "CNY",
+                  "stock": 80
+                }
+              ],
+              "score": 1.0,
+              "source_platform": "etsy",
+              "canonical_product_id": "CAN-LEGACY-002",
+              "material_tags": [
+                "合成聚合物"
+              ],
+              "weight_kg": 0.33,
+              "description": "防泼水尼龙 超轻 可折叠收纳 大容量 35升 徒步 城市通勤 便宜实惠 高性价比",
+              "rating_summary": {
+                "average": 4.2,
+                "review_count": 52
+              },
+              "rating_is_live": false,
+              "ships_to": [
+                "CN",
+                "JP",
+                "SG"
+              ],
+              "dimensions_cm": {
+                "height": 6,
+                "length": 14,
+                "width": 10
+              },
+              "updated_at": "2026-08-01",
+              "default_sku_id": "P1003-S1",
+              "image_url": "/products/wanderlite.png",
+              "image_kind": "illustration",
+              "image_alt": "Wanderlite 折叠旅行双肩包 35L：AI 生成示意图，非商品实拍",
+              "product_type": "背包",
+              "known_weight_kg": 0.33,
+              "eligible_sku_ids": [
+                "P1003-S1"
+              ],
+              "landed_price": {
+                "ship_to": "CN",
+                "subtotal_major": 129.0,
+                "freight_major": 25.0,
+                "tariff_major": 0.0,
+                "tariff_rate": 0.09,
+                "de_minimis_applied": true,
+                "landed_total_major": 154.0,
+                "currency": "CNY"
+              }
+            }
+          ],
+          "result_ref": "ctx_06cec31c29b048d2a2fa051a6f173501",
+          "filtered_out": []
+        }
+      },
+      {
+        "type": "tool.invoke",
+        "payload": {
+          "tool": "create_order_tool",
+          "args": {
+            "buyer_id": "harness-agent-approval-0",
+            "items": null
+          }
+        }
+      },
+      {
+        "type": "confirmation.required",
+        "payload": {
+          "confirmation": {
+            "confirmation_id": "31b7985c742d43a2b14401e9599bc121",
+            "operation_id": "operation-243fe0b2f2204096960f67a7798c1892",
+            "buyer_id": "harness-agent-approval-0",
+            "session_id": "session-agent-approval-0",
+            "action": "create",
+            "payload": {
+              "items": [
+                {
+                  "product_id": "P1003",
+                  "sku_id": "P1003-S1",
+                  "title": "Wanderlite 折叠旅行双肩包 35L（石墨黑）",
+                  "unit_price_minor": 12900,
+                  "currency": "CNY",
+                  "quantity": 1
+                }
+              ],
+              "shipping_address": {
+                "recipient_name": "评测买家",
+                "country": "CN",
+                "state": "上海",
+                "city": "上海",
+                "address_line": "评测街1号",
+                "postal_code": "200000",
+                "phone": "00000000000"
+              },
+              "currency": "CNY",
+              "total_amount_minor": 12900,
+              "amount_scope": "merchandise_only",
+              "order_kind": "purchase_intent"
+            },
+            "snapshot_hash": "30f1e30b1bfbcd1188e2920f4352e3ee6da273ecea7419e68ace4ab54899614e",
+            "expires_at": "2026-10-23T14:24:52.591132+00:00",
+            "status": "pending",
+            "result": null,
+            "created_at": "2026-10-23T14:19:52.596251+00:00",
+            "resolved_at": null,
+            "expired": false
+          }
+        }
+      },
+      {
+        "type": "tool.result",
+        "payload": {
+          "tool": "create_order_tool",
+          "confirmation_required": true,
+          "confirmation": {
+            "confirmation_id": "31b7985c742d43a2b14401e9599bc121",
+            "operation_id": "operation-243fe0b2f2204096960f67a7798c1892",
+            "buyer_id": "harness-agent-approval-0",
+            "session_id": "session-agent-approval-0",
+            "action": "create",
+            "payload": {
+              "items": [
+                {
+                  "product_id": "P1003",
+                  "sku_id": "P1003-S1",
+                  "title": "Wanderlite 折叠旅行双肩包 35L（石墨黑）",
+                  "unit_price_minor": 12900,
+                  "currency": "CNY",
+                  "quantity": 1
+                }
+              ],
+              "shipping_address": {
+                "recipient_name": "评测买家",
+                "country": "CN",
+                "state": "上海",
+                "city": "上海",
+                "address_line": "评测街1号",
+                "postal_code": "200000",
+                "phone": "00000000000"
+              },
+              "currency": "CNY",
+              "total_amount_minor": 12900,
+              "amount_scope": "merchandise_only",
+              "order_kind": "purchase_intent"
+            },
+            "snapshot_hash": "30f1e30b1bfbcd1188e2920f4352e3ee6da273ecea7419e68ace4ab54899614e",
+            "expires_at": "2026-10-23T14:24:52.591132+00:00",
+            "status": "pending",
+            "result": null,
+            "created_at": "2026-10-23T14:19:52.596251+00:00",
+            "resolved_at": null,
+            "expired": false
+          }
+        }
+      },
+      {
+        "type": "confirmation.resolved",
+        "payload": {
+          "confirmation": {
+            "confirmation_id": "31b7985c742d43a2b14401e9599bc121",
+            "operation_id": "operation-243fe0b2f2204096960f67a7798c1892",
+            "buyer_id": "harness-agent-approval-0",
+            "session_id": "session-agent-approval-0",
+            "action": "create",
+            "payload": {
+              "items": [
+                {
+                  "product_id": "P1003",
+                  "sku_id": "P1003-S1",
+                  "title": "Wanderlite 折叠旅行双肩包 35L（石墨黑）",
+                  "unit_price_minor": 12900,
+                  "currency": "CNY",
+                  "quantity": 1
+                }
+              ],
+              "shipping_address": {
+                "recipient_name": "评测买家",
+                "country": "CN",
+                "state": "上海",
+                "city": "上海",
+                "address_line": "评测街1号",
+                "postal_code": "200000",
+                "phone": "00000000000"
+              },
+              "currency": "CNY",
+              "total_amount_minor": 12900,
+              "amount_scope": "merchandise_only",
+              "order_kind": "purchase_intent"
+            },
+            "snapshot_hash": "30f1e30b1bfbcd1188e2920f4352e3ee6da273ecea7419e68ace4ab54899614e",
+            "expires_at": "2026-10-23T14:24:52.591132+00:00",
+            "status": "rejected",
+            "result": null,
+            "created_at": "2026-10-23T14:19:52.596251+00:00",
+            "resolved_at": "2026-10-23T14:19:59.506988+00:00",
+            "expired": false
+          }
+        }
+      }
+    ],
+    "tool_trace": [
+      {
+        "tool": "product_search_tool",
+        "elapsed_ms": 20.820594996621367,
+        "state": "success"
+      },
+      {
+        "tool": "create_order_tool",
+        "elapsed_ms": 30.155365995597094,
+        "state": "success"
+      }
+    ],
+    "context_diagnostics": [
+      {
+        "type": "state",
+        "mode": "snapshot",
+        "emitted": true,
+        "estimated_tokens": 257
+      },
+      {
+        "type": "state",
+        "mode": "snapshot",
+        "emitted": true,
+        "estimated_tokens": 338
+      },
+      {
+        "type": "state",
+        "mode": "snapshot",
+        "emitted": true,
+        "estimated_tokens": 291
+      }
+    ],
+    "lookup_calls": 0,
+    "compactions": {
+      "policy_version": "layered-v4",
+      "reason": "pressure",
+      "before_tokens": 16203,
+      "after_tokens": 16203,
+      "archived_results": 0,
+      "summary_changed": false,
+      "elapsed_ms": 8,
+      "status": "noop"
+    },
+    "scope": "生产 MainAgentFactory 和真实本地交易工具；合成目录、隔离 SQLite；非浏览器/外部检索验收",
+    "strategy": "candidate",
+    "critical": true,
+    "title": "订单准备、拒绝和恢复",
+    "evidence_trace": "traces/agent-approval-candidate-0.jsonl"
+  },
+  {
+    "case_id": "h1-dev-sku",
+    "split": "dev",
+    "mode": "snapshot",
+    "strategy": "current",
+    "repetition": 0,
+    "answer": "第一批历史结果（observed_at 2026-09-01T10:01:00Z，非当前实时）中的黑色命名 SKU：\n\n- P28102-S2（黑色 / 20寸）：899.0 CNY\n- P28103-S1（石墨黑）：165 CNY\n- P28104-S1（曜石黑）：219.0 USD\n\n已排除非黑色规格（军绿色、沙漠黄、银色、雾霾蓝、月光白、标准版）。",
+    "checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true,
+      "complete_black_sku_set": true,
+      "sku_price_currency_associations": true
+    },
+    "passed": true,
+    "error": null,
+    "usage": [
+      {
+        "kind": "business",
+        "input_tokens": 16117,
+        "output_tokens": 736,
+        "elapsed_ms": 10169.102535001002,
+        "request_context": {
+          "system_estimated_tokens": 1558,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 0,
+          "history_estimated_tokens": 28886,
+          "tool_schema_estimated_tokens": 1,
+          "reason": "buyer_request",
+          "visible_evidence_answer": true,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "9fe0c455ea37049c6687b1c85595c2c6db939678df0f3673b92dd6a4481c5fc6",
+          "prefix_tools_hash": "89b13781c0866a90a0fb9c7fe9c1650360af7b392569562990a8c9cf6c084fb8",
+          "prefix_message_count": 54,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      }
+    ],
+    "input_tokens": 16117,
+    "output_tokens": 736,
+    "model_calls": 1,
+    "lookup_calls": 0,
+    "lookup_events": [],
+    "context_diagnostics": [
+      {
+        "type": "prune",
+        "before_tokens": 55128,
+        "after_tokens": 55128,
+        "high_watermark": 6000,
+        "next_high_watermark": 6000,
+        "low_watermark": 6000,
+        "archived_results": 0,
+        "protected_results": 2,
+        "below_target": false,
+        "trigger": "pressure"
+      },
+      {
+        "type": "visible_evidence",
+        "covered": true,
+        "batch": 1,
+        "product_count": 5,
+        "historical_lookup_required": false,
+        "prefix_preserved": false
+      }
+    ],
+    "current_calls": 0,
+    "elapsed_ms": 10654,
+    "compactions": [],
+    "round_metrics": [
+      {
+        "elapsed_ms": 10296,
+        "compacted": false,
+        "model_calls": 1
+      }
+    ],
+    "compaction_metrics": [],
+    "final_context_estimated_tokens": 75615,
+    "last_compaction": {
+      "policy_version": "layered-v4",
+      "reason": "pressure",
+      "before_tokens": 15080,
+      "after_tokens": 15080,
+      "archived_results": 0,
+      "summary_changed": false,
+      "elapsed_ms": 52,
+      "status": "noop"
+    },
+    "final_product_observations": 120,
+    "final_product_duplicate_ratio": 0.9166666666666666,
+    "association_check": {
+      "applicable": false,
+      "status": "not_applicable"
+    },
+    "original_checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "layer": "context",
+    "critical": true,
+    "title": "不同SKU价格",
+    "evidence_trace": "traces/h1-dev-sku-current-0.jsonl"
+  },
+  {
+    "case_id": "h1-dev-sku",
+    "split": "dev",
+    "mode": "snapshot",
+    "strategy": "candidate",
+    "repetition": 0,
+    "answer": "第一批（result_ref: ctx_b1546dee68d6433d84bb65e8a30bf695，observed_at 2026-09-01T10:01:00Z）中的黑色规格 SKU，历史单价与原报价币种如下：\n\n- P28102-S2（黑色 / 20寸）：899.0 CNY\n- P28103-S1（石墨黑）：165 CNY\n- P28104-S1（曜石黑）：219.0 USD\n\n说明：以上为历史批次记录，非当前实时价格/库存；P28104-S1 的 SKU 原报价币种为 USD（顶层展示的 CNY 不适用于该 SKU）。其余非黑色规格已按要求过滤。",
+    "checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true,
+      "complete_black_sku_set": true,
+      "sku_price_currency_associations": true
+    },
+    "passed": true,
+    "error": null,
+    "usage": [
+      {
+        "kind": "business",
+        "input_tokens": 16270,
+        "output_tokens": 469,
+        "elapsed_ms": 8631.375288998242,
+        "request_context": {
+          "system_estimated_tokens": 1175,
+          "state_estimated_tokens": 690,
+          "product_estimated_tokens": 22127,
+          "history_estimated_tokens": 7425,
+          "tool_schema_estimated_tokens": 788,
+          "reason": "buyer_request",
+          "visible_evidence_answer": true,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "a54db30658675a8448231a2afb81946043fc11aca5ecf5a22ea982f4486af00f",
+          "prefix_tools_hash": "85505bf4847090e2f74a1fb08bfe187feea9edf0a7516b39abec42c5d2199a41",
+          "prefix_message_count": 103,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      }
+    ],
+    "input_tokens": 16270,
+    "output_tokens": 469,
+    "model_calls": 1,
+    "lookup_calls": 0,
+    "lookup_events": [],
+    "context_diagnostics": [
+      {
+        "type": "state",
+        "mode": "snapshot",
+        "emitted": true,
+        "estimated_tokens": 500
+      },
+      {
+        "type": "prune",
+        "before_tokens": 55128,
+        "after_tokens": 55128,
+        "high_watermark": 6000,
+        "next_high_watermark": 6000,
+        "low_watermark": 6000,
+        "archived_results": 0,
+        "protected_results": 2,
+        "below_target": false,
+        "trigger": "pressure"
+      },
+      {
+        "type": "visible_evidence",
+        "covered": true,
+        "batch": 1,
+        "product_count": 5,
+        "historical_lookup_required": false,
+        "prefix_preserved": true
+      }
+    ],
+    "current_calls": 0,
+    "elapsed_ms": 9354,
+    "compactions": [],
+    "round_metrics": [
+      {
+        "elapsed_ms": 8778,
+        "compacted": false,
+        "model_calls": 1
+      }
+    ],
+    "compaction_metrics": [],
+    "final_context_estimated_tokens": 75997,
+    "last_compaction": {
+      "policy_version": "layered-v4",
+      "reason": "pressure",
+      "before_tokens": 15236,
+      "after_tokens": 15236,
+      "archived_results": 0,
+      "summary_changed": false,
+      "elapsed_ms": 70,
+      "status": "noop"
+    },
+    "final_product_observations": 120,
+    "final_product_duplicate_ratio": 0.9166666666666666,
+    "association_check": {
+      "applicable": false,
+      "status": "not_applicable"
+    },
+    "original_checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "layer": "context",
+    "critical": true,
+    "title": "不同SKU价格",
+    "evidence_trace": "traces/h1-dev-sku-candidate-0.jsonl"
+  },
+  {
+    "case_id": "h1-dev-budget",
+    "split": "dev",
+    "mode": "snapshot",
+    "strategy": "current",
+    "repetition": 0,
+    "answer": "366 CNY",
+    "checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "passed": true,
+    "error": null,
+    "usage": [
+      {
+        "kind": "business",
+        "input_tokens": 10734,
+        "output_tokens": 60,
+        "elapsed_ms": 2377.597701000923,
+        "request_context": {
+          "system_estimated_tokens": 1057,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 17669,
+          "history_estimated_tokens": 4607,
+          "tool_schema_estimated_tokens": 788,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 1024,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "0753d69f396ee57b06d12d341ebbbdc113a7242a352473052ee95cc82b3b9f03",
+          "prefix_tools_hash": "2cb0627f604e48ebc8f0b74a3d4f0d0b450b3893b4890b402f6875e0863506f0",
+          "prefix_message_count": 99,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      }
+    ],
+    "input_tokens": 10734,
+    "output_tokens": 60,
+    "model_calls": 1,
+    "lookup_calls": 0,
+    "lookup_events": [],
+    "context_diagnostics": [
+      {
+        "type": "prune",
+        "before_tokens": 55128,
+        "after_tokens": 9621,
+        "high_watermark": 6000,
+        "next_high_watermark": 6000,
+        "low_watermark": 6000,
+        "archived_results": 21,
+        "protected_results": 2,
+        "below_target": false,
+        "trigger": "pressure"
+      }
+    ],
+    "current_calls": 0,
+    "elapsed_ms": 3024,
+    "compactions": [],
+    "round_metrics": [
+      {
+        "elapsed_ms": 2493,
+        "compacted": false,
+        "model_calls": 1
+      }
+    ],
+    "compaction_metrics": [],
+    "final_context_estimated_tokens": 24960,
+    "last_compaction": {
+      "policy_version": "layered-v4",
+      "reason": "pressure",
+      "before_tokens": 14826,
+      "after_tokens": 10395,
+      "archived_results": 21,
+      "summary_changed": false,
+      "elapsed_ms": 71,
+      "status": "completed"
+    },
+    "final_product_observations": 15,
+    "final_product_duplicate_ratio": 0.33333333333333337,
+    "association_check": {
+      "applicable": false,
+      "status": "not_applicable"
+    },
+    "original_checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "layer": "context",
+    "critical": true,
+    "title": "预算变更",
+    "evidence_trace": "traces/h1-dev-budget-current-0.jsonl"
+  },
+  {
+    "case_id": "h1-dev-budget",
+    "split": "dev",
+    "mode": "snapshot",
+    "strategy": "candidate",
+    "repetition": 0,
+    "answer": "366 CNY",
+    "checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "passed": true,
+    "error": null,
+    "usage": [
+      {
+        "kind": "business",
+        "input_tokens": 10806,
+        "output_tokens": 98,
+        "elapsed_ms": 2392.698506002489,
+        "request_context": {
+          "system_estimated_tokens": 884,
+          "state_estimated_tokens": 480,
+          "product_estimated_tokens": 17669,
+          "history_estimated_tokens": 4607,
+          "tool_schema_estimated_tokens": 788,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 1024,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "95fde0abfb40fd63fc0e626b52e212695294d4083032bc0d7ee790ea18f24af3",
+          "prefix_tools_hash": "ca8b44b7b87fa7962c8ec638a0df13b3c1bfd6efc29b94159be5cf2c22d187bf",
+          "prefix_message_count": 100,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      }
+    ],
+    "input_tokens": 10806,
+    "output_tokens": 98,
+    "model_calls": 1,
+    "lookup_calls": 0,
+    "lookup_events": [],
+    "context_diagnostics": [
+      {
+        "type": "state",
+        "mode": "snapshot",
+        "emitted": true,
+        "estimated_tokens": 297
+      },
+      {
+        "type": "prune",
+        "before_tokens": 55128,
+        "after_tokens": 9621,
+        "high_watermark": 6000,
+        "next_high_watermark": 6000,
+        "low_watermark": 6000,
+        "archived_results": 21,
+        "protected_results": 2,
+        "below_target": false,
+        "trigger": "pressure"
+      }
+    ],
+    "current_calls": 0,
+    "elapsed_ms": 3025,
+    "compactions": [],
+    "round_metrics": [
+      {
+        "elapsed_ms": 2506,
+        "compacted": false,
+        "model_calls": 1
+      }
+    ],
+    "compaction_metrics": [],
+    "final_context_estimated_tokens": 25520,
+    "last_compaction": {
+      "policy_version": "layered-v4",
+      "reason": "pressure",
+      "before_tokens": 14982,
+      "after_tokens": 10551,
+      "archived_results": 21,
+      "summary_changed": false,
+      "elapsed_ms": 68,
+      "status": "completed"
+    },
+    "final_product_observations": 15,
+    "final_product_duplicate_ratio": 0.33333333333333337,
+    "association_check": {
+      "applicable": false,
+      "status": "not_applicable"
+    },
+    "original_checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "layer": "context",
+    "critical": true,
+    "title": "预算变更",
+    "evidence_trace": "traces/h1-dev-budget-candidate-0.jsonl"
+  },
+  {
+    "case_id": "h1-dev-stock",
+    "split": "dev",
+    "mode": "snapshot",
+    "strategy": "current",
+    "repetition": 0,
+    "answer": "**P28173-S1（Wanderlite 折叠旅行双肩包 35L / 石墨黑）当前实时核验结果**\n\n- 当前库存：**3 件**（来自 current_business_state 实时查询，非历史值）\n- 当前单价：**183 CNY**\n- 关联订单：ORD-EVAL，状态 **CANCELLED**（未下单，符合你的要求）\n\n**与历史的差异（仅作对照，不作为当前依据）**\n- 历史批次（第2批，ship_to=DE 观察）：单价 209 CNY、库存 51；现已更新为 183 CNY、库存 3。\n- 历史落地价 252 CNY（含运费 35 + 税 8）也是历史观察，当前工具未返回德国方向的运费/税费，**该项未知**，需另行核验。\n\n**结论**：按当前单价 183 CNY 计，仍在预算 347 CNY 内；库存 3 件，满足 1 件需求。\n\n⚠️ 一点需要你确认：历史商品资料中 P28173 的配送范围仅列出 CN/JP/SG，未包含德国，且当前工具未返回配送范围。是否要我按德国收货地址重新核验可配送性与落地价？未获你明确授权前，我不会下单或写入任何数据。",
+    "checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "passed": true,
+    "error": null,
+    "usage": [
+      {
+        "kind": "business",
+        "input_tokens": 14853,
+        "output_tokens": 47,
+        "elapsed_ms": 2226.8016380039626,
+        "request_context": {
+          "system_estimated_tokens": 1058,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 22127,
+          "history_estimated_tokens": 4602,
+          "tool_schema_estimated_tokens": 788,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 1024,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "5fcee5e8a7cc0327ebf560d22a818eba853cab262b9a4e4eb2c89cbf1ba61dbf",
+          "prefix_tools_hash": "a25444d5590a62047cadfac19555de434428d3df2ca5f87a07a92f4403752a59",
+          "prefix_message_count": 99,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      },
+      {
+        "kind": "business",
+        "input_tokens": 14971,
+        "output_tokens": 592,
+        "elapsed_ms": 11976.919322994945,
+        "request_context": {
+          "system_estimated_tokens": 1058,
+          "state_estimated_tokens": 0,
+          "product_estimated_tokens": 22127,
+          "history_estimated_tokens": 5062,
+          "tool_schema_estimated_tokens": 788,
+          "reason": "tool_followup",
+          "visible_evidence_answer": false,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 14336,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "5fcee5e8a7cc0327ebf560d22a818eba853cab262b9a4e4eb2c89cbf1ba61dbf",
+          "prefix_tools_hash": "a25444d5590a62047cadfac19555de434428d3df2ca5f87a07a92f4403752a59",
+          "prefix_message_count": 101,
+          "prefix_common_messages": 99,
+          "prefix_common_message_bytes": 50198,
+          "prefix_first_changed_message": 99,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": false
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      }
+    ],
+    "input_tokens": 29824,
+    "output_tokens": 639,
+    "model_calls": 2,
+    "lookup_calls": 0,
+    "lookup_events": [],
+    "context_diagnostics": [
+      {
+        "type": "prune",
+        "before_tokens": 55128,
+        "after_tokens": 55128,
+        "high_watermark": 6000,
+        "next_high_watermark": 6000,
+        "low_watermark": 6000,
+        "archived_results": 0,
+        "protected_results": 2,
+        "below_target": false,
+        "trigger": "pressure"
+      },
+      {
+        "type": "prune",
+        "before_tokens": 55128,
+        "after_tokens": 55128,
+        "high_watermark": 6000,
+        "next_high_watermark": 6000,
+        "low_watermark": 6000,
+        "archived_results": 0,
+        "protected_results": 3,
+        "below_target": false,
+        "trigger": "pressure"
+      }
+    ],
+    "current_calls": 1,
+    "elapsed_ms": 15290,
+    "compactions": [],
+    "round_metrics": [
+      {
+        "elapsed_ms": 14658,
+        "compacted": false,
+        "model_calls": 2
+      }
+    ],
+    "compaction_metrics": [],
+    "final_context_estimated_tokens": 76021,
+    "last_compaction": {
+      "policy_version": "layered-v4",
+      "reason": "pressure",
+      "before_tokens": 16496,
+      "after_tokens": 16496,
+      "archived_results": 0,
+      "summary_changed": false,
+      "elapsed_ms": 113,
+      "status": "noop"
+    },
+    "final_product_observations": 120,
+    "final_product_duplicate_ratio": 0.9166666666666666,
+    "association_check": {
+      "applicable": false,
+      "status": "not_applicable"
+    },
+    "original_checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "layer": "context",
+    "critical": true,
+    "title": "当前库存",
+    "evidence_trace": "traces/h1-dev-stock-current-0.jsonl"
+  },
+  {
+    "case_id": "h1-dev-stock",
+    "split": "dev",
+    "mode": "snapshot",
+    "strategy": "candidate",
+    "repetition": 0,
+    "answer": "已按当前权威库存核验（未使用历史批次数据）：\n\n- **P28173-S1（Wanderlite 折叠旅行双肩包 35L / 石墨黑）**\n  - 当前库存：**3 件**\n  - 当前单价：**183 CNY**\n  - 关联订单：ORD-EVAL，状态 **已取消**\n\n说明：历史展示批次中该规格的库存（51）与价格（209 CNY）均为旧观察值，已被当前结果覆盖，请以本次核验为准。\n\n另：当前业务状态显示\"长期排除塑料材质\"的偏好已删除，因此本次不再据此过滤商品。如需我按 347 CNY 预算、寄往德国重新核算到手价或推荐替代品，告诉我即可——在你明确授权前我不会下单或写入任何数据。",
+    "checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "passed": true,
+    "error": null,
+    "usage": [
+      {
+        "kind": "business",
+        "input_tokens": 14909,
+        "output_tokens": 42,
+        "elapsed_ms": 2064.0017820041976,
+        "request_context": {
+          "system_estimated_tokens": 884,
+          "state_estimated_tokens": 482,
+          "product_estimated_tokens": 22127,
+          "history_estimated_tokens": 4602,
+          "tool_schema_estimated_tokens": 788,
+          "reason": "buyer_request",
+          "visible_evidence_answer": false,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 1024,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "first_request",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "2e15c095fc30a353c2334d4b1b6fa2ea59b95e35167ea2dbd903702347aa2d6e",
+          "prefix_tools_hash": "fb6d9645331c4aeb56f14fd7133aa6bbe243e7a32cb8e5e5c3ffc7dc4f5a95d5",
+          "prefix_message_count": 100,
+          "prefix_common_messages": null,
+          "prefix_common_message_bytes": null,
+          "prefix_first_changed_message": null,
+          "prefix_system_changed": null,
+          "prefix_tools_changed": null,
+          "prefix_parameters_changed": null
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      },
+      {
+        "kind": "business",
+        "input_tokens": 15027,
+        "output_tokens": 323,
+        "elapsed_ms": 5727.883364001173,
+        "request_context": {
+          "system_estimated_tokens": 884,
+          "state_estimated_tokens": 482,
+          "product_estimated_tokens": 22127,
+          "history_estimated_tokens": 5048,
+          "tool_schema_estimated_tokens": 788,
+          "reason": "tool_followup",
+          "visible_evidence_answer": false,
+          "recovery_attempt": 0
+        },
+        "prompt_cache": {
+          "model": "qwen3.8-flash",
+          "response_model": "qwen3.8-flash",
+          "response_model_matches": true,
+          "response_model_conflict": false,
+          "protocol_status": "valid",
+          "cache_mode": "passthrough",
+          "cache_policy": "static",
+          "cache_marker_count": 0,
+          "cache_reason": "passthrough",
+          "cache_retry_without_markers": false,
+          "cache_read_tokens": 14336,
+          "cache_write_tokens": null,
+          "cache_usage_invalid": false,
+          "reported_cost": null,
+          "prefix_comparison": "append",
+          "prefix_scope_known": true,
+          "prefix_system_hash": "2e15c095fc30a353c2334d4b1b6fa2ea59b95e35167ea2dbd903702347aa2d6e",
+          "prefix_tools_hash": "fb6d9645331c4aeb56f14fd7133aa6bbe243e7a32cb8e5e5c3ffc7dc4f5a95d5",
+          "prefix_message_count": 102,
+          "prefix_common_messages": 100,
+          "prefix_common_message_bytes": 50664,
+          "prefix_first_changed_message": 100,
+          "prefix_system_changed": false,
+          "prefix_tools_changed": false,
+          "prefix_parameters_changed": false
+        },
+        "model_execution": {
+          "identity": "qwen3.8-flash|https://dashscope.aliyuncs.com/compatible-mode/v1/",
+          "requested_model": "qwen3.8-flash",
+          "response_models": [
+            "qwen3.8-flash"
+          ],
+          "response_model_matches": true,
+          "profile_id": null,
+          "profile_revision": null
+        },
+        "ttft_ms": null
+      }
+    ],
+    "input_tokens": 29936,
+    "output_tokens": 365,
+    "model_calls": 2,
+    "lookup_calls": 0,
+    "lookup_events": [],
+    "context_diagnostics": [
+      {
+        "type": "state",
+        "mode": "snapshot",
+        "emitted": true,
+        "estimated_tokens": 298
+      },
+      {
+        "type": "prune",
+        "before_tokens": 55128,
+        "after_tokens": 55128,
+        "high_watermark": 6000,
+        "next_high_watermark": 6000,
+        "low_watermark": 6000,
+        "archived_results": 0,
+        "protected_results": 2,
+        "below_target": false,
+        "trigger": "pressure"
+      },
+      {
+        "type": "prune",
+        "before_tokens": 55128,
+        "after_tokens": 55128,
+        "high_watermark": 6000,
+        "next_high_watermark": 6000,
+        "low_watermark": 6000,
+        "archived_results": 0,
+        "protected_results": 3,
+        "below_target": false,
+        "trigger": "pressure"
+      }
+    ],
+    "current_calls": 1,
+    "elapsed_ms": 8669,
+    "compactions": [],
+    "round_metrics": [
+      {
+        "elapsed_ms": 8108,
+        "compacted": false,
+        "model_calls": 2
+      }
+    ],
+    "compaction_metrics": [],
+    "final_context_estimated_tokens": 76146,
+    "last_compaction": {
+      "policy_version": "layered-v4",
+      "reason": "pressure",
+      "before_tokens": 16541,
+      "after_tokens": 16541,
+      "archived_results": 0,
+      "summary_changed": false,
+      "elapsed_ms": 96,
+      "status": "noop"
+    },
+    "final_product_observations": 120,
+    "final_product_duplicate_ratio": 0.9166666666666666,
+    "association_check": {
+      "applicable": false,
+      "status": "not_applicable"
+    },
+    "original_checks": {
+      "facts": true,
+      "current_lookup": true,
+      "no_error": true
+    },
+    "layer": "context",
+    "critical": true,
+    "title": "当前库存",
+    "evidence_trace": "traces/h1-dev-stock-candidate-0.jsonl"
+  }
+]

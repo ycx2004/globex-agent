@@ -80,14 +80,33 @@ def build_app() -> FastAPI:
         application.state.session_store = getattr(c, "session_store", None)
         application.state.session_owner_binding = getattr(getattr(c, "settings", None), "session_owner_binding", True)
         application.state.metrics_reader_buyers = getattr(getattr(c, "settings", None), "metrics_reader_buyers", ())
+        application.state.learning_admin_buyers = getattr(getattr(c, "settings", None), "learning_admin_buyers", ())
+        application.state.learning_schedule_timezone = getattr(getattr(c, "settings", None), "learning_schedule_timezone", "")
         state["connections"] = ConnectionManager(c.bus)
         await c.startup()
+        # 每日提炼只挂在 API 进程；app.worker 不经过这里，避免双跑。
+        if application.state.learning_schedule_timezone and application.state.learning_admin_buyers:
+            from app.application.learning_review import run_daily
+            state["learning_daily"] = asyncio.create_task(
+                run_daily(learning_review_service(), application.state.learning_schedule_timezone), name="learning-daily")
+        # 空闲 Skill 整理同样只在 API 进程扫描，前端不再计时。
+        from app.application.skill_suggestions import run_idle_scan
+        state["skill_idle_scan"] = asyncio.create_task(run_idle_scan(skill_suggestion_service), name="skill-idle-scan")
         if c.backplane is not None:
             # 跨进程事件转发：不开这个任务，worker 产生的流式事件到不了前端
             state["forwarder"] = asyncio.create_task(_forward_remote_events(c))
         try:
             yield
         finally:
+            for name in ("learning_daily", "skill_idle_scan"):
+                task = state.pop(name, None)
+                if task is not None:
+                    task.cancel()
+                    await asyncio.gather(task, return_exceptions=True)
+            manual = getattr(application.state, "learning_manual_task", None)
+            if manual is not None and not manual.done():
+                manual.cancel()
+                await asyncio.gather(manual, return_exceptions=True)
             forwarder = state.pop("forwarder", None)
             if forwarder is not None:
                 forwarder.cancel()
@@ -103,6 +122,32 @@ def build_app() -> FastAPI:
         if "c" not in state:
             raise HTTPException(status_code=503, detail="服务尚未就绪")
         return state["c"]
+
+    def account_store():
+        if "accounts" not in state:
+            from app.infrastructure.account_store import AccountStore
+            state["accounts"] = AccountStore(container().settings.data_dir / "accounts.db")
+        return state["accounts"]
+
+    def learning_review_service():
+        # 单例：手动与定时任务共用同一把锁，防止并发领取同一批任务。
+        if "learning_review" not in state:
+            from dataclasses import replace
+            from app.application.learning_review import LearningReviewService
+            from app.infrastructure.capability_registry import CapabilityRegistry
+            from app.infrastructure.learning_store import LearningStore
+            settings = container().settings
+
+            def extractor():
+                from app.infrastructure.llm import create_chat_model
+                from app.infrastructure.strategy_extractor import AgentScopeStrategyExtractor
+                return AgentScopeStrategyExtractor(create_chat_model(replace(settings, llm_fallback_model="", llm_max_retries=0), stream=False))
+
+            state["learning_review"] = LearningReviewService(
+                LearningStore(settings.data_dir / "ag_ui_runs.db"),
+                lambda: CapabilityRegistry(settings.data_dir / "capabilities.db"), extractor,
+                report_path=settings.data_dir / "learning_last_run.json")
+        return state["learning_review"]
 
     settings_origins = build_container_origins()
     api.add_middleware(
@@ -133,6 +178,30 @@ def build_app() -> FastAPI:
     from app.presentation.favorites import register_favorite_routes
     from app.infrastructure.buyer_favorites import BuyerFavoriteStore
     register_favorite_routes(api, lambda: BuyerFavoriteStore(container().settings.data_dir / "buyer_favorites.db"))
+    from app.presentation.auth import register_auth_routes
+    register_auth_routes(api, lambda: account_store(), learning_review_service)
+
+    def skill_suggestion_service():
+        # 单例：同一买家的分析共用一把锁，避免空闲触发与手动按钮并发调用模型。
+        if "skill_suggestions" not in state:
+            from dataclasses import replace
+            from app.application.skill_suggestions import SkillSuggestionService
+            from app.infrastructure.skill_suggestion_store import SuggestionStore
+            settings = container().settings
+
+            def suggester():
+                from app.infrastructure.llm import create_chat_model
+                from app.infrastructure.skill_suggester import AgentScopeSkillSuggester
+                return AgentScopeSkillSuggester(create_chat_model(replace(settings, llm_fallback_model="", llm_max_retries=0), stream=False))
+
+            state["skill_suggestions"] = SkillSuggestionService(
+                SuggestionStore(settings.data_dir / "skill_suggestions.db"),
+                container().orchestrator._sessions._main_factory.buyer_skill_store,
+                settings.data_dir / "ag_ui_runs.db", suggester)
+        return state["skill_suggestions"]
+
+    from app.presentation.skill_suggestions import register_skill_suggestion_routes
+    register_skill_suggestion_routes(api, skill_suggestion_service)
 
     @api.get("/health")
     async def health() -> dict:

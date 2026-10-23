@@ -80,7 +80,8 @@ from app.presentation.ag_ui_runtime import AGUIRuntime
 from app.infrastructure.runtime_version import app_source_fingerprint
 from app.infrastructure.vector.index_bootstrap import bootstrap_product_index
 from app.infrastructure.vector.embedding_identity import embedding_identity
-from app.infrastructure.vector.qdrant_product_index import QdrantProductIndex
+from app.domain.catalog.ports.retrieval_ports import ProductVectorIndex
+from app.infrastructure.vector.product_index_factory import build_product_index
 
 logger = logging.getLogger(__name__)
 
@@ -111,7 +112,7 @@ class Container:
     cancel_order: CancelOrderUseCase
     product_repo: InMemoryProductRepository
     embedder: Any
-    vector_index: QdrantProductIndex
+    vector_index: ProductVectorIndex
     knowledge_base: Any
     db_engine: Any
     confirmations: Any = None
@@ -196,7 +197,7 @@ async def build_container() -> Container:
     # ---- Infrastructure ----
     product_repo = InMemoryProductRepository()
     bus = TradeEventBus()
-    vector_index = QdrantProductIndex(settings)
+    vector_index = build_product_index(settings)
 
     cache = RedisCache(settings.redis_url)
     raw_embedder = OpenAIEmbeddingClient(settings)

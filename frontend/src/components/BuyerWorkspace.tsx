@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
 import Modal from "./Modal";
+import { PendingSkillSuggestions } from "./SkillSuggestions";
 import "./buyerWorkspace.css";
 
 type PersonalSkill = { id: string; version: string; title: string; description: string; body: string };
@@ -103,6 +104,7 @@ export default function BuyerWorkspace({ mode, busy, request, onSkillsChanged }:
     {busy && <p className="workspace-note" role="status">正在完成这次选购，结束后可编辑。新记忆从下一轮开始生效。</p>}
     {error && !(mode === "skills" && skillEditorOpen) && <div className="workspace-error" role="alert">{error} <button type="button" onClick={() => void refresh()} disabled={saving}>重新加载</button></div>}
     {notice && <p className="workspace-notice" role="status"><Icon name="check" />{notice}</p>}
+    {mode === "skills" && <PendingSkillSuggestions request={request} busy={disabled} onSaved={() => { void refresh(); void onSkillsChanged(); }} />}
     <div className="workspace-grid">
       <aside className="workspace-library" aria-label={mode === "skills" ? "已保存的 Skill" : "已保存的偏好"}>
         <div className="workspace-section-title"><h2>{mode === "skills" ? "全部方法" : "我的记忆"}</h2>

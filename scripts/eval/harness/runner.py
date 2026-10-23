@@ -33,13 +33,22 @@ async def contract_checks(suite, output):
             raise
     counts={'tests':0,'failures':0,'errors':0,'skipped':0}
     covered=set()
+    # 仅豁免 suite 白名单中声明的平台专属用例，且当前平台确实不适用；其他跳过仍判失败。
+    allowed={(s['test'],s['only_os']) for s in suite.get('platform_skips',[])}
+    excused=[]
     if (output/'contracts.xml').exists():
         for group in ET.parse(output/'contracts.xml').getroot().iter('testsuite'):
             for key in counts:counts[key]+=int(group.get(key,'0'))
-            for test in group.iter('testcase'):covered.update(test.get('classname','').split('.'))
+            for test in group.iter('testcase'):
+                covered.update(test.get('classname','').split('.'))
+                name=test.get('classname','')+'::'+test.get('name','')
+                if test.find('skipped') is not None and any(t==name and os.name!=only for t,only in allowed):
+                    excused.append(name)
     missing={Path(p).stem for p in suite['contract_tests']}-covered
+    blocking_skips=counts['skipped']-len(excused)
     return {**counts,'exit_code':code,'missing_test_modules':sorted(missing),
-            'passed':code==0 and counts['tests']>0 and counts['skipped']==0 and not missing,
+            'platform_skipped':sorted(excused),
+            'passed':code==0 and counts['tests']>0 and blocking_skips==0 and not missing,
             'passed_count':counts['tests']-counts['failures']-counts['errors']-counts['skipped'],
             'elapsed_ms':(time.monotonic()-start)*1000}
 

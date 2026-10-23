@@ -1,0 +1,133 @@
+{
+  "run_at": "2026-10-23 02:25:16 +0000",
+  "scope": "检索模块评测（直连 CatalogSearchUseCase，不经 Agent/LLM）；非 make eval-harness",
+  "wiring": {
+    "vector_backend": "milvus",
+    "milvus_collection": "globex_products_100k",
+    "milvus_search_ef": 128,
+    "embedding_model": "text-embedding-v4",
+    "embedding_dim": 1024,
+    "reranker_model": "qwen3-rerank",
+    "recall_candidates": 32,
+    "hybrid_recall_enabled": false
+  },
+  "spec": {
+    "top_k": 16,
+    "ship_to": "CN",
+    "target_currency": "CNY"
+  },
+  "dataset": {
+    "cases_total": 5265,
+    "sample": 300,
+    "seed": 20261023,
+    "gold": "ESCI esci_label == E",
+    "cases_sha256": "00c2f468a5eaaaf557b0739aa4995d1efd91d6ed7f01b628654d01aa0237f59a",
+    "catalog_sha256": "a279f2f4da012a1c61c4e90d24ccd06e17c8a6b4307feb7562e9293fe25a3877",
+    "catalog_count": 99999,
+    "catalog_load_s": 16.3
+  },
+  "source_sha256": {
+    "/app/app/application/usecases/catalog_search.py": "b82f854e9ac81e917b5b3ab25cbd932b99692727e0910ab467586012d4e29936",
+    "/app/app/infrastructure/vector/milvus_product_index.py": "3aeb90d70fa3c98609bfb6db414cb5b928f8c0ddb22281f4111180ab59cd56b4"
+  },
+  "results": {
+    "embedding_only": {
+      "queries": 300,
+      "errors": 0,
+      "actual_recall_strategies": [
+        "embedding_only"
+      ],
+      "rerank_status": [
+        "not_configured"
+      ],
+      "k": 16,
+      "recall@16_full": 0.4947,
+      "recall@16_capped": 0.5106,
+      "precision@16": 0.2556,
+      "mrr": 0.6151,
+      "ndcg@16": 0.3916,
+      "hit_rate@16": 0.8567,
+      "latency_ms": {
+        "total": {
+          "n": 300,
+          "mean": 397.6,
+          "p50": 360.5,
+          "p95": 698.2,
+          "p99": 889.3
+        },
+        "embed": {
+          "n": 300,
+          "mean": 357.8,
+          "p50": 319.3,
+          "p95": 634.1,
+          "p99": 844.2
+        },
+        "vector": {
+          "n": 300,
+          "mean": 22.1,
+          "p50": 19.1,
+          "p95": 39.3,
+          "p99": 58.1
+        },
+        "rerank": {
+          "n": 300,
+          "mean": 0.0,
+          "p50": 0.0,
+          "p95": 0.0,
+          "p99": 0.0
+        }
+      },
+      "vector_calls_mean": 1
+    },
+    "embedding_rerank": {
+      "queries": 300,
+      "errors": 0,
+      "actual_recall_strategies": [
+        "embedding_only",
+        "embedding_rerank"
+      ],
+      "rerank_status": [
+        "failed",
+        "success"
+      ],
+      "k": 16,
+      "recall@16_full": 0.5605,
+      "recall@16_capped": 0.5785,
+      "precision@16": 0.2919,
+      "mrr": 0.6934,
+      "ndcg@16": 0.4529,
+      "hit_rate@16": 0.8933,
+      "latency_ms": {
+        "total": {
+          "n": 300,
+          "mean": 1192.8,
+          "p50": 962.2,
+          "p95": 2355.0,
+          "p99": 3814.5
+        },
+        "embed": {
+          "n": 300,
+          "mean": 359.4,
+          "p50": 316.3,
+          "p95": 620.9,
+          "p99": 867.9
+        },
+        "vector": {
+          "n": 300,
+          "mean": 26.8,
+          "p50": 23.8,
+          "p95": 45.6,
+          "p99": 54.7
+        },
+        "rerank": {
+          "n": 300,
+          "mean": 788.2,
+          "p50": 552.7,
+          "p95": 2015.9,
+          "p99": 3392.3
+        }
+      },
+      "vector_calls_mean": 1
+    }
+  }
+}

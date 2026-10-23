@@ -9,6 +9,8 @@ type Options = {
   onConnected: () => void;
   retries?: number;
   retryDelay?: number;
+  /** 建连或读流超过该时长无任何字节（含 keep-alive 注释）即视为连接僵死；服务端每 15 秒发 keep-alive。 */
+  stallTimeout?: number;
 };
 
 /** 保留官方 SDK 的协议校验/归约器；传输层只处理游标、重复帧与断线重连。 */
@@ -19,12 +21,28 @@ export function recoveringFetch(fetcher: Fetcher, options: Options): Fetcher {
     let reader: ReadableStreamDefaultReader<Uint8Array> | undefined;
     const headers = new Headers(init?.headers);
     headers.set("Accept", "text/event-stream");
-    const reconnect = () => fetcher(`${options.eventsUrl}&after=${cursor}`, {
-      method: "GET", signal, headers,
+    const stall = options.stallTimeout ?? 30000;
+    // 每条连接一个控制器：外部 signal 取消时跟随中止；僵死时只中止本连接，再走 GET 恢复。
+    let link: AbortController | undefined;
+    const connect = (call: (connection: AbortSignal) => Promise<Response>) => {
+      const current = new AbortController();
+      link = current;
+      const follow = () => current.abort(signal?.reason);
+      if (signal?.aborted) current.abort(signal.reason);
+      else signal?.addEventListener("abort", follow, { once: true });
+      const timer = setTimeout(() => current.abort(new DOMException("连接超时", "TimeoutError")), stall);
+      return call(current.signal).finally(() => clearTimeout(timer));
+    };
+    const reconnect = () => connect((connection) => fetcher(`${options.eventsUrl}&after=${cursor}`, {
+      method: "GET", signal: connection, headers,
+    }));
+    const read = (source: ReadableStreamDefaultReader<Uint8Array>) => new Promise<ReadableStreamReadResult<Uint8Array>>((resolve, reject) => {
+      const timer = setTimeout(() => { link?.abort(); reject(new Error("事件流长时间无数据，重新连接")); }, stall);
+      source.read().then((value) => { clearTimeout(timer); resolve(value); }, (error) => { clearTimeout(timer); reject(error); });
     });
     let response: Response;
     try {
-      response = await (options.resume ? reconnect() : fetcher(input, init));
+      response = await (options.resume ? reconnect() : connect((connection) => fetcher(input, { ...init, signal: connection })));
     } catch (error) {
       if (signal?.aborted) throw error;
       options.onReconnect();
@@ -43,7 +61,7 @@ export function recoveringFetch(fetcher: Fetcher, options: Options): Fetcher {
             try {
               reader = response.body!.getReader();
               while (!closed) {
-                const chunk = await reader.read();
+                const chunk = await read(reader);
                 if (chunk.done) break;
                 buffer = (buffer + decoder.decode(chunk.value, { stream: true })).replace(/\r\n/g, "\n");
                 let boundary: number;

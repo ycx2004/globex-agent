@@ -203,3 +203,68 @@ async def test_exact_sku_price_and_card_default_never_fall_back_to_cheaper_sibli
 def test_static_knowledge_does_not_substitute_neighbours_for_missing_evidence(query):
     from app.infrastructure.rag.knowledge_retrieval import unsupported_fact_reason
     assert unsupported_fact_reason(query) is not None
+
+
+def _server_lexical_index(products, lexical_ids, vector_ids):
+    """模拟服务端维护 BM25 全文索引的向量库（如 Milvus BM25 Function）。"""
+    def hits(ids, top_n):
+        return [VectorHit(pid, 1/(i+1)) for i, pid in enumerate(ids[:top_n])]
+    return SimpleNamespace(
+        supports_lexical_search=lambda: True,
+        search_lexical=AsyncMock(side_effect=lambda q, top_n: hits(lexical_ids, top_n)),
+        search=AsyncMock(side_effect=lambda emb, top_n: hits(vector_ids, top_n)),
+        search_filtered=AsyncMock(side_effect=AssertionError("服务端混合检索不应下发全量 ID 过滤")),
+    )
+
+
+async def test_server_hybrid_never_scans_catalog_and_truncates_fusion_before_rerank():
+    repo = InMemoryProductRepository()
+    products = await repo.list_all()
+    ids = [p.product_id for p in products]
+    repo.list_all = AsyncMock(side_effect=AssertionError("大目录混合检索不应全量扫描"))
+    # 两路各 32 条且互不重叠，融合后 64 条，需截断到 candidate_limit=32 再精排
+    index = _server_lexical_index(products, ids[:40], ids[40:80])
+    reranker = SimpleNamespace(rerank=AsyncMock(side_effect=lambda q, docs: [float(-i) for i in range(len(docs))]))
+    usecase = CatalogSearchUseCase(repo, embedder=SimpleNamespace(embed=AsyncMock(return_value=[1])),
+                                   vector_index=index, reranker=reranker, hybrid_enabled=True,
+                                   hybrid_lexical_weight=1, hybrid_vector_weight=2, recall_candidates=32)
+    usecase._reject_reason = lambda p, s, primary=None: None
+    result = await usecase.execute(ProductSearchSpec(normalized_query="unmatched123", top_k=8))
+    # 截断按不同款计数：同款跨平台副本一并保留，不挤占名额
+    by_text = {p.searchable_text(): p.canonical_product_id or p.product_id for p in products}
+    assert len({by_text[doc] for doc in reranker.rerank.await_args.args[1]}) == 32
+    assert index.search_lexical.await_args.kwargs["top_n"] == 32
+    assert result["recall_strategy"] == "hybrid_rerank"
+    assert len({p.canonical_product_id or p.product_id for p in products
+                if p.searchable_text() in reranker.rerank.await_args.args[1]}) == 32
+    assert len(result["hits"]) == 8
+
+
+async def test_server_hybrid_weights_vector_side_and_filters_both_sides():
+    repo = InMemoryProductRepository()
+    products = await repo.list_all()
+    ids = [p.product_id for p in products]
+    blocked = ids[0]
+    # 同名次时向量权重 2 胜过词法权重 1；被硬约束挡掉的商品进入 filtered_out
+    index = _server_lexical_index(products, [blocked, ids[1]], [blocked, ids[2]])
+    usecase = CatalogSearchUseCase(repo, embedder=SimpleNamespace(embed=AsyncMock(return_value=[1])),
+                                   vector_index=index, hybrid_enabled=True,
+                                   hybrid_lexical_weight=1, hybrid_vector_weight=2)
+    usecase._reject_reason = lambda p, s, primary=None: "out_of_stock" if p.product_id == blocked else None
+    result = await usecase.execute(ProductSearchSpec(normalized_query="unmatched123", top_k=2))
+    hit_ids = [h["product_id"] for h in result["hits"]]
+    assert blocked not in hit_ids and hit_ids[0] == ids[2]
+    assert [r["product_id"] for r in result["filtered_out"]] == [blocked]
+
+
+async def test_server_hybrid_degrades_to_vector_when_lexical_index_fails():
+    repo = InMemoryProductRepository()
+    ids = [p.product_id for p in await repo.list_all()]
+    index = _server_lexical_index(None, [], ids[:5])
+    index.search_lexical = AsyncMock(side_effect=RuntimeError("no sparse field"))
+    usecase = CatalogSearchUseCase(repo, embedder=SimpleNamespace(embed=AsyncMock(return_value=[1])),
+                                   vector_index=index, hybrid_enabled=True)
+    usecase._reject_reason = lambda p, s, primary=None: None
+    result = await usecase.execute(ProductSearchSpec(normalized_query="unmatched123", top_k=3))
+    assert result["recall_strategy"] == "embedding_only"
+    assert [h["product_id"] for h in result["hits"]] == ids[:3]

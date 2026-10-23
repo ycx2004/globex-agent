@@ -138,6 +138,10 @@ class Settings:
     prompt_pin_version: str = ""
     metrics_reader_buyers: tuple[str, ...] = ()
     identity_hmac_secret: str = field(default="", repr=False)
+    # 学习审核管理员（签名主体）；只能审核与手动发布，空值关闭审核接口。
+    learning_admin_buyers: tuple[str, ...] = ()
+    # 每日 0 点自动提炼+校验的时区；空值关闭。审批与发布永远不自动执行。
+    learning_schedule_timezone: str = ""
     reranker_mode: str = "http"  # 只允许专用 HTTP 精排或显式关闭
     reranker_api_key: str = field(default="", repr=False)
     reranker_protocol: str = "flat"  # flat / dashscope
@@ -149,6 +153,15 @@ class Settings:
     field_lexical_enabled: bool = False  # 实验字段召回；收益门禁通过前不默认启用。
     field_lexical_weights: dict[str, float] | None = None
     embedding_version: str = ""  # 同名模型更新权重或编码方式时，用版本区分已存向量
+    # ---- 向量后端选择：qdrant（默认，demo）/ milvus（10w 商品库）----
+    vector_backend: str = "qdrant"  # VECTOR_BACKEND=milvus 时商品检索切 Milvus；品类 KB 不受影响
+    milvus_uri: str = ""  # 如 http://milvus:19530
+    milvus_token: str = ""  # 无鉴权留空
+    milvus_collection: str = "globex_products"
+    milvus_search_ef: int = 128  # HNSW 查询 ef，越大召回越全、延迟越高
+    # 同一集合内维护 searchable_text 的 BM25 全文索引，供大目录混合检索在服务端做词法召回；
+    # 只能用于新建集合（旧集合无 text/sparse 字段，检索时会失败并降级为纯向量）
+    milvus_lexical_enabled: bool = False
 
 
 def load_settings(*, require_llm_key: bool = True) -> Settings:
@@ -209,6 +222,12 @@ def load_settings(*, require_llm_key: bool = True) -> Settings:
         embedding_dim=int(os.getenv("EMBEDDING_DIM", "1024")),
         qdrant_url=os.getenv("QDRANT_URL", ""),
         qdrant_collection=os.getenv("QDRANT_COLLECTION", "globex_products"),
+        vector_backend=os.getenv("VECTOR_BACKEND", "qdrant").strip().lower(),
+        milvus_uri=os.getenv("MILVUS_URI", ""),
+        milvus_token=os.getenv("MILVUS_TOKEN", ""),
+        milvus_collection=os.getenv("MILVUS_COLLECTION", "globex_products"),
+        milvus_search_ef=int(os.getenv("MILVUS_SEARCH_EF", "128")),
+        milvus_lexical_enabled=os.getenv("MILVUS_LEXICAL_ENABLED", "0") in ("1", "true", "True"),
         reranker_base_url=os.getenv("RERANKER_BASE_URL", ""),
         reranker_model=os.getenv("RERANKER_MODEL", ""),
         tavily_api_key=os.getenv("TAVILY_API_KEY", ""),
@@ -273,4 +292,6 @@ def load_settings(*, require_llm_key: bool = True) -> Settings:
         prompt_pin_version=os.getenv("PROMPT_PIN_VERSION", ""),
         metrics_reader_buyers=tuple(item.strip() for item in os.getenv("METRICS_READER_BUYERS", "").split(",") if item.strip()),
         identity_hmac_secret=os.getenv("IDENTITY_HMAC_SECRET", ""),
+        learning_admin_buyers=tuple(item.strip() for item in os.getenv("LEARNING_ADMIN_BUYERS", "").split(",") if item.strip()),
+        learning_schedule_timezone=os.getenv("LEARNING_SCHEDULE_TIMEZONE", "").strip(),
     )

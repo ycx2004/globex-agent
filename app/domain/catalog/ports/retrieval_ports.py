@@ -38,6 +38,14 @@ class ProductVectorIndex(ABC):
         """按权威目录许可的 ID 召回；旧适配器返回 None，由应用层渐进补召回。"""
         return None
 
+    def supports_lexical_search(self) -> bool:
+        """是否在服务端维护商品正文全文索引；为 True 时 search_lexical 可用。"""
+        return False
+
+    async def search_lexical(self, query: str, top_n: int) -> list[VectorHit]:
+        """服务端 BM25 召回，score 为该后端的 BM25 分；仅 supports_lexical_search() 为 True 时调用。"""
+        raise NotImplementedError
+
     @abstractmethod
     async def ensure_ready(self, vector_dim: int) -> None:
         """确保 collection 存在（幂等）。"""

@@ -74,7 +74,6 @@ def build_product_search_tool(usecase: CatalogSearchUseCase, bus: TradeEventBus,
         sku_spec: str | None = None,
         product_type: str | None = None,
         max_weight_kg: float | str | None = None,
-        preferred_product_type: str | None = None,
         prefer_lightweight: bool = False,
     ) -> ToolChunk:
         """检索跨境商品库（embedding+rerank 二阶段召回），返回 Top-K 商品卡 JSON。
@@ -109,8 +108,6 @@ def build_product_search_tool(usecase: CatalogSearchUseCase, bus: TradeEventBus,
                 明确要购买的细分类型，如“背包”“颈枕”，作为硬过滤；与一级类目分开。
             max_weight_kg (`float | None`):
                 明确重量上限，单位 kg；没有可靠重量的商品不能满足该硬约束。
-            preferred_product_type (`str | None`):
-                模糊类型偏好，仅调整排序，不排除其他类型。
             prefer_lightweight (`bool`):
                 仅表达轻便偏好时为 true，优先已知较轻商品；不擅自指定重量上限。
         """
@@ -160,7 +157,6 @@ def build_product_search_tool(usecase: CatalogSearchUseCase, bus: TradeEventBus,
             "sku_spec": sku_spec,
             "product_type": product_type,
             "max_weight_kg": max_weight_kg,
-            "preferred_product_type": preferred_product_type,
             "prefer_lightweight": prefer_lightweight,
         }
         bus.publish(session_id, "tool.invoke", {"tool": "product_search_tool", "args": args})
@@ -186,7 +182,6 @@ def build_product_search_tool(usecase: CatalogSearchUseCase, bus: TradeEventBus,
                 sku_spec=sku_spec,
                 product_type=product_type,
                 max_weight_kg=max_weight_kg,
-                preferred_product_type=preferred_product_type,
                 prefer_lightweight=prefer_lightweight,
             )
             result = await usecase.execute(spec)
